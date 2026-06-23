@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison Alma | Prêt-à-porter Parisien</title>
+    <meta name="description" content="Maison Alma - Boutique mode parisienne. Exemple de site e-commerce réalisé par Shuren.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://shuren.fr/demos/alma/">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CE9YD8CRJM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', { analytics_storage: 'denied' });
+        if (localStorage.getItem('cookie_consent') === 'accepted') {
+          gtag('consent', 'update', { analytics_storage: 'granted' });
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-CE9YD8CRJM');
+    </script>
+
+    <!-- Google Fonts: Syne (Titles/Modern Geometric) & Inter (Body/Clean) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="favicon-alma.svg">
+    <link rel="apple-touch-icon" href="favicon-alma.svg">
+
+
+
+    <style>
+        :root {
+            --color-white: #FFFFFF;
+            --color-black: #0A0A0A;
+            --color-accent: #E8C4B8;
+            --color-border: #EEEEEE;
+
+            --font-title: 'Syne', sans-serif;
+            --font-body: 'Inter', sans-serif;
+
+            /* Sharp, quick transitions */
+            --transition-snap: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* --- Reset & Base --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--color-white);
+            color: var(--color-black);
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-title);
+            font-weight: 600;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 4vw;
+        }
+
+        /* --- Typography Classes --- */
+        .text-lead {
+            font-size: 1.25rem;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .uppercase-label {
+            font-family: var(--font-title);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 500;
+        }
+
+        /* --- UI Elements --- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            font-family: var(--font-title);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            background-color: var(--color-black);
+            color: var(--color-white);
+            border: 1px solid var(--color-black);
+            cursor: pointer;
+            transition: var(--transition-snap);
+        }
+
+        .btn:hover {
+            background-color: var(--color-accent);
+            border-color: var(--color-accent);
+            color: var(--color-black);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--color-black);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--color-black);
+            color: var(--color-white);
+        }
+
+        /* --- Navigation --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-border);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-inner {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            flex: 1;
+        }
+
+        .nav-links a {
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: var(--color-accent);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .logo {
+            font-family: var(--font-title);
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.05em;
+            text-align: center;
+            flex: 0 0 auto;
+        }
+
+        .nav-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 2rem;
+            flex: 1;
+        }
+
+        .nav-actions a {
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .cart-icon {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cart-count {
+            background-color: var(--color-accent);
+            color: var(--color-black);
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            font-weight: 600;
+        }
+
+        /* --- Hero Section (Split Layout) --- */
+        .hero {
+            padding-top: 80px;
+            /* offset nav */
+            height: 100vh;
+            display: flex;
+        }
+
+        .hero-text {
+            flex: 0 0 45%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4vw;
+        }
+
+        .hero-text h1 {
+            font-size: 5vw;
+            line-height: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .hero-text p {
+            max-width: 400px;
+            margin-bottom: 3rem;
+        }
+
+        .hero-image {
+            flex: 1;
+            height: calc(100vh - 80px);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
+        }
+
+        /* --- Nouveautés (Asymmetrical Grid) --- */
+        .nouveautes {
+            padding: 10vw 0;
+            background-color: var(--color-white);
+        }
+
+        .section-header {
+            margin-bottom: 6vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+        }
+
+        .view-all {
+            font-family: var(--font-title);
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            transition: var(--transition-snap);
+        }
+
+        .view-all:hover {
+            color: var(--color-accent);
+        }
+
+        .grid-asym {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2vw;
+            align-items: start;
+        }
+
+        .product-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Asymmetry mapping */
+        .product-card:nth-child(1) {
+            grid-column: 1 / 5;
+            margin-top: 10vw;
+        }
+
+        .product-card:nth-child(2) {
+            grid-column: 5 / 10;
+        }
+
+        .product-card:nth-child(3) {
+            grid-column: 10 / 13;
+            margin-top: -5vw;
+        }
+
+        .product-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            background-color: #F8F8F8;
+            margin-bottom: 1.5rem;
+            aspect-ratio: 3/4;
+        }
+
+        .product-card:nth-child(2) .product-image-wrapper {
+            aspect-ratio: 4/5;
+        }
+
+        .product-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .product-card:hover .product-image-wrapper img {
+            transform: scale(1.05);
+            /* Zoom effect */
+        }
+
+        /* Add to cart overlay icon on hover */
+        .product-add {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            width: 40px;
+            height: 40px;
+            background-color: var(--color-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: var(--transition-snap);
+            cursor: pointer;
+        }
+
+        .product-add svg {
+            width: 16px;
+            fill: var(--color-black);
+        }
+
+        .product-card:hover .product-add {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .product-add:hover {
+            background-color: var(--color-accent);
+        }
+
+        .product-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .product-title {
+            font-family: var(--font-title);
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-transform: none;
+            margin-bottom: 0.2rem;
+        }
+
+        .product-price {
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .product-category {
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        /* --- Catégories Section --- */
+        .categories {
+            padding: 5vw 0 10vw;
+        }
+
+        .cat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2vw;
+        }
+
+        .cat-card {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cat-card img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .cat-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.15);
+            transition: background-color 0.4s ease;
+        }
+
+        .cat-card:hover img {
+            transform: scale(1.03);
+        }
+
+        .cat-card:hover::after {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .cat-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: var(--color-white);
+        }
+
+        .cat-content h3 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-white);
+        }
+
+        .cat-content .btn {
+            background-color: var(--color-white);
+            color: var(--color-black);
+            border-color: var(--color-white);
+        }
+
+        .cat-content .btn:hover {
+            background-color: var(--color-accent);
+            border-color: var(--color-accent);
+        }
+
+        /* --- Newsletter --- */
+        .newsletter {
+            padding: 8vw 0;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+        }
+
+        .newsletter-inner {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter p {
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            border-bottom: 1px solid var(--color-black);
+            padding-bottom: 0.5rem;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            padding: 0.5rem 0;
+        }
+
+        .newsletter-form button {
+            background: none;
+            border: none;
+            font-family: var(--font-title);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            transition: color 0.2s;
+        }
+
+        .newsletter-form button:hover {
+            color: var(--color-accent);
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--color-black);
+            color: var(--color-white);
+            padding: 6vw 0 2vw;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 4vw;
+            margin-bottom: 6vw;
+        }
+
+        .footer-col h4 {
+            color: var(--color-white);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 20px;
+            height: 1px;
+            background-color: var(--color-accent);
+        }
+
+        .footer-col ul {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-col a {
+            color: #999;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: var(--color-white);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #222;
+            padding-top: 2rem;
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        .footer-logo {
+            font-family: var(--font-title);
+            font-size: 2rem;
+            color: var(--color-white);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 1024px) {
+            .hero-text h1 {
+                font-size: 4rem;
+            }
+
+            .grid-asym {
+                display: flex;
+                flex-direction: column;
+                gap: 4rem;
+            }
+
+            .product-card:nth-child(n) {
+                margin-top: 0;
+            }
+
+            .product-image-wrapper {
+                aspect-ratio: 4/5 !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .nav-links,
+            .nav-actions {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .hero-text {
+                padding: 15vw 4vw;
+                align-items: center;
+                text-align: center;
+            }
+
+            .hero-image {
+                height: 60vh;
+            }
+
+            .cat-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sticky Thin Navbar -->
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <div class="nav-links">
+                <a href="#femme">Femme</a>
+                <a href="#homme">Homme</a>
+                <a href="#accessoires">Accessoires</a>
+            </div>
+
+            <a href="#" class="logo">MAISON ALMA</a>
+
+            <div class="nav-actions">
+                <a href="#search">Recherche</a>
+                <a href="#account">Compte</a>
+                <a href="#cart" class="cart-icon">
+                    Panier
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Split Hero -->
+        <header class="hero">
+            <div class="hero-text">
+                <span class="uppercase-label">Nouvelle Collection</span>
+                <h1>L'Élégance<br>Évidente.</h1>
+                <p class="text-lead">Découvrez notre collection Printemps-Été. Des lignes pures, des matières nobles et
+                    une conception responsable pour un vestiaire intemporel.</p>
+                <div>
+                    <a href="#shop" class="btn">Découvrir</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- High-end fashion Unsplash image -->
+                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=800&auto=format&fit=crop"
+                    alt="Modèle féminin avec un manteau beige">
+            </div>
+        </header>
+
+        <!-- Nouveautés Asymmetrical Grid -->
+        <section class="nouveautes container">
+            <div class="section-header">
+                <h2>Nouveautés</h2>
+                <a href="#" class="view-all">Tout voir</a>
+            </div>
+
+            <div class="grid-asym">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?q=80&w=600&auto=format&fit=crop"
+                            alt="Sac à main minimaliste en cuir" loading="lazy">
+                        <div class="product-add">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3 class="product-title">Le Sac Demi-Lune</h3>
+                            <span class="product-category">Accessoires</span>
+                        </div>
+                        <span class="product-price">285€</span>
+                    </div>
+                </div>
+
+                <!-- Product 2 (Bigger) -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1548549557-dbe9d8ebb63e?q=80&w=600&auto=format&fit=crop"
+                            alt="Veste de tailleur modernisée" loading="lazy">
+                        <div class="product-add">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3 class="product-title">Veste Tailleur Oversize</h3>
+                            <span class="product-category">Prêt-à-porter</span>
+                        </div>
+                        <span class="product-price">190€</span>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=600&auto=format&fit=crop"
+                            alt="Top basique col carré" loading="lazy">
+                        <div class="product-add">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3 class="product-title">T-shirt Essentiel</h3>
+                            <span class="product-category">Essentiels</span>
+                        </div>
+                        <span class="product-price">45€</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catégories -->
+        <section class="categories container">
+            <div class="cat-grid">
+                <a href="#femme" class="cat-card">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=700&auto=format&fit=crop"
+                        alt="Collection Femme" loading="lazy">
+                    <div class="cat-content">
+                        <h3>Femme</h3>
+                        <span class="btn">Parcourir</span>
+                    </div>
+                </a>
+                <a href="#homme" class="cat-card">
+                    <img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?q=80&w=700&auto=format&fit=crop"
+                        alt="Collection Homme" loading="lazy">
+                    <div class="cat-content">
+                        <h3>Homme</h3>
+                        <span class="btn">Parcourir</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <div class="newsletter-inner container">
+                <h2>Le Journal d'Alma</h2>
+                <p>Abonnez-vous pour recevoir un accès privilégié à nos archives, nos nouvelles collections et nos
+                    histoires d'ateliers.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Votre adresse email" required>
+                    <button type="submit">S'inscrire</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Maison Alma</h4>
+                    <ul>
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">Nos Ateliers</a></li>
+                        <li><a href="#">Engagements</a></li>
+                        <li><a href="#">Carrières</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Service Client</h4>
+                    <ul>
+                        <li><a href="#">Contactez-nous</a></li>
+                        <li><a href="#">Livraison & Retours</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Entretien des pièces</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Légal</h4>
+                    <ul>
+                        <li><a href="#">Mentions Légales</a></li>
+                        <li><a href="#">CGV</a></li>
+                        <li><a href="#">Confidentialité</a></li>
+                        <li><a href="#">Cookies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Réseaux</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                        <li><a href="#">Journal</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span class="footer-logo">M. ALMA</span>
+                <span>&copy; 2026 Maison Alma. Conçu à Paris.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toast notification
+        function showToast(msg) {
+            const t = document.createElement('div');
+            t.style.cssText = 'position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);background:#0A0A0A;color:#fff;padding:0.75rem 1.5rem;font-family:var(--font-title);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;z-index:9999;opacity:0;transition:opacity 0.25s;pointer-events:none;white-space:nowrap';
+            t.textContent = msg;
+            document.body.appendChild(t);
+            setTimeout(() => t.style.opacity = '1', 10);
+            setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.remove(), 300); }, 2500);
+        }
+
+        // Header actions
+        document.querySelector('[href="#search"]').addEventListener('click', e => {
+            e.preventDefault();
+            showToast('Recherche — disponible sur le site complet');
+        });
+        document.querySelector('[href="#account"]').addEventListener('click', e => {
+            e.preventDefault();
+            showToast('Espace client — disponible sur le site complet');
+        });
+        document.querySelector('[href="#cart"]').addEventListener('click', e => {
+            e.preventDefault();
+            showToast(count > 0 ? `Panier — ${count} article${count > 1 ? 's' : ''}` : 'Votre panier est vide');
+        });
+
+        // Add to cart
+        const cartButtons = document.querySelectorAll('.product-add');
+        const cartCount = document.querySelector('.cart-count');
+        let count = 0;
+
+        cartButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                count++;
+                cartCount.textContent = count;
+                cartCount.style.transform = 'scale(1.5)';
+                setTimeout(() => { cartCount.style.transform = 'scale(1)'; }, 200);
+                showToast('Article ajouté au panier');
+            });
+        });
+
+        // Newsletter
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Merci de votre inscription à la newsletter Alma.');
+        });
+    </script>
+</body>
+
+</html>
