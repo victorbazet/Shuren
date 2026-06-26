@@ -19,11 +19,11 @@
     gtag('js', new Date());
     gtag('config', 'G-CE9YD8CRJM');
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-
   <style>
+    @font-face { font-family: 'Lato'; src: url('../../assets/fonts/lato-300.woff2') format('woff2'); font-weight: 300; font-display: swap; }
+    @font-face { font-family: 'Lato'; src: url('../../assets/fonts/lato-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+    @font-face { font-family: 'Lato'; src: url('../../assets/fonts/lato-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+
     :root {
       --fond: #FAF8F5;
       --fond-creme: #F2EBE0;
@@ -32,7 +32,7 @@
       --accent: #8B5E3C;
       --accent-clair: #C49A6C;
       --bordure: rgba(0,0,0,0.09);
-      --font-titre: 'Playfair Display', serif;
+      --font-titre: Georgia, 'Times New Roman', serif;
       --font-corps: 'Lato', sans-serif;
       --radius: 8px;
     }
@@ -918,7 +918,7 @@
     <div class="footer-inner">
       <span class="footer-nom">Boulangerie Martin</span>
       <span>14 rue du Marché, Lyon 3e · 04 72 00 00 00</span>
-      <span>Site réalisé par <a href="https://shuren.fr" style="color:#C49A6C;">Shuren</a></span>
+      <span>Site réalisé par <a href="https://shuren.fr" style="color:#C49A6C;">Shuren</a> · <a href="https://shuren.fr/mentions-legales.html" style="color:#C49A6C;">Mentions légales</a></span>
     </div>
   </footer>
 
@@ -1116,6 +1116,7 @@
       });
     });
   </script>
+  <script src="../../script.js?v=5"></script>
 
 </body>
 </html>

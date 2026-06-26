@@ -1,3 +1,13 @@
+/* Gérer les cookies — retrait du consentement */
+const cookiePrefsBtn = document.getElementById('cookiePrefs');
+if (cookiePrefsBtn) {
+  cookiePrefsBtn.addEventListener('click', function () {
+    localStorage.removeItem('cookie_consent');
+    if (typeof gtag === 'function') gtag('consent', 'update', { analytics_storage: 'denied' });
+    location.reload();
+  });
+}
+
 /* Cookie Consent Banner */
 (function () {
   if (localStorage.getItem('cookie_consent')) return;
@@ -304,50 +314,6 @@ faqItems.forEach(item => {
 });
 
 /* Curseur Caméléon */
-const cursor = document.getElementById('cursor');
-
-if (cursor && matchMedia('(pointer: fine)').matches) {
-  let mouseX = window.innerWidth / 2;
-  let mouseY = window.innerHeight / 2;
-  let cursorX = mouseX;
-  let cursorY = mouseY;
-  const speed = 0.3;
-
-  function animateCursor() {
-    cursorX += (mouseX - cursorX) * speed;
-    cursorY += (mouseY - cursorY) * speed;
-    cursor.style.transform = `translate3d(calc(${cursorX}px - 50%), calc(${cursorY}px - 50%), 0)`;
-    requestAnimationFrame(animateCursor);
-  }
-
-  window.addEventListener('mousemove', e => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  animateCursor();
-
-  const cards = document.querySelectorAll('.card');
-  cards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      if (card.querySelector('.card-visual-epicure')) {
-        cursor.classList.add('cursor-epicure');
-      } else if (card.querySelector('.card-visual-nature')) {
-        cursor.classList.add('cursor-nature');
-      } else if (card.querySelector('.card-visual-alma')) {
-        cursor.classList.add('cursor-alma');
-      } else if (card.querySelector('.card-visual-agent')) {
-        cursor.classList.add('cursor-agent');
-      } else {
-        cursor.classList.add('cursor-default');
-      }
-    });
-
-    card.addEventListener('mouseleave', () => {
-      cursor.className = '';
-    });
-  });
-}
 
 /* Slider Avant/Après */
 const slider = document.querySelector('.ba-slider');

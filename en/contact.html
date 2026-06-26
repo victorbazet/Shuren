@@ -31,14 +31,13 @@
     gtag('config', 'G-CE9YD8CRJM');
   </script>
 
-  <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="preload" href="../assets/fonts/syne-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../assets/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
 
   <link rel="icon" type="image/svg+xml" href="../favicon.svg?v=3">
   <link rel="apple-touch-icon" href="../favicon.svg?v=3">
 
-  <link rel="stylesheet" href="../style.css?v=8">
+  <link rel="stylesheet" href="../style.css?v=9">
   <script>
     (function () { var t = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); document.documentElement.setAttribute('data-theme', t) })();
   </script>
@@ -161,6 +160,7 @@
             </div>
             <button type="submit" class="btn-plein form-submit">Send message</button>
             <p class="form-erreur" id="formErreur"></p>
+            <p class="form-rgpd">Your data (name, email, message) is used solely to handle your request and is not shared with third parties. See our <a href="../mentions-legales.html">legal notice</a> to exercise your rights.</p>
           </form>
         </div>
       </div>
@@ -172,12 +172,13 @@
       <span class="footer-nom">Shuren - Website creation</span>
       <div class="footer-links">
         <a href="../mentions-legales.html" class="footer-legales">Legal notice</a>
+        <button id="cookiePrefs" class="footer-legales footer-cookie-btn">Cookie settings</button>
         <span class="footer-copy">© 2026</span>
       </div>
     </div>
   </footer>
 
-  <script src="../script.js?v=4"></script>
+  <script src="../script.js?v=5"></script>
 </body>
 
 </html>

@@ -616,6 +616,21 @@ main {
   border-color: rgba(192, 57, 43, 0.2);
 }
 
+.card-visual-email {
+  background: linear-gradient(135deg, #0D1B2A 0%, #1B3050 100%);
+  position: relative;
+}
+
+.card-visual-avis {
+  background: linear-gradient(135deg, #1A0E00 0%, #2E1E00 100%);
+  position: relative;
+}
+
+.card-visual-planning {
+  background: linear-gradient(135deg, #051A18 0%, #0C2E2A 100%);
+  position: relative;
+}
+
 .card-visual-projet {
   background: #F5F5F3;
   color: var(--texte-doux);
@@ -747,6 +762,14 @@ main {
   font-size: 0.875rem;
   color: var(--texte-doux);
   margin-top: -8px;
+}
+
+.tarif-tva {
+  font-size: 0.75rem;
+  color: var(--texte-doux);
+  text-align: center;
+  margin-top: 32px;
+  opacity: 0.7;
 }
 
 .tarif-features {
@@ -1081,6 +1104,20 @@ main {
   min-height: 20px;
 }
 
+.form-rgpd {
+  font-size: 0.75rem;
+  color: var(--texte-doux);
+  line-height: 1.6;
+  margin-top: 12px;
+  opacity: 0.8;
+}
+
+.form-rgpd a {
+  color: var(--texte-doux);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 /* Footer */
 #footer {
   border-top: 1px solid var(--bordure);
@@ -1117,86 +1154,19 @@ main {
   color: var(--texte);
 }
 
+.footer-cookie-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
 .footer-copy {
   font-size: 0.875rem;
   color: var(--texte-doux);
 }
 
-/* Curseur Caméléon */
-@media (pointer: fine) {
-  .card, .card * {
-    cursor: none;
-  }
-}
-
-#cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 12px;
-  height: 12px;
-  background-color: var(--texte);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0;
-  transform: translate3d(-50%, -50%, 0);
-  transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, border-radius 0.3s ease, border 0.3s ease, opacity 0.2s ease;
-  will-change: transform;
-}
-
-#cursor.cursor-epicure,
-#cursor.cursor-nature,
-#cursor.cursor-alma,
-#cursor.cursor-agent,
-#cursor.cursor-default {
-  opacity: 1;
-}
-
-#cursor.cursor-epicure {
-  width: 60px;
-  height: 60px;
-  background-color: transparent;
-  border: 1px solid #C9A96E;
-}
-
-#cursor.cursor-nature {
-  width: 40px;
-  height: 40px;
-  background-color: #6B8F6B;
-  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-  opacity: 0.8;
-}
-
-#cursor.cursor-alma {
-  width: 40px;
-  height: 40px;
-  background-color: transparent;
-  border: 2px solid var(--texte);
-  border-radius: 0;
-}
-
-#cursor.cursor-agent {
-  width: 44px;
-  height: 44px;
-  background-color: transparent;
-  border: 1.5px solid #8B5E3C;
-  border-radius: 50%;
-  opacity: 0.85;
-}
-
-#cursor.cursor-default {
-  width: 12px;
-  height: 12px;
-  background-color: var(--texte);
-  border-radius: 50%;
-}
-
-@media (hover: none) and (pointer: coarse) {
-  #cursor {
-    display: none !important;
-  }
-}
 
 /* Slider Avant/Après */
 .ba-slider {

@@ -137,7 +137,6 @@
   </script>
 
   <!-- Preconnect -->
-  <link rel="preconnect" href="https://www.googletagmanager.com">
   <!-- Fonts (local) -->
   <link rel="preload" href="assets/fonts/syne-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -148,15 +147,13 @@
 
 
 
-  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="style.css?v=9">
   <script>
     (function () { var t = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); document.documentElement.setAttribute('data-theme', t) })();
   </script>
 </head>
 
 <body>
-  <div id="cursor"></div>
-
   <nav id="nav">
     <div class="nav-inner">
       <a href="#hero" class="nav-logo">
@@ -262,15 +259,59 @@
           <article class="card card-chef-simon reveal">
             <div class="card-visual card-visual-chefsimon">
               <img src="assets/chefsimon-logo.png" alt="Chef Simon — Le plaisir de cuisiner">
-              <span class="card-badge-reel">Projet réel</span>
             </div>
-            <div class="card-tag">Agent IA · Gastronomie</div>
+            <div class="card-tag">Intelligence Artificielle · Gastronomie</div>
             <h3 class="card-titre">Chef Simon</h3>
             <p class="card-desc">Intégration d'un agent IA de génération de recettes pour l'un des sites culinaires les
               plus populaires de France — 12 millions de recettes consultées par an.</p>
             <div class="card-footer">
               <a href="https://chefsimon.ai/" target="_blank" rel="noopener noreferrer" class="card-lien-site">Voir le
                 site <span class="card-lien-arrow">→</span></a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-visual card-visual-email">
+              <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+            </div>
+            <div class="card-tag">Agent IA · Email</div>
+            <h3 class="card-titre">Triage d'emails automatique</h3>
+            <p class="card-desc">L'agent lit, trie et rédige un brouillon de réponse pour chaque email entrant — en moins d'une minute, 24h/24.</p>
+            <div class="card-footer">
+              <a href="contact.html" class="card-lien-site">Discutons-en <span class="card-lien-arrow">→</span></a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-visual card-visual-avis">
+              <svg width="52" height="52" viewBox="0 0 24 24" fill="rgba(255,255,255,0.75)" stroke="none" aria-hidden="true">
+                <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
+              </svg>
+            </div>
+            <div class="card-tag">Agent IA · Restauration</div>
+            <h3 class="card-titre">Réponses aux avis Google</h3>
+            <p class="card-desc">Chaque avis reçoit une réponse personnalisée au ton de l'établissement, générée et postée automatiquement.</p>
+            <div class="card-footer">
+              <a href="contact.html" class="card-lien-site">Discutons-en <span class="card-lien-arrow">→</span></a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-visual card-visual-planning">
+              <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2"/>
+                <path d="M16 2v4M8 2v4M3 10h18"/>
+                <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/>
+              </svg>
+            </div>
+            <div class="card-tag">Agent IA · Restauration</div>
+            <h3 class="card-titre">Planning équipes par IA</h3>
+            <p class="card-desc">L'IA génère les plannings de la semaine en quelques secondes, selon les contrats, disponibilités et contraintes horaires.</p>
+            <div class="card-footer">
+              <a href="contact.html" class="card-lien-site">Discutons-en <span class="card-lien-arrow">→</span></a>
             </div>
           </article>
 
@@ -366,7 +407,7 @@
     <section id="tarifs">
       <div class="section-inner">
         <h2 class="section-titre reveal">Des offres claires, sans engagement</h2>
-        <p class="section-sous-titre reveal">Du pilote sans risque à l'opérationnel complet. Sans engagement.</p>
+        <p class="section-sous-titre reveal">Du pilote sans risque à l'opérationnel complet. Sans engagement. Sans frais cachés.</p>
         <div class="tarifs-grid tarifs-grid-3">
           <article class="tarif-card reveal">
             <div class="tarif-badge-soft">Recommandé</div>
@@ -395,7 +436,7 @@
               <span class="tarif-montant">400€</span>
               <span class="tarif-detail">/ mois</span>
             </div>
-            <p class="tarif-maintenance">Sans engagement · tous établissements</p>
+            <p class="tarif-maintenance">Sans engagement</p>
             <ul class="tarif-features">
               <li class="feat-oui">Réponses automatiques aux avis Google</li>
               <li class="feat-oui">Récap quotidien de votre activité sur WhatsApp</li>
@@ -414,7 +455,7 @@
               <span class="tarif-montant">700€</span>
               <span class="tarif-detail">/ mois</span>
             </div>
-            <p class="tarif-maintenance">Sans engagement · tous établissements</p>
+            <p class="tarif-maintenance">Sans engagement</p>
             <ul class="tarif-features">
               <li class="feat-oui">Tout du Package Essentiel</li>
               <li class="feat-oui">App de génération de planning équipes (IA)</li>
@@ -435,6 +476,7 @@
           </div>
           <a href="contact.html" class="btn-plein tarif-devis-btn">Demander un devis</a>
         </div>
+        <p class="tarif-tva">TVA non applicable, art. 293 B du CGI</p>
       </div>
     </section>
 
@@ -649,12 +691,13 @@
       <span class="footer-nom">Shuren - Agents IA pour entreprises</span>
       <div class="footer-links">
         <a href="mentions-legales.html" class="footer-legales">Mentions légales</a>
+        <button id="cookiePrefs" class="footer-legales footer-cookie-btn">Gérer les cookies</button>
         <span class="footer-copy">© 2026</span>
       </div>
     </div>
   </footer>
 
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=5"></script>
 </body>
 
 </html>
