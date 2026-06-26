@@ -49,8 +49,8 @@
 
   const isEn = document.documentElement.lang === 'en';
   const mots = isEn
-    ? ['bakeries', 'hairdressers', 'restaurants', 'craftsmen', 'law firms', 'florists', 'photographers', 'clinics', 'retailers', 'SMEs']
-    : ['boulangeries', 'coiffeurs', 'restaurants', 'artisans', 'cabinets', 'fleuristes', 'photographes', 'cliniques', 'commerçants', 'PME'];
+    ? ['restaurants', 'craftsmen', 'law firms', 'retailers', 'businesses']
+    : ['restaurants', 'artisans', 'cabinets', 'commerçants', 'entreprises'];
 
   let motIndex = 0;
   let charIndex = 0;
@@ -126,14 +126,14 @@ if (navHamburger && navMobile && nav) {
   navHamburger.addEventListener('click', () => {
     const isOpen = nav.classList.toggle('nav-open');
     navHamburger.setAttribute('aria-expanded', String(isOpen));
-    navMobile.setAttribute('aria-hidden', String(!isOpen));
+    navMobile.inert = !isOpen;
   });
 
   navMobile.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       nav.classList.remove('nav-open');
       navHamburger.setAttribute('aria-expanded', 'false');
-      navMobile.setAttribute('aria-hidden', 'true');
+      navMobile.inert = true;
     });
   });
 }
