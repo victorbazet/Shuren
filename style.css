@@ -263,7 +263,6 @@ main {
 }
 
 #hero {
-  min-height: 100vh;
   display: flex;
   align-items: center;
   background: var(--fond);
@@ -486,6 +485,7 @@ main {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   cursor: pointer;
   position: relative;
+  overflow: hidden;
 }
 
 .card-visual {
@@ -594,7 +594,8 @@ main {
   filter: drop-shadow(0 2px 8px rgba(0,0,0,0.25));
 }
 
-.card-badge-reel {
+.card-badge-reel,
+.card-badge-demo {
   position: absolute;
   top: 14px;
   left: 16px;
@@ -1189,12 +1190,6 @@ main {
   height: 12px;
   background-color: var(--texte);
   border-radius: 50%;
-}
-
-@media (hover: none) and (pointer: coarse) {
-  #cursor {
-    display: none !important;
-  }
 }
 
 @media (hover: none) and (pointer: coarse) {
