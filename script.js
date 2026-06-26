@@ -66,17 +66,6 @@ if (cookiePrefsBtn) {
   let charIndex = 0;
   let effacement = false;
 
-  document.fonts.ready.then(() => {
-    const probe = document.createElement('span');
-    probe.style.cssText = 'position:fixed;top:-9999px;visibility:hidden;white-space:nowrap;';
-    probe.style.font = getComputedStyle(tw).font;
-    document.body.appendChild(probe);
-    let maxW = 0;
-    mots.forEach(m => { probe.textContent = m + '.'; maxW = Math.max(maxW, probe.offsetWidth); });
-    probe.remove();
-    tw.parentElement.style.minWidth = maxW + 'px';
-  });
-
   function tick() {
     const mot = mots[motIndex];
 

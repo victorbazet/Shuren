@@ -137,9 +137,12 @@
   </script>
 
   <!-- Preconnect -->
+  <link rel="preconnect" href="https://www.google-analytics.com">
   <!-- Fonts (local) -->
   <link rel="preload" href="assets/fonts/syne-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/lato-300.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/lato-700.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg?v=3">
@@ -157,8 +160,8 @@
   <nav id="nav">
     <div class="nav-inner">
       <a href="#hero" class="nav-logo">
-        <img src="assets/logos/logo-no-shuren-black-on-white.svg" alt="Logo Shuren" class="nav-logo-mark">
-        <img src="assets/logos/Just-Shuren-black-on-white.svg" alt="Shuren" class="nav-logo-text">
+        <img src="assets/logos/logo-no-shuren-black-on-white.svg" alt="Logo Shuren" class="nav-logo-mark" width="32" height="32">
+        <img src="assets/logos/Just-Shuren-black-on-white.svg" alt="Shuren" class="nav-logo-text" width="80" height="18">
       </a>
       <div class="nav-right">
         <ul class="nav-links">
@@ -229,8 +232,10 @@
       <div class="section-inner">
         <h2 class="section-titre reveal">Qui suis-je ?</h2>
         <div class="apropos-bloc reveal">
-          <img src="assets/victor.jpg" alt="Victor Bazet-Braun, fondateur de Shuren" class="apropos-photo" width="180"
-            height="180" loading="lazy">
+          <picture>
+            <source srcset="assets/victor.webp" type="image/webp">
+            <img src="assets/victor.jpg" alt="Victor Bazet-Braun, fondateur de Shuren" class="apropos-photo" width="180" height="180" loading="lazy">
+          </picture>
           <div class="apropos-contenu">
             <p>Je m'appelle Victor, expert en automatisation et intégration d'agents IA basé à New York. Je travaille avec des entreprises françaises qui veulent gagner du temps et automatiser leur quotidien, sans se perdre dans la technique.</p>
             <p>Shuren (修練) signifie discipline et maîtrise en japonais. C'est ma philosophie : chaque agent IA est déployé avec rigueur, testé, et livre des résultats concrets pour votre activité.</p>
@@ -258,7 +263,10 @@
 
           <article class="card card-chef-simon reveal">
             <div class="card-visual card-visual-chefsimon">
-              <img src="assets/chefsimon-logo.png" alt="Chef Simon — Le plaisir de cuisiner">
+              <picture>
+                <source srcset="assets/chefsimon-logo.webp" type="image/webp">
+                <img src="assets/chefsimon-logo.png" alt="Chef Simon — Le plaisir de cuisiner" width="220" height="66">
+              </picture>
             </div>
             <div class="card-tag">Intelligence Artificielle · Gastronomie</div>
             <h3 class="card-titre">Chef Simon</h3>
@@ -716,7 +724,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=5"></script>
+  <script src="script.js?v=5" defer></script>
 </body>
 
 </html>
