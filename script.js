@@ -18,10 +18,10 @@ if (cookiePrefsBtn) {
 
   var p = document.createElement('p');
   p.textContent = isEn
-    ? 'This site uses Google Analytics to measure traffic. No data is collected without your consent. '
-    : 'Ce site utilise Google Analytics pour mesurer l\'audience. Aucune donnée n\'est collectée sans votre accord. ';
+    ? 'This site uses Google Analytics to measure traffic. No cookies are stored without your consent. '
+    : 'Ce site utilise Google Analytics pour mesurer l\'audience. Aucun cookie n\'est déposé sans votre accord. ';
   var link = document.createElement('a');
-  link.href = isEn ? '../mentions-legales.html' : 'mentions-legales.html';
+  link.href = '/mentions-legales';
   link.textContent = isEn ? 'Learn more' : 'En savoir plus';
   p.appendChild(link);
 

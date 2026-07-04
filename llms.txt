@@ -7,18 +7,18 @@ Shuren est un studio qui combine la création de sites web et l'automatisation p
 ## Pages principales (FR)
 
 - [Accueil](https://shuren.fr/): présentation de Shuren, des agents IA et des offres.
-- [Processus](https://shuren.fr/processus.html): les étapes de collaboration, de l'audit au déploiement.
-- [FAQ](https://shuren.fr/faq.html): réponses aux questions fréquentes sur les services et les tarifs.
-- [Contact](https://shuren.fr/contact.html): formulaire pour démarrer un projet.
+- [Processus](https://shuren.fr/processus): les étapes de collaboration, de l'audit au déploiement.
+- [FAQ](https://shuren.fr/faq): réponses aux questions fréquentes sur les services et les tarifs.
+- [Contact](https://shuren.fr/contact): formulaire pour démarrer un projet.
 
 ## Pages (EN)
 
 - [Home](https://shuren.fr/en/): overview of Shuren, AI agents and offers.
-- [Process](https://shuren.fr/en/processus.html): how a project runs, from audit to deployment.
-- [FAQ](https://shuren.fr/en/faq.html): frequently asked questions about services and pricing.
-- [Contact](https://shuren.fr/en/contact.html): contact form to start a project.
+- [Process](https://shuren.fr/en/processus): how a project runs, from audit to deployment.
+- [FAQ](https://shuren.fr/en/faq): frequently asked questions about services and pricing.
+- [Contact](https://shuren.fr/en/contact): contact form to start a project.
 
 ## Optional
 
-- [Mentions légales](https://shuren.fr/mentions-legales.html): informations légales et politique de confidentialité.
+- [Mentions légales](https://shuren.fr/mentions-legales): informations légales et politique de confidentialité.
 - [Plan du site (sitemap)](https://shuren.fr/sitemap.xml): liste complète des URLs du site.
