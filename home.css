@@ -527,13 +527,8 @@ body.loaded .hero-enso path { stroke-dashoffset: 0; }
 }
 .card-visual-chefsimon { background: #F3EDE2; }
 [data-theme="dark"] .card-visual-chefsimon { background: #E9E2D4; }
-.card-visual-eo { background: linear-gradient(135deg, #12333A, #266B6B); }
-.eo-mark {
-  font-family: var(--font-titre);
-  font-size: 3rem;
-  color: rgba(255, 255, 255, 0.85);
-  letter-spacing: 0.06em;
-}
+.card-visual-eo { background: #2B2FE0; }
+.card-visual-eo img { width: 100%; height: 100%; object-fit: cover; }
 .card-visual-email { background: linear-gradient(135deg, #1B2735, #3A506B); }
 .card-visual-avis { background: linear-gradient(135deg, #2B2118, #6B4F2C); }
 .card-visual-planning { background: linear-gradient(135deg, #21182B, #52396B); }
