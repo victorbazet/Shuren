@@ -1,9 +1,61 @@
-/* Shuren — Refonte V1 (préversion). Autonome : ne dépend pas de script.js. */
+/* Shuren — Home (V1 minimal premium). Autonome : ne dépend pas de script.js.
+   Contrat conservé avec les autres pages : localStorage 'theme' / 'cookie_consent',
+   data-theme sur <html>, #cookiePrefs, gtag consent mode. */
 (function () {
   'use strict';
 
   var RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
   var FINE = matchMedia('(pointer: fine)').matches;
+
+  /* ---------- Gérer les cookies — retrait du consentement ---------- */
+  var cookiePrefsBtn = document.getElementById('cookiePrefs');
+  if (cookiePrefsBtn) {
+    cookiePrefsBtn.addEventListener('click', function () {
+      localStorage.removeItem('cookie_consent');
+      if (typeof gtag === 'function') gtag('consent', 'update', { analytics_storage: 'denied' });
+      location.reload();
+    });
+  }
+
+  /* ---------- Bannière cookies ---------- */
+  (function () {
+    if (localStorage.getItem('cookie_consent')) return;
+
+    var banner = document.createElement('div');
+    banner.id = 'cookie-banner';
+
+    var p = document.createElement('p');
+    p.textContent = 'Ce site utilise Google Analytics pour mesurer l\'audience. Aucun cookie n\'est déposé sans votre accord. ';
+    var link = document.createElement('a');
+    link.href = '/mentions-legales';
+    link.textContent = 'En savoir plus';
+    p.appendChild(link);
+
+    var btns = document.createElement('div');
+    btns.className = 'cookie-btns';
+    var btnRefuse = document.createElement('button');
+    btnRefuse.className = 'cookie-refuse';
+    btnRefuse.textContent = 'Refuser';
+    var btnAccept = document.createElement('button');
+    btnAccept.className = 'cookie-accept';
+    btnAccept.textContent = 'Accepter';
+    btns.appendChild(btnRefuse);
+    btns.appendChild(btnAccept);
+
+    banner.appendChild(p);
+    banner.appendChild(btns);
+    document.body.appendChild(banner);
+
+    banner.querySelector('.cookie-accept').addEventListener('click', function () {
+      localStorage.setItem('cookie_consent', 'accepted');
+      if (typeof gtag === 'function') gtag('consent', 'update', { analytics_storage: 'granted' });
+      banner.remove();
+    });
+    banner.querySelector('.cookie-refuse').addEventListener('click', function () {
+      localStorage.setItem('cookie_consent', 'refused');
+      banner.remove();
+    });
+  })();
 
   /* ---------- Entrée du hero ---------- */
   requestAnimationFrame(function () {
