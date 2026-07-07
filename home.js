@@ -145,8 +145,7 @@
       }
     });
   }, { threshold: 0.5 });
-  var preuves = document.querySelector('.preuves-inner');
-  if (preuves) ioCount.observe(preuves);
+  document.querySelectorAll('[data-counts]').forEach(function (el) { ioCount.observe(el); });
 
   /* ---------- Rouleau de mots du hero ---------- */
   var roller = document.getElementById('rollerWord');
@@ -181,22 +180,43 @@
     });
   }
 
-  /* ---------- Parallaxe du kanji ---------- */
+  /* ---------- Kanji : pin desktop (texte fixe, lettres qui défilent) + parallaxe léger mobile ---------- */
   var kanji = document.querySelector('.apropos-kanji');
   var apropos = document.getElementById('apropos');
-  if (kanji && apropos && !RM && FINE) {
+  var aproposPin = document.querySelector('.apropos-pin');
+  if (kanji && apropos && aproposPin && !RM) {
+    var pinQuery = matchMedia('(min-width: 901px)');
     var kTicking = false;
+
+    function updateKanji() {
+      var shift = 0;
+      if (pinQuery.matches) {
+        var rect = apropos.getBoundingClientRect();
+        var total = rect.height - innerHeight;
+        if (total > 0) {
+          var progress = Math.max(0, Math.min(1, -rect.top / total));
+          var pinHeight = aproposPin.getBoundingClientRect().height || innerHeight;
+          var kanjiHeight = kanji.getBoundingClientRect().height;
+          var maxTravel = Math.max(0, (pinHeight - kanjiHeight) / 2 - 12);
+          var travel = Math.min(150, maxTravel);
+          shift = (progress - 0.5) * 2 * travel;
+        }
+      } else {
+        var r = apropos.getBoundingClientRect();
+        if (r.bottom > 0 && r.top < innerHeight) {
+          shift = Math.max(-40, Math.min(40, (r.top - innerHeight / 2) * -0.05));
+        }
+      }
+      kanji.style.setProperty('--kanji-shift', shift.toFixed(1) + 'px');
+    }
+
     addEventListener('scroll', function () {
       if (kTicking) return;
       kTicking = true;
-      requestAnimationFrame(function () {
-        var r = apropos.getBoundingClientRect();
-        if (r.bottom > 0 && r.top < innerHeight) {
-          kanji.style.transform = 'translateY(' + ((r.top - innerHeight / 2) * -0.09).toFixed(1) + 'px)';
-        }
-        kTicking = false;
-      });
+      requestAnimationFrame(function () { updateKanji(); kTicking = false; });
     }, { passive: true });
+    addEventListener('resize', updateKanji, { passive: true });
+    updateKanji();
   }
 
   /* ---------- Toggle mensuel / annuel ---------- */

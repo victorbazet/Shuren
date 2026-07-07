@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cas client — EO Family, groupe de restauration | Shuren</title>
+  <meta name="description"
+    content="Comment EO Family, groupe de 4 restaurants à Gruissan, a confié à des agents IA Shuren les avis Google, le rapport d'activité quotidien, les plannings et le suivi fournisseurs.">
+  <meta name="author" content="Victor Bazet-Braun — Shuren">
+  <link rel="canonical" href="https://shuren.fr/cas-client">
+  <link rel="alternate" hreflang="fr" href="https://shuren.fr/cas-client">
+  <link rel="alternate" hreflang="x-default" href="https://shuren.fr/cas-client">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Shuren">
+  <meta property="og:title" content="Cas client — EO Family, groupe de restauration | Shuren">
+  <meta property="og:description"
+    content="4 restaurants, 4 agents IA branchés sur l'existant : avis Google, rapport quotidien, plannings, stocks et fournisseurs.">
+  <meta property="og:url" content="https://shuren.fr/cas-client">
+  <meta property="og:image" content="https://shuren.fr/assets/logos/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Shuren — Cas client EO Family">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cas client — EO Family, groupe de restauration | Shuren">
+  <meta name="twitter:description"
+    content="4 restaurants, 4 agents IA branchés sur l'existant : avis Google, rapport quotidien, plannings, stocks et fournisseurs.">
+  <meta name="twitter:image" content="https://shuren.fr/assets/logos/og-image.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CE9YD8CRJM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('consent', 'default', { analytics_storage: 'denied' });
+    if (localStorage.getItem('cookie_consent') === 'accepted') {
+      gtag('consent', 'update', { analytics_storage: 'granted' });
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-CE9YD8CRJM');
+  </script>
+
+  <link rel="preload" href="assets/fonts/syne-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/lato-300.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/lato-700.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=3">
+  <link rel="apple-touch-icon" href="favicon.svg?v=3">
+
+  <link rel="stylesheet" href="home.css?v=1">
+  <script>
+    (function () { var t = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); document.documentElement.setAttribute('data-theme', t) })();
+  </script>
+</head>
+
+<body>
+  <div id="progress" aria-hidden="true"></div>
+
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="assets/logos/logo-no-shuren-black-on-white.svg" alt="Logo Shuren" class="nav-logo-mark" width="30" height="30">
+        <img src="assets/logos/Just-Shuren-black-on-white.svg" alt="Shuren" class="nav-logo-text" width="78" height="18">
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="/#realisations">L'Atelier</a></li>
+          <li><a href="/#agents">Agents IA</a></li>
+          <li><a href="/#tarifs">Nos Offres</a></li>
+          <li><a href="/processus">Processus</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">
+          <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+          </svg>
+        </button>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile" id="navMobile" inert>
+      <ul>
+        <li><a href="/#realisations">L'Atelier</a></li>
+        <li><a href="/#agents">Agents IA</a></li>
+        <li><a href="/#tarifs">Nos Offres</a></li>
+        <li><a href="/processus">Processus</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============ CAS CLIENT ============ -->
+    <section id="cas-client" class="cas-hero">
+      <div class="section-inner">
+
+        <p class="cas-fil rv"><a href="/#realisations">L'atelier</a> / Cas client</p>
+
+        <p class="eyebrow rv">Cas client</p>
+        <h1 class="section-titre rv">EO Family : un groupe de restaurants,<br>et plus un seul avis sans réponse.</h1>
+        <p class="section-sous-titre rv">Comment un groupe de 4 restaurants à Gruissan a confié ses tâches invisibles à quatre agents IA branchés sur les outils déjà en place.</p>
+
+        <div class="cas-grid">
+
+          <!-- Fiche client : sticky sur desktop -->
+          <aside class="cas-fiche rv">
+            <p class="cas-fiche-label">Fiche client</p>
+            <ul class="cas-fiche-liste">
+              <li><span>Client</span><strong>EO Family</strong></li>
+              <li><span>Secteur</span><strong>Restauration · Gruissan, Sud de la France</strong></li>
+              <li><span>Taille</span><strong>Groupe multi-établissements, forte activité saisonnière</strong></li>
+              <li><span>Établissements</span><strong>4 restaurants</strong></li>
+              <li><span>Outils en place</span><strong>Caisse, réservation, planning — déjà en service</strong></li>
+              <li><span>Palier</span><strong class="accent">Opérationnel</strong></li>
+            </ul>
+            <div class="cas-fiche-cta">
+              <a href="/contact" class="lien-souligne">Discuter d'un projet similaire →</a>
+            </div>
+          </aside>
+
+          <!-- Récit en trois actes -->
+          <div class="cas-actes">
+
+            <article class="acte rv">
+              <p class="acte-num">Acte I — La situation</p>
+              <h2 class="acte-titre">Quatre restaurants en pleine saison, pilotés à la main.</h2>
+              <p class="acte-texte">
+                Quatre établissements en pleine saison, des centaines d'avis Google par an, des plannings
+                refaits chaque semaine sur un coin de table, des stocks suivis de tête. À cette échelle,
+                un avis négatif ignoré ou un point de démarque non détecté ne sont pas des détails&nbsp;:
+                ce sont des lignes de compte de résultat.
+              </p>
+            </article>
+
+            <article class="acte rv">
+              <p class="acte-num">Acte II — Le déploiement</p>
+              <h2 class="acte-titre">Quatre agents, branchés sur l'existant.</h2>
+              <p class="acte-texte">
+                Aucun logiciel à apprendre. Les agents Shuren se sont connectés aux outils déjà en place&nbsp;:
+                réponses aux avis Google au ton de chaque maison, rapport d'activité consolidé chaque matin,
+                plannings générés selon les contrats et la météo des réservations, alertes stock et relances
+                fournisseurs automatiques.
+              </p>
+              <ul class="acte-agents">
+                <li>Agent avis clients</li>
+                <li>Agent rapport quotidien</li>
+                <li>Agent planning</li>
+                <li>Agent stocks &amp; fournisseurs</li>
+              </ul>
+            </article>
+
+            <article class="acte rv">
+              <p class="acte-num">Acte III — Le résultat</p>
+              <h2 class="acte-titre">La marge se défend toute seule.</h2>
+              <div class="acte-kpis" data-counts>
+                <div class="kpi">
+                  <span class="kpi-n"><span class="js-count" data-target="100">0</span>&nbsp;%</span>
+                  <span class="kpi-l">des avis répondus en moins de 24&nbsp;h, sur les 4 restaurants</span>
+                </div>
+                <div class="kpi">
+                  <span class="kpi-n">≈&nbsp;<span class="js-count" data-target="40">0</span>&nbsp;h</span>
+                  <span class="kpi-l">de travail administratif rendues aux équipes chaque mois</span>
+                </div>
+                <div class="kpi">
+                  <span class="kpi-n"><span class="js-count" data-target="7">0</span>h00</span>
+                  <span class="kpi-l">l'heure à laquelle la direction reçoit l'état complet du groupe</span>
+                </div>
+              </div>
+              <p class="kpi-note">Ordre de grandeur illustrant le type de résultats obtenus sur ce cas — on chiffre le vôtre lors du premier échange.</p>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Le relevé de service : ce que les agents ont pris en charge -->
+        <div class="addition-wrap rv">
+          <div class="addition-copy">
+            <h2 class="addition-titre">Faites l'addition.</h2>
+            <p class="addition-texte">
+              Chaque métier a ses tâches invisibles — celles que tout le monde repousse et que
+              personne ne chiffre. Voici ce que les agents ont pris en charge sur ce groupe,
+              en une année. Le même relevé peut s'écrire pour votre entreprise, quel que soit
+              votre secteur.
+            </p>
+            <p class="addition-note">* Estimation propre à ce cas — on chiffre le vôtre lors du premier échange.</p>
+          </div>
+
+          <div class="addition" role="img" aria-label="Relevé listant ce que les agents IA ont pris en charge en un an chez EO Family : environ 400 avis Google répondus en moins de 24 heures, rapports quotidiens envoyés à 7h, plannings générés en quelques minutes, zéro relance fournisseur oubliée, soit environ 40 heures rendues aux équipes chaque mois.">
+            <p class="addition-head">Relevé de service · agents Shuren<span>Année pleine — 4 restaurants</span></p>
+            <ul class="addition-lignes">
+              <li><span class="add-item">Avis Google × 400</span><span class="add-dots"></span><span class="add-prix">répondus &lt; 24&nbsp;h</span></li>
+              <li><span class="add-item">Rapports d'activité × 365</span><span class="add-dots"></span><span class="add-prix">envoyés 7h00</span></li>
+              <li><span class="add-item">Plannings hebdo × 4 sites</span><span class="add-dots"></span><span class="add-prix">générés en min.</span></li>
+              <li><span class="add-item">Relances fournisseurs</span><span class="add-dots"></span><span class="add-prix">zéro oubli</span></li>
+            </ul>
+            <p class="addition-total"><span>Temps rendu aux équipes</span><span class="addition-total-n">≈ 40&nbsp;h&nbsp;/&nbsp;mois*</span></p>
+            <p class="addition-vs"><span>Palier Opérationnel</span><span>700&nbsp;€&nbsp;/&nbsp;mois</span></p>
+            <p class="addition-merci">Merci de votre visite — Shuren 修練</p>
+          </div>
+        </div>
+
+        <!-- Transposition à d'autres secteurs -->
+        <div class="transpose rv">
+          <p class="transpose-titre">Votre métier n'est pas la restauration&nbsp;? Les mêmes agents s'adaptent.</p>
+          <ul class="transpose-chips">
+            <li>Hôtellerie</li>
+            <li>Commerces</li>
+            <li>Artisans</li>
+            <li>Cabinets</li>
+            <li>Agences</li>
+            <li>Services</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ CTA FINAL ============ -->
+    <section id="cta-final">
+      <div class="cta-panel rv">
+        <h2 class="cta-titre">Prêt à automatiser et vous concentrer sur votre métier&nbsp;?</h2>
+        <p class="cta-sub">Échange gratuit de 15 minutes pour définir votre projet d'automatisation IA. Sans engagement.</p>
+        <div class="cta-boutons">
+          <a href="/contact" class="btn-plein btn-inverse magnet">Me contacter</a>
+          <a href="mailto:contact@shuren.fr" class="btn-outline btn-outline-inverse magnet">contact@shuren.fr</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer">
+    <div class="footer-inner">
+      <span class="footer-nom">Shuren - Agents IA pour entreprises</span>
+      <div class="footer-links">
+        <a href="/mentions-legales" class="footer-lien">Mentions légales</a>
+        <button id="cookiePrefs" class="footer-lien footer-cookie-btn">Gérer les cookies</button>
+        <span class="footer-copy">© 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="home.js?v=1" defer></script>
+</body>
+
+</html>
