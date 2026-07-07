@@ -38,6 +38,14 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://shuren.fr/cas-client</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shuren.fr/cas-client"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shuren.fr/cas-client"/>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://shuren.fr/en/</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://shuren.fr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shuren.fr/"/>
