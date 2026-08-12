@@ -137,34 +137,40 @@
     gtag('config', 'G-CE9YD8CRJM');
   </script>
 
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://www.google-analytics.com">
   <!-- Fonts (local) -->
   <link rel="preload" href="../assets/fonts/syne-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../assets/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/lato-300.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/lato-700.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="../favicon.svg?v=3">
   <link rel="apple-touch-icon" href="../favicon.svg?v=3">
 
-  <link rel="stylesheet" href="../style.css?v=10">
+  <link rel="stylesheet" href="../home.css?v=1">
   <script>
     (function () { var t = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); document.documentElement.setAttribute('data-theme', t) })();
   </script>
 </head>
 
 <body>
+  <div id="progress" aria-hidden="true"></div>
+
   <nav id="nav">
     <div class="nav-inner">
       <a href="#hero" class="nav-logo">
-        <img src="../assets/logos/logo-no-shuren-black-on-white.svg" alt="Shuren logo" class="nav-logo-mark">
-        <img src="../assets/logos/Just-Shuren-black-on-white.svg" alt="Shuren" class="nav-logo-text">
+        <img src="../assets/logos/logo-no-shuren-black-on-white.svg" alt="Shuren logo" class="nav-logo-mark" width="30" height="30">
+        <img src="../assets/logos/Just-Shuren-black-on-white.svg" alt="Shuren" class="nav-logo-text" width="78" height="18">
       </a>
       <div class="nav-right">
         <ul class="nav-links">
           <li><a href="#realisations">The AI Lab</a></li>
           <li><a href="#agents">AI Agents</a></li>
           <li><a href="#tarifs">Our Offers</a></li>
-          <li><a href="/en/processus">Process</a></li>
-          <li><a href="/en/faq">FAQ</a></li>
+          <li><a href="#methode">Method</a></li>
+          <li><a href="#faq-courte">FAQ</a></li>
           <li><a href="/en/contact">Contact</a></li>
         </ul>
         <div class="lang-toggle">
@@ -173,27 +179,15 @@
           <a href="/en/" class="lang-btn active">EN</a>
         </div>
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="1.5">
-            <circle cx="12" cy="12" r="5" />
-            <line x1="12" y1="1" x2="12" y2="3" />
-            <line x1="12" y1="21" x2="12" y2="23" />
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-            <line x1="1" y1="12" x2="3" y2="12" />
-            <line x1="21" y1="12" x2="23" y2="12" />
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
           </svg>
-          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="1.5">
-            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+          <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
           </svg>
         </button>
         <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
       </div>
     </div>
@@ -202,102 +196,174 @@
         <li><a href="#realisations">The AI Lab</a></li>
         <li><a href="#agents">AI Agents</a></li>
         <li><a href="#tarifs">Our Offers</a></li>
-        <li><a href="/en/processus">Process</a></li>
-        <li><a href="/en/faq">FAQ</a></li>
+        <li><a href="#methode">Method</a></li>
+        <li><a href="#faq-courte">FAQ</a></li>
         <li><a href="/en/contact">Contact</a></li>
+        <li><a href="/">FR</a></li>
       </ul>
     </div>
   </nav>
 
   <main>
+
+    <!-- ============ HERO ============ -->
     <section id="hero">
+      <svg class="hero-enso" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+        <path d="M100 15 A85 85 0 1 1 57.5 26.4" pathLength="1" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
       <div class="hero-inner">
-        <h1 class="hero-titre">AI Agents for <span class="hero-underline"><span
-              id="typewriter">businesses</span><span class="tw-cursor" aria-hidden="true">|</span>.</span></h1>
-        <p class="hero-sous-titre">24/7 responses, lead qualification, automated scheduling, review management.<br>I
-          deploy the AI, you focus on your craft.</p>
-        <div class="hero-cta">
-          <a href="/en/contact" class="btn-plein">Start my AI project</a>
-          <a href="#agents" class="btn-outline">Discover the AI agents</a>
+        <p class="hero-kicker fu">Shuren <span class="kanji-inline" lang="ja">修練</span> — Custom AI agents</p>
+        <h1 class="hero-h1">
+          <span class="line"><span class="line-in">AI Agents</span></span>
+          <span class="line"><span class="line-in">for <span class="roller"><span class="roller-word" id="rollerWord" data-words="businesses|restaurants|hotels|craftsmen|law firms|retailers">businesses</span></span><span class="hero-dot">.</span></span></span>
+        </h1>
+        <p class="hero-sub fu" style="--d:.35s">24/7 responses, lead qualification, automatically generated schedules, review management.<br> I deploy the AI, you focus on your craft.</p>
+        <div class="hero-cta fu" style="--d:.5s">
+          <a href="/en/contact" class="btn-plein magnet">Start my AI project</a>
+          <a href="#agents" class="btn-outline magnet">Discover the AI agents</a>
+        </div>
+        <div class="hero-tools fu" style="--d:.62s">
+          <span class="hero-tools-label">Works with your tools</span>
+          <ul class="tools-row">
+            <li class="tool-chip">
+              <img class="tool-icon-img" src="../assets/tools/gmail.png" alt="" width="18" height="18" loading="lazy">
+              Gmail
+            </li>
+            <li class="tool-chip">
+              <img class="tool-icon-img" src="../assets/tools/outlook.png" alt="" width="18" height="18" loading="lazy">
+              Outlook
+            </li>
+            <li class="tool-chip">
+              <svg class="tool-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              WhatsApp
+            </li>
+            <li class="tool-chip">
+              <img class="tool-icon-img" src="../assets/tools/google-business.png" alt="" width="18" height="18" loading="lazy">
+              Google Business
+            </li>
+            <li class="tool-chip">
+              <img class="tool-icon-img" src="../assets/tools/skello.png" alt="" width="18" height="18" loading="lazy">
+              Skello
+            </li>
+            <li class="tool-chip">
+              <img class="tool-icon-img" src="../assets/tools/excel.png" alt="" width="18" height="18" loading="lazy">
+              Excel
+            </li>
+          </ul>
         </div>
       </div>
     </section>
 
+    <!-- ============ SOCIAL PROOF ============ -->
+    <section id="preuves" aria-label="Key figures">
+      <div class="preuves-inner rv" data-counts>
+        <div class="preuve">
+          <span class="preuve-n">100%</span>
+          <span class="preuve-l">custom-built<br>for your business</span>
+        </div>
+        <div class="preuve">
+          <span class="preuve-n"><span class="js-count" data-target="24">0</span>/7</span>
+          <span class="preuve-l">agents at work,<br>day and night</span>
+        </div>
+        <div class="preuve">
+          <span class="preuve-n">&lt;&hairsp;<span class="js-count" data-target="24">0</span>h</span>
+          <span class="preuve-l">maximum<br>response time</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHO AM I ============ -->
     <section id="apropos">
-      <div class="section-inner">
-        <h2 class="section-titre reveal">Who am I?</h2>
-        <div class="apropos-bloc reveal">
-          <img src="../assets/victor.jpg" alt="Victor Bazet-Braun, founder of Shuren" class="apropos-photo" width="180"
-            height="180" loading="lazy">
-          <div class="apropos-contenu">
-            <p>My name is Victor, an automation and AI agent expert based in New York. I work with French businesses that want to save time and automate their day-to-day, without getting lost in the technical details.</p>
-            <p>Shuren (修練) means discipline and mastery in Japanese. That's my philosophy: every AI agent is deployed with precision, tested thoroughly, and delivers concrete results for your business.</p>
-          </div>
-        </div>
-        <div class="apropos-stats reveal">
-          <div class="stat-item">
-            <span class="stat-chiffre">100% custom</span>
-            <span class="stat-label">for your business</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-chiffre">&lt; 24h</span>
-            <span class="stat-label">response time</span>
+      <div class="apropos-pin">
+        <span class="apropos-kanji" aria-hidden="true" lang="ja">修練</span>
+        <div class="section-inner">
+          <p class="eyebrow rv">Who am I?</p>
+          <h2 class="section-titre rv">A craftsman's discipline,<br>applied to AI.</h2>
+          <div class="apropos-bloc">
+            <div class="apropos-photo-wrap rv">
+              <picture>
+                <source srcset="../assets/victor.webp" type="image/webp">
+                <img src="../assets/victor.jpg" alt="Victor Bazet-Braun, founder of Shuren" class="apropos-photo" width="180" height="180" loading="lazy">
+              </picture>
+            </div>
+            <div class="apropos-contenu">
+              <p class="rv" style="--d:.1s">My name is Victor, an automation and AI agent integration expert based in New York. I work with French businesses that want to save time and automate their day-to-day, without getting lost in the technical details.</p>
+              <p class="rv" style="--d:.2s">Shuren (<span lang="ja">修練</span>) means discipline and mastery in Japanese. That's my philosophy: every AI agent is deployed with rigour, tested thoroughly, and delivers concrete results for your business.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ============ THE AI LAB ============ -->
     <section id="realisations">
       <div class="section-inner">
-        <h2 class="section-titre reveal">The AI Lab</h2>
-        <p class="section-sous-titre reveal">AI projects delivered: deployed agents, custom integrations, and contributions to existing AI systems.</p>
-        <div class="realisations-grid">
+        <p class="eyebrow rv">The AI lab</p>
+        <h2 class="section-titre rv">Agents already at work.</h2>
+        <p class="section-sous-titre rv">Delivered AI projects: agents deployed, custom integrations and contributions to existing AI systems.</p>
+        <div class="atelier-grid">
 
-          <article class="card card-chef-simon reveal">
+          <article class="card card-clickable rv" style="--d:.05s">
+            <div class="card-badge">Flagship reference</div>
             <div class="card-visual card-visual-chefsimon">
-              <img src="../assets/chefsimon-logo.png" alt="Chef Simon — Le plaisir de cuisiner">
+              <picture>
+                <source srcset="../assets/chefsimon-logo.webp" type="image/webp">
+                <img src="../assets/chefsimon-logo.png" alt="Chef Simon — Le plaisir de cuisiner" width="200" height="60" loading="lazy">
+              </picture>
             </div>
-            <div class="card-tag">Artificial Intelligence · Gastronomy</div>
+            <div class="card-tag">Artificial Intelligence · Food</div>
             <h3 class="card-titre">Chef Simon</h3>
-            <p class="card-desc">Integration of an AI recipe generation agent for one of France's most popular culinary sites — 12 million recipes consulted per year.</p>
+            <p class="card-desc">Integration of a recipe-generating AI agent for one of France's most popular cooking websites — 12&nbsp;million recipes viewed per year.</p>
             <div class="card-footer">
-              <a href="https://chefsimon.ai/" target="_blank" rel="noopener noreferrer" class="card-lien-site">View the
-                site <span class="card-lien-arrow">→</span></a>
+              <a href="https://chefsimon.ai/" target="_blank" rel="noopener noreferrer" class="card-lien card-lien-stretched">Visit the site <span class="card-arrow">→</span></a>
             </div>
           </article>
 
-          <article class="card reveal">
+          <article class="card card-clickable rv" style="--d:.12s">
+            <div class="card-badge">Case study</div>
+            <div class="card-visual card-visual-eo">
+              <img src="../assets/eo-family-logo.jpeg" alt="EO Family logo" width="150" height="150" loading="lazy">
+            </div>
+            <div class="card-tag">AI Agents · Restaurants</div>
+            <h3 class="card-titre">EO Family</h3>
+            <p class="card-desc">Agents deployed for a group of 4&nbsp;restaurants in Gruissan: Google review replies, daily activity recap and AI-generated team schedules.</p>
+            <div class="card-footer">
+              <a href="/en/cas-client" class="card-lien card-lien-stretched">Read the case study <span class="card-arrow">→</span></a>
+            </div>
+          </article>
+
+          <article class="card rv" style="--d:.19s">
             <div class="card-visual card-visual-email">
-              <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <rect x="2" y="4" width="20" height="16" rx="2"/>
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
               </svg>
             </div>
             <div class="card-tag">AI Agent · Email</div>
             <h3 class="card-titre">Automated email triage</h3>
-            <p class="card-desc">The agent reads, sorts, and drafts a reply for every incoming email — in under a minute, 24 hours a day.</p>
+            <p class="card-desc">The agent reads, sorts and drafts a reply for every incoming email — in under a minute, around the clock.</p>
             <div class="card-footer">
-              <a href="/en/contact" class="card-lien-site">Let's talk <span class="card-lien-arrow">→</span></a>
+              <a href="/en/contact" class="card-lien">Let's talk <span class="card-arrow">→</span></a>
             </div>
           </article>
 
-          <article class="card reveal">
+          <article class="card rv" style="--d:.05s">
             <div class="card-visual card-visual-avis">
-              <svg width="52" height="52" viewBox="0 0 24 24" fill="rgba(255,255,255,0.75)" stroke="none" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="rgba(255,255,255,0.8)" stroke="none" aria-hidden="true">
                 <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
               </svg>
             </div>
             <div class="card-tag">AI Agent · Restaurants</div>
             <h3 class="card-titre">Google review replies</h3>
-            <p class="card-desc">Every review receives a personalised reply in the venue's tone, generated and posted automatically.</p>
+            <p class="card-desc">Every review gets a personalised reply in the venue's own tone, generated and posted automatically.</p>
             <div class="card-footer">
-              <a href="/en/contact" class="card-lien-site">Let's talk <span class="card-lien-arrow">→</span></a>
+              <a href="/en/contact" class="card-lien">Let's talk <span class="card-arrow">→</span></a>
             </div>
           </article>
 
-          <article class="card reveal">
+          <article class="card rv" style="--d:.12s">
             <div class="card-visual card-visual-planning">
-              <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <rect x="3" y="4" width="18" height="18" rx="2"/>
                 <path d="M16 2v4M8 2v4M3 10h18"/>
                 <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/>
@@ -305,19 +371,19 @@
             </div>
             <div class="card-tag">AI Agent · Restaurants</div>
             <h3 class="card-titre">AI team scheduling</h3>
-            <p class="card-desc">The AI generates the week's schedule in seconds, based on contracts, availability, and time constraints.</p>
+            <p class="card-desc">The AI generates the week's schedules in seconds, based on contracts, availability and working-time constraints.</p>
             <div class="card-footer">
-              <a href="/en/contact" class="card-lien-site">Let's talk <span class="card-lien-arrow">→</span></a>
+              <a href="/en/contact" class="card-lien">Let's talk <span class="card-arrow">→</span></a>
             </div>
           </article>
 
-          <article class="card card-dashed reveal">
-            <div class="card-visual card-visual-projet">+</div>
+          <article class="card card-dashed rv" style="--d:.19s">
+            <div class="card-visual card-visual-projet" aria-hidden="true">+</div>
             <div class="card-tag">Available</div>
             <h3 class="card-titre">Your AI agent here</h3>
-            <p class="card-desc">Automate your customer service, qualify your leads, or generate your schedules with AI. Let's talk about it.</p>
+            <p class="card-desc">Automate your customer service, qualify your leads or generate your schedules with AI. Let's talk it through.</p>
             <div class="card-footer">
-              <a href="/en/contact" class="card-link">Get started →</a>
+              <a href="/en/contact" class="card-lien">Get started <span class="card-arrow">→</span></a>
             </div>
           </article>
 
@@ -325,373 +391,372 @@
       </div>
     </section>
 
+    <!-- ============ AGENTS 24/7 ============ -->
     <section id="agents">
       <div class="section-inner">
-        <h2 class="section-titre reveal">An AI agent that works for you, 24/7</h2>
-        <p class="section-sous-titre reveal">Answering customer questions, qualifying leads, booking appointments — without
-          you ever having to pick up the phone.</p>
+        <p class="eyebrow rv">AI Agents</p>
+        <h2 class="section-titre rv">An agent working for you, around the clock.</h2>
+        <p class="section-sous-titre rv">Answering customer questions, qualifying leads, booking appointments — without you ever picking up the phone.</p>
         <div class="agents-grid">
 
-          <div class="agent-card reveal">
+          <div class="agent-card rv" style="--d:.05s">
             <div class="agent-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
               </svg>
             </div>
             <h3 class="agent-titre">FAQ chatbot</h3>
-            <p class="agent-desc">Your agent instantly answers common questions: hours, pricing, services, address.
-              Available 24/7, even on Sundays.</p>
-            <div class="agent-exemple">
-              <span class="agent-exemple-label">Example</span>
-              <span>"Are you open on Saturdays?"</span>
-              <span class="agent-exemple-arrow">→</span>
-              <span>Automatic reply in 2 seconds.</span>
+            <p class="agent-desc">Your agent instantly answers common questions: opening hours, prices, services, address. Available 24/7, Sundays included.</p>
+            <div class="agent-chat" aria-label="Example: a customer question and the agent's reply">
+              <span class="chat-q">“Are you open on Saturdays?”</span>
+              <span class="chat-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="chat-a">Automatic reply in 2&nbsp;seconds.</span>
             </div>
           </div>
 
-          <div class="agent-card reveal">
+          <div class="agent-card rv" style="--d:.15s">
             <div class="agent-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <polyline points="16 11 18 13 22 9" />
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <polyline points="16 11 18 13 22 9"/>
               </svg>
             </div>
             <h3 class="agent-titre">Lead qualification</h3>
-            <p class="agent-desc">Before passing you a prospect, your agent collects their name, their need and their
-              budget. You only talk to serious contacts.</p>
-            <div class="agent-exemple">
-              <span class="agent-exemple-label">Example</span>
-              <span>"I'd like a quote"</span>
-              <span class="agent-exemple-arrow">→</span>
-              <span>The agent qualifies, you get the summary.</span>
+            <p class="agent-desc">Before handing over a prospect, your agent collects their name, their need and their budget. You only speak to serious contacts.</p>
+            <div class="agent-chat" aria-label="Example: a quote request qualified by the agent">
+              <span class="chat-q">“I'd like a quote”</span>
+              <span class="chat-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="chat-a">The agent qualifies, you get the summary.</span>
             </div>
           </div>
 
-          <div class="agent-card reveal">
+          <div class="agent-card rv" style="--d:.25s">
             <div class="agent-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                <line x1="16" y1="2" x2="16" y2="6" />
-                <line x1="8" y1="2" x2="8" y2="6" />
-                <line x1="3" y1="10" x2="21" y2="10" />
-                <polyline points="9 16 11 18 15 14" />
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+                <polyline points="9 16 11 18 15 14"/>
               </svg>
             </div>
             <h3 class="agent-titre">Appointment booking</h3>
-            <p class="agent-desc">Your agent offers time slots based on your availability and confirms appointments by
-              email. No more back-and-forth to find a time.</p>
-            <div class="agent-exemple">
-              <span class="agent-exemple-label">Example</span>
-              <span>"I want an appointment this week"</span>
-              <span class="agent-exemple-arrow">→</span>
-              <span>Slot booked, confirmation sent.</span>
+            <p class="agent-desc">Your agent offers slots based on your availability and confirms appointments by email. No more back-and-forth to find a time.</p>
+            <div class="agent-chat" aria-label="Example: automatic appointment booking">
+              <span class="chat-q">“I'd like an appointment this week”</span>
+              <span class="chat-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="chat-a">Slot booked, confirmation sent.</span>
             </div>
           </div>
 
         </div>
-        <div class="agents-cta reveal">
-          <a href="/en/contact" class="btn-plein">Deploy my AI agent</a>
-          <a href="#tarifs" class="btn-outline">See the plans</a>
+        <div class="agents-cta rv">
+          <a href="/en/contact" class="btn-plein magnet">Deploy my AI agent</a>
+          <a href="#tarifs" class="btn-outline magnet">See the pricing</a>
         </div>
       </div>
     </section>
 
+    <!-- ============ METHOD (process teaser) ============ -->
+    <section id="methode">
+      <div class="section-inner">
+        <p class="eyebrow rv">How it works</p>
+        <h2 class="section-titre rv">From idea to agent in service,<br>in 4 steps.</h2>
+        <div class="methode-wrap rv">
+          <span class="methode-ligne" aria-hidden="true"></span>
+          <ol class="methode-grid">
+            <li class="methode-etape rv" style="--d:.1s">
+              <span class="methode-num" aria-hidden="true">01</span>
+              <h3 class="methode-titre">Discovery</h3>
+              <p class="methode-desc">We get to know each other: you tell me which repetitive tasks to automate. 15&nbsp;minutes is enough.</p>
+            </li>
+            <li class="methode-etape rv" style="--d:.22s">
+              <span class="methode-num" aria-hidden="true">02</span>
+              <h3 class="methode-titre">Design</h3>
+              <p class="methode-desc">I design the agent's flows, its role and its personality. You approve before anything connects to your data.</p>
+            </li>
+            <li class="methode-etape rv" style="--d:.34s">
+              <span class="methode-num" aria-hidden="true">03</span>
+              <h3 class="methode-titre">Build &amp; testing</h3>
+              <p class="methode-desc">I build the agent, train it on your business knowledge and test how robust it is.</p>
+            </li>
+            <li class="methode-etape rv" style="--d:.46s">
+              <span class="methode-num" aria-hidden="true">04</span>
+              <h3 class="methode-titre">Deployment</h3>
+              <p class="methode-desc">Your agent is connected to your channels. I monitor it and fine-tune its behaviour continuously.</p>
+            </li>
+          </ol>
+        </div>
+        <p class="methode-lien rv"><a href="/en/processus" class="lien-souligne">See the full process <span class="card-arrow">→</span></a></p>
+      </div>
+    </section>
+
+    <!-- ============ PRICING ============ -->
     <section id="tarifs">
       <div class="section-inner">
-        <h2 class="section-titre reveal">Clear offers, no commitment</h2>
-        <p class="section-sous-titre reveal">From a risk-free pilot to full operations. No commitment. No hidden fees.</p>
-        <div class="tarifs-grid tarifs-grid-3">
-          <article class="tarif-card reveal">
-            <div class="tarif-badge-soft">Recommended</div>
-            <div class="tarif-header">
-              <h3 class="tarif-nom">Pilot</h3>
-            </div>
-            <div class="tarif-prix">
-              <span class="tarif-montant">€299</span>
-              <span class="tarif-detail">/ month</span>
-            </div>
-            <p class="tarif-maintenance">2 months · 1 venue · risk-free</p>
+        <p class="eyebrow rv">Our offers</p>
+        <h2 class="section-titre rv">Clear plans, no commitment.</h2>
+        <p class="section-sous-titre rv">From a risk-free pilot to fully operational. No commitment. No hidden fees.</p>
+
+        <div class="bill-toggle rv" role="group" aria-label="Billing choice">
+          <button class="bill-btn active" data-bill="m" aria-pressed="true">Monthly</button>
+          <button class="bill-btn" data-bill="a" aria-pressed="false">Yearly <span class="bill-tag">2 months free</span></button>
+        </div>
+
+        <div class="tarifs-grid">
+
+          <article class="tarif-card tarif-reco rv" style="--d:.05s">
+            <div class="tarif-badge">Recommended</div>
+            <h3 class="tarif-nom">Pilot</h3>
+            <p class="tarif-prix"><span class="tarif-montant" data-fixed="299">€299</span><span class="tarif-detail">/ month</span></p>
+            <p class="tarif-cadence" data-m="2 months · 1 venue · risk-free" data-a="2-month trial offer — not affected by yearly billing">2 months · 1 venue · risk-free</p>
             <ul class="tarif-features">
-              <li class="feat-oui">Automated Google review replies</li>
-              <li class="feat-oui">Daily recap of your activity on WhatsApp</li>
-              <li class="feat-oui">Setup and configuration included</li>
-              <li class="feat-oui">Direct support &lt; 24h</li>
+              <li>Automated Google review replies</li>
+              <li>Daily recap of your activity on WhatsApp</li>
+              <li>Setup and configuration included</li>
+              <li>Direct support &lt; 24h</li>
             </ul>
-            <a href="/en/contact" class="btn-outline tarif-btn">Start the pilot</a>
+            <a href="/en/contact" class="btn-plein tarif-btn">Start the pilot</a>
           </article>
 
-          <article class="tarif-card reveal">
-            <div class="tarif-header">
-              <h3 class="tarif-nom">Essential</h3>
-            </div>
-            <div class="tarif-prix">
-              <span class="tarif-montant">€399</span>
-              <span class="tarif-detail">/ month</span>
-            </div>
-            <p class="tarif-maintenance">No commitment</p>
+          <article class="tarif-card rv" style="--d:.15s">
+            <h3 class="tarif-nom">Essential</h3>
+            <p class="tarif-prix"><span class="tarif-montant" data-m="399" data-a="333">€399</span><span class="tarif-detail">/ month</span></p>
+            <p class="tarif-cadence" data-m="No commitment" data-a="Billed yearly — 2 months free">No commitment</p>
             <ul class="tarif-features">
-              <li class="feat-oui">Automated Google review replies</li>
-              <li class="feat-oui">Daily recap of your activity on WhatsApp</li>
-              <li class="feat-oui">Automated weekly report (revenue, reviews, alerts)</li>
-              <li class="feat-oui">Maintenance and updates included</li>
+              <li>Automated Google review replies</li>
+              <li>Daily recap of your activity on WhatsApp</li>
+              <li>Automated weekly report (revenue, reviews, alerts)</li>
+              <li>Maintenance and updates included</li>
             </ul>
             <a href="/en/contact" class="btn-outline tarif-btn">Get started</a>
           </article>
 
-          <article class="tarif-card tarif-populaire reveal">
-            <div class="tarif-badge-pop">Most complete</div>
-            <div class="tarif-header">
-              <h3 class="tarif-nom">Operational</h3>
-            </div>
-            <div class="tarif-prix">
-              <span class="tarif-montant">€699</span>
-              <span class="tarif-detail">/ month</span>
-            </div>
-            <p class="tarif-maintenance">No commitment</p>
+          <article class="tarif-card rv" style="--d:.25s">
+            <div class="tarif-badge tarif-badge-soft">Most complete</div>
+            <h3 class="tarif-nom">Operational</h3>
+            <p class="tarif-prix"><span class="tarif-montant" data-m="699" data-a="583">€699</span><span class="tarif-detail">/ month</span></p>
+            <p class="tarif-cadence" data-m="No commitment" data-a="Billed yearly — 2 months free">No commitment</p>
             <ul class="tarif-features">
-              <li class="feat-oui">Everything in the Essential package</li>
-              <li class="feat-oui">AI team scheduling app</li>
-              <li class="feat-oui">Automated supplier orders &amp; follow-ups</li>
-              <li class="feat-oui">Stock tracking and automatic alerts</li>
-              <li class="feat-oui">Priority support</li>
+              <li>Everything in the Essential plan</li>
+              <li>AI team scheduling app</li>
+              <li>Automated supplier orders &amp; follow-ups</li>
+              <li>Stock tracking and automatic alerts</li>
+              <li>Priority support</li>
             </ul>
-            <a href="/en/contact" class="btn-plein tarif-btn">Get started</a>
+            <a href="/en/contact" class="btn-outline tarif-btn">Get started</a>
           </article>
+
         </div>
 
-        <div class="tarif-parrainage reveal">
-          <div class="tarif-parrainage-item">
-            <div class="tarif-parrainage-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <div class="tarif-extras rv">
+          <div class="tarif-extra">
+            <div class="tarif-extra-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
                 <circle cx="9" cy="7" r="4"/>
                 <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
               </svg>
             </div>
-            <p><strong>Referral</strong><br>Recommend Shuren to a contact. As soon as they start their subscription, you get <strong>1 month free</strong> on yours.</p>
+            <p><strong>Referrals</strong><br>Recommend Shuren to a contact. As soon as they start their subscription, you get <strong>1 month free</strong> on yours.</p>
           </div>
-          <div class="tarif-parrainage-item">
-            <div class="tarif-parrainage-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <div class="tarif-extra">
+            <div class="tarif-extra-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="4" width="18" height="18" rx="2"/>
                 <path d="M16 2v4M8 2v4M3 10h18"/>
               </svg>
             </div>
-            <p><strong>Annual plan</strong><br>Commit to 12 months and get <strong>2 months free</strong> — the equivalent of 2 free months on your subscription.</p>
+            <p><strong>Yearly subscription</strong><br>Commit for 12 months and get <strong>2 months free</strong> — that's 2 months at no cost on your subscription.</p>
           </div>
         </div>
-        <div class="tarif-devis reveal">
+
+        <div class="tarif-devis rv">
           <div class="tarif-devis-texte">
-            <h3 class="tarif-devis-titre">A custom need?</h3>
-            <p class="tarif-devis-desc">Special request, multiple venues, specific integration, or automation that doesn't fit any plan? We build a tailored solution and provide a personalised quote.</p>
+            <h3 class="tarif-devis-titre">Need something custom?</h3>
+            <p class="tarif-devis-desc">Special request, multiple venues, a specific integration or an automation that fits none of the plans? We build a tailored solution and put together a quote to match.</p>
           </div>
-          <a href="/en/contact" class="btn-plein tarif-devis-btn">Request a quote</a>
+          <a href="/en/contact" class="btn-plein magnet tarif-devis-btn">Request a quote</a>
         </div>
-        <p class="tarif-tva">VAT not applicable — French auto-entrepreneur (art. 293 B CGI)</p>
+        <p class="tarif-tva rv">VAT not applicable, art. 293 B of the French tax code</p>
       </div>
     </section>
 
+    <!-- ============ WHAT THE SUBSCRIPTION INCLUDES ============ -->
     <section id="avantages">
       <div class="section-inner">
-        <h2 class="section-titre reveal">What your subscription includes</h2>
-        <p class="section-sous-titre reveal">An all-inclusive monthly plan — your agent runs, you run your business.</p>
-        <div class="avantages-grid reveal">
-          <div class="avantage-item">
-            <div class="avantage-icone" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
+        <p class="eyebrow rv">All included</p>
+        <h2 class="section-titre rv">What your subscription includes.</h2>
+        <p class="section-sous-titre rv">One all-inclusive monthly fee — your agent runs, you run your business.</p>
+        <div class="avantages-grid">
+          <div class="avantage-item rv" style="--d:.05s">
+            <div class="avantage-icone icon-draw" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
               </svg>
             </div>
             <h3 class="avantage-titre">Agent active 24/7</h3>
-            <p class="avantage-desc">Your agent never sleeps, never takes holidays, and replies within seconds at any
-              hour.</p>
+            <p class="avantage-desc">Your agent never sleeps, never takes holidays and replies within seconds, at any hour.</p>
           </div>
-          <div class="avantage-item">
-            <div class="avantage-icone" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <line x1="18" y1="2" x2="22" y2="6" />
-                <path d="M7.5 20.5 19 9l-4-4L3.5 16.5 2 22z" />
+          <div class="avantage-item rv" style="--d:.12s">
+            <div class="avantage-icone icon-draw" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="2" x2="22" y2="6"/><path d="M7.5 20.5 19 9l-4-4L3.5 16.5 2 22z"/>
               </svg>
             </div>
             <h3 class="avantage-titre">Knowledge updates</h3>
-            <p class="avantage-desc">New pricing, new service, changed procedure? I update your agent right away.
-              Included.</p>
+            <p class="avantage-desc">New price, new service, a change of procedure? I update your agent right away. Included.</p>
           </div>
-          <div class="avantage-item">
-            <div class="avantage-icone" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+          <div class="avantage-item rv" style="--d:.19s">
+            <div class="avantage-icone icon-draw" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
               </svg>
             </div>
-            <h3 class="avantage-titre">Monitoring and optimisation</h3>
-            <p class="avantage-desc">I monitor your agent's conversations and fine-tune its responses so it keeps
-              improving over time.</p>
+            <h3 class="avantage-titre">Monitoring and tuning</h3>
+            <p class="avantage-desc">I watch your agent's conversations and refine its answers so it keeps improving over time.</p>
           </div>
-          <div class="avantage-item">
-            <div class="avantage-icone" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+          <div class="avantage-item rv" style="--d:.05s">
+            <div class="avantage-icone icon-draw" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
               </svg>
             </div>
             <h3 class="avantage-titre">Human support &lt; 24h</h3>
-            <p class="avantage-desc">A question, an issue? I reply within 24h, by email or phone. No offshore support.</p>
+            <p class="avantage-desc">A question, a problem? I reply within 24 hours, by email or phone. No offshore support desk.</p>
           </div>
-          <div class="avantage-item">
-            <div class="avantage-icone" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="3" width="20" height="14" rx="2" />
-                <path d="M8 21h8M12 17v4" />
+          <div class="avantage-item rv" style="--d:.12s">
+            <div class="avantage-icone icon-draw" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
               </svg>
             </div>
             <h3 class="avantage-titre">Integrations included</h3>
-            <p class="avantage-desc">WhatsApp, Google Business, website: your agent is connected wherever your customers
-              are. No extra fees.</p>
+            <p class="avantage-desc">WhatsApp, Google Business, your website: your agent is connected wherever your customers are. No extra charge.</p>
           </div>
-          <div class="avantage-item">
-            <div class="avantage-icone" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                <path d="M7 11V7a5 5 0 0 1 9.9-1" />
+          <div class="avantage-item rv" style="--d:.19s">
+            <div class="avantage-icone icon-draw" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/>
               </svg>
             </div>
             <h3 class="avantage-titre">No commitment</h3>
-            <p class="avantage-desc">You stop whenever you want, with no hidden fees. No 12- or 24-month contract to
-              sign.</p>
+            <p class="avantage-desc">Stop whenever you want, with no hidden fees. No 12- or 24-month contract to sign.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ============ FAQ ============ -->
     <section id="faq-courte">
-      <div class="section-inner">
-        <h2 class="section-titre reveal">Your frequent questions</h2>
-        <p class="section-sous-titre reveal">Everything people ask me before getting started.</p>
-        <div class="faq-liste reveal">
+      <div class="section-inner section-inner-etroite">
+        <p class="eyebrow rv">FAQ</p>
+        <h2 class="section-titre rv">Your frequent questions.</h2>
+        <p class="section-sous-titre rv">Everything people ask me before getting started.</p>
+        <div class="faq-liste rv">
           <details class="faq-item">
-            <summary>What happens if I stop the subscription?</summary>
-            <p>You can stop at any time. The site goes offline at the end of the current month. Your content and texts
-              belong to you — I transfer them on simple request.</p>
+            <summary>What happens if I stop the subscription?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <p>You can stop at any time. Your agent is switched off at the end of the current month, and your data as well as your configurations (knowledge base, history, access) are handed over on request. Nothing is held hostage.</p>
           </details>
           <details class="faq-item">
-            <summary>How many changes can I request per month?</summary>
-            <p>As many as needed to keep your business alive: change a photo, add a service, update your hours, publish
-              news. Anything that is routine content is included. For big projects (full redesign, an entirely new page),
-              we discuss it together.</p>
+            <summary>How many updates can I request per month?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <p>As many as needed: new price, new service, changed hours or procedures — I update your agent's knowledge with no limit and no extra charge. For a new agent or a new integration, we discuss it together.</p>
           </details>
           <details class="faq-item">
-            <summary>Are there hidden fees or a commitment?</summary>
-            <p>None. It's the displayed price per month, full stop. No creation fee, no extra hosting to pay, no 12-month
-              contract. You start when you want, you stop when you want.</p>
+            <summary>Are there hidden fees or a commitment?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <p>None. It's the advertised price per month, full stop. No setup fee, no extra infrastructure to pay for, no 12-month contract. You start when you want, you stop when you want.</p>
           </details>
           <details class="faq-item">
-            <summary>What if I don't know how to use a computer at all?</summary>
-            <p>That's exactly why this plan exists. You have nothing to learn, nothing to install, nothing to configure.
-              You send me your texts and photos by email or WhatsApp, I take care of the rest.</p>
+            <summary>What if I'm not comfortable with computers at all?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <p>That's exactly why this offer exists. There's nothing to learn, nothing to install, nothing to configure. You send me your information by email or WhatsApp, and I take care of everything else.</p>
           </details>
           <details class="faq-item">
-            <summary>How long until my agent is deployed?</summary>
-            <p>Between 1 and 2 weeks depending on the complexity of your workflows and the number of tools to connect
-              (website, WhatsApp, CRM).</p>
+            <summary>How long before my AI agent is up and running?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <p>Count on 1 to 2 weeks between our first conversation and going live: a few days to design the agent and train it on your business, a few days for testing and fine-tuning with you.</p>
           </details>
           <details class="faq-item">
-            <summary>What is an AI agent, concretely?</summary>
-            <p>It's an assistant integrated into your business that answers your customers' questions in real time — like
-              a virtual employee available 24/7. It's trained on your information (hours, pricing, services) and always
-              replies consistently with your brand.</p>
+            <summary>What exactly is an AI agent?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <p>A virtual employee available around the clock: it answers your customers, qualifies your prospects, generates your schedules or your reports — plugged into the channels you already use (WhatsApp, Google Business, email, your website). It's trained on your information and always answers in a way that's consistent with your brand.</p>
           </details>
           <details class="faq-item">
-            <summary>Can my AI agent reply to my customers at night and on weekends?</summary>
-            <p>That's exactly its role. Your agent doesn't sleep, doesn't take weekends off and replies within seconds at
-              any hour. No more messages left unanswered for 48h — your customers get an immediate reply, and you pick up
-              the urgent requests first thing the next morning.</p>
+            <summary>Can my AI agent answer customers at night and on weekends?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <p>That's exactly its job. Your agent doesn't sleep, doesn't take weekends off and replies within seconds at any hour. No more messages left unanswered for 48 hours — your customers get an immediate reply, and you pick up the urgent requests first thing the next morning.</p>
           </details>
         </div>
-        <div class="faq-cta reveal">
+        <div class="faq-cta rv">
           <a href="/en/faq" class="btn-outline">See all questions</a>
         </div>
       </div>
     </section>
 
-    <section id="cta-final">
-      <div class="section-inner cta-final-inner reveal">
-        <h2 class="cta-final-titre">Ready to automate and focus on your craft?</h2>
-        <p class="cta-final-sous">A free 15-minute chat to define your AI automation project. No commitment.</p>
-        <div class="cta-final-boutons">
-          <a href="/en/contact" class="btn-plein">Contact me</a>
-          <a href="mailto:contact@shuren.fr" class="btn-outline">contact@shuren.fr</a>
+    <!-- ============ WHY SHUREN ============ -->
+    <section id="comparateur">
+      <div class="section-inner">
+        <p class="eyebrow rv">Why Shuren?</p>
+        <h2 class="section-titre rv">What you get,<br>compared to the alternatives.</h2>
+        <div class="comp">
+          <div class="comp-head rv">
+            <span class="comp-head-critere"></span>
+            <span class="comp-head-shuren">
+              <img src="../assets/logos/logo-no-shuren-black-on-white.svg" alt="Shuren logo" class="comp-head-logo-mark" width="24" height="24">
+              <img src="../assets/logos/Just-Shuren-black-on-white.svg" alt="Shuren" class="comp-head-logo-text" width="62" height="14">
+            </span>
+            <span class="comp-head-agence">Traditional AI agency</span>
+          </div>
+          <div class="comp-row rv" style="--d:.04s">
+            <span class="comp-critere">Entry cost</span>
+            <span class="comp-shuren"><svg class="comp-check" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8.5l3.5 3.5 7.5-8" pathLength="1"/></svg>€0 — included in the subscription</span>
+            <span class="comp-agence">€10,000 to €50,000 (setup)</span>
+          </div>
+          <div class="comp-row rv" style="--d:.08s">
+            <span class="comp-critere">Monthly cost</span>
+            <span class="comp-shuren"><svg class="comp-check" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8.5l3.5 3.5 7.5-8" pathLength="1"/></svg>from €299 / month all inclusive</span>
+            <span class="comp-agence">€1,000 to €5,000 / month (maintenance)</span>
+          </div>
+          <div class="comp-row rv" style="--d:.12s">
+            <span class="comp-critere">Delivery time</span>
+            <span class="comp-shuren"><svg class="comp-check" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8.5l3.5 3.5 7.5-8" pathLength="1"/></svg>1 to 2 weeks</span>
+            <span class="comp-agence">3 to 6 months</span>
+          </div>
+          <div class="comp-row rv" style="--d:.16s">
+            <span class="comp-critere">Updates and changes</span>
+            <span class="comp-shuren"><svg class="comp-check" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8.5l3.5 3.5 7.5-8" pathLength="1"/></svg>Included in the subscription</span>
+            <span class="comp-agence">Billed on quote</span>
+          </div>
+          <div class="comp-row rv" style="--d:.2s">
+            <span class="comp-critere">AI agent quality</span>
+            <span class="comp-shuren"><svg class="comp-check" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8.5l3.5 3.5 7.5-8" pathLength="1"/></svg>Latest-gen LLM, custom-built</span>
+            <span class="comp-agence">Standard or custom</span>
+          </div>
+          <div class="comp-row rv" style="--d:.24s">
+            <span class="comp-critere">Business integrations</span>
+            <span class="comp-shuren"><svg class="comp-check" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8.5l3.5 3.5 7.5-8" pathLength="1"/></svg>Included (WhatsApp, Google, etc.)</span>
+            <span class="comp-agence">Billed separately</span>
+          </div>
+          <div class="comp-row rv" style="--d:.28s">
+            <span class="comp-critere">Support and monitoring</span>
+            <span class="comp-shuren"><svg class="comp-check" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8.5l3.5 3.5 7.5-8" pathLength="1"/></svg>Proactive and included</span>
+            <span class="comp-agence">Standard support ticket</span>
+          </div>
+          <div class="comp-row rv" style="--d:.32s">
+            <span class="comp-critere">Commitment</span>
+            <span class="comp-shuren"><svg class="comp-check" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8.5l3.5 3.5 7.5-8" pathLength="1"/></svg>None</span>
+            <span class="comp-agence">12 to 36 months often required</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="comparateur">
-      <div class="section-inner">
-        <h2 class="section-titre reveal">Why Shuren?</h2>
-        <p class="section-sous-titre reveal">What you get, compared to the alternatives.</p>
-        <div class="comparateur-table reveal">
-          <table>
-            <thead>
-              <tr>
-                <th class="comp-critere"></th>
-                <th class="comp-shuren">Shuren (AI Subscription)</th>
-                <th class="comp-agence">Traditional AI Agency</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="comp-critere">Entry cost</td>
-                <td class="comp-shuren">€0 (included in the subscription)</td>
-                <td class="comp-agence">€10,000 to €50,000 (setup)</td>
-              </tr>
-              <tr>
-                <td class="comp-critere">Monthly cost</td>
-                <td class="comp-shuren">€299 / month all inclusive</td>
-                <td class="comp-agence">€1,000 to €5,000 / month (maintenance)</td>
-              </tr>
-              <tr>
-                <td class="comp-critere">Delivery time</td>
-                <td class="comp-shuren">1 to 2 weeks</td>
-                <td class="comp-agence">3 to 6 months</td>
-              </tr>
-              <tr>
-                <td class="comp-critere">Updates and changes</td>
-                <td class="comp-shuren">✓ Included in the subscription</td>
-                <td class="comp-agence">Billed on quote</td>
-              </tr>
-              <tr>
-                <td class="comp-critere">AI agent quality</td>
-                <td class="comp-shuren">✓ Latest-gen LLM, custom-built</td>
-                <td class="comp-agence">✓ Standard or custom</td>
-              </tr>
-              <tr>
-                <td class="comp-critere">Business integrations</td>
-                <td class="comp-shuren">✓ Included (WhatsApp, Google, etc.)</td>
-                <td class="comp-agence">Billed separately</td>
-              </tr>
-              <tr>
-                <td class="comp-critere">Support and monitoring</td>
-                <td class="comp-shuren">✓ Proactive and included</td>
-                <td class="comp-agence">Standard support ticket</td>
-              </tr>
-              <tr>
-                <td class="comp-critere">Commitment</td>
-                <td class="comp-shuren">✗ None</td>
-                <td class="comp-agence">✓ 12 to 36 months often required</td>
-              </tr>
-            </tbody>
-          </table>
+    <!-- ============ FINAL CTA ============ -->
+    <section id="cta-final">
+      <div class="cta-panel rv">
+        <h2 class="cta-titre">Ready to automate and focus on your craft?</h2>
+        <p class="cta-sub">A free 15-minute call to scope your AI automation project. No commitment.</p>
+        <div class="cta-boutons">
+          <a href="/en/contact" class="btn-plein btn-inverse magnet">Get in touch</a>
+          <a href="mailto:contact@shuren.fr" class="btn-outline btn-outline-inverse magnet">contact@shuren.fr</a>
         </div>
       </div>
     </section>
@@ -702,14 +767,14 @@
     <div class="footer-inner">
       <span class="footer-nom">Shuren - AI Agents for businesses</span>
       <div class="footer-links">
-        <a href="/mentions-legales" class="footer-legales">Legal notice</a>
-        <button id="cookiePrefs" class="footer-legales footer-cookie-btn">Cookie settings</button>
+        <a href="/mentions-legales" class="footer-lien">Legal notice</a>
+        <button id="cookiePrefs" class="footer-lien footer-cookie-btn">Cookie settings</button>
         <span class="footer-copy">© 2026</span>
       </div>
     </div>
   </footer>
 
-  <script src="../script.js?v=6"></script>
+  <script src="../home.js?v=2" defer></script>
 </body>
 
 </html>

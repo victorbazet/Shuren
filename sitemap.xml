@@ -41,7 +41,8 @@
     <loc>https://shuren.fr/cas-client</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://shuren.fr/cas-client"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shuren.fr/cas-client"/>
-    <lastmod>2026-07-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shuren.fr/en/cas-client"/>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -50,7 +51,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://shuren.fr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shuren.fr/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://shuren.fr/en/"/>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -80,5 +81,14 @@
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://shuren.fr/en/cas-client</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shuren.fr/cas-client"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shuren.fr/cas-client"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shuren.fr/en/cas-client"/>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

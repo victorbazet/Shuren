@@ -6,6 +6,7 @@
 
   var RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
   var FINE = matchMedia('(pointer: fine)').matches;
+  var isEn = document.documentElement.lang === 'en';
 
   /* ---------- Gérer les cookies — retrait du consentement ---------- */
   var cookiePrefsBtn = document.getElementById('cookiePrefs');
@@ -25,20 +26,22 @@
     banner.id = 'cookie-banner';
 
     var p = document.createElement('p');
-    p.textContent = 'Ce site utilise Google Analytics pour mesurer l\'audience. Aucun cookie n\'est déposé sans votre accord. ';
+    p.textContent = isEn
+      ? 'This site uses Google Analytics to measure traffic. No cookies are stored without your consent. '
+      : 'Ce site utilise Google Analytics pour mesurer l\'audience. Aucun cookie n\'est déposé sans votre accord. ';
     var link = document.createElement('a');
     link.href = '/mentions-legales';
-    link.textContent = 'En savoir plus';
+    link.textContent = isEn ? 'Learn more' : 'En savoir plus';
     p.appendChild(link);
 
     var btns = document.createElement('div');
     btns.className = 'cookie-btns';
     var btnRefuse = document.createElement('button');
     btnRefuse.className = 'cookie-refuse';
-    btnRefuse.textContent = 'Refuser';
+    btnRefuse.textContent = isEn ? 'Decline' : 'Refuser';
     var btnAccept = document.createElement('button');
     btnAccept.className = 'cookie-accept';
-    btnAccept.textContent = 'Accepter';
+    btnAccept.textContent = isEn ? 'Accept' : 'Accepter';
     btns.appendChild(btnRefuse);
     btns.appendChild(btnAccept);
 
@@ -150,7 +153,9 @@
   /* ---------- Rouleau de mots du hero ---------- */
   var roller = document.getElementById('rollerWord');
   if (roller && !RM) {
-    var mots = ['entreprises', 'restaurants', 'hôtels', 'artisans', 'cabinets', 'commerçants'];
+    /* Les mots viennent du HTML (data-words) pour rester dans la langue de la page. */
+    var mots = (roller.dataset.words || '').split('|').filter(Boolean);
+    if (!mots.length) mots = ['entreprises', 'restaurants', 'hôtels', 'artisans', 'cabinets', 'commerçants'];
     var i = 0;
     setInterval(function () {
       roller.classList.add('out');
@@ -236,7 +241,7 @@
         if (!val) return;
         el.classList.add('swap');
         setTimeout(function () {
-          el.textContent = val + '€';
+          el.textContent = isEn ? '€' + val : val + '€';
           el.classList.remove('swap');
         }, 180);
       });

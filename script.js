@@ -196,6 +196,23 @@ if (formuleSelect) {
 /* Validation formulaire */
 const form = document.getElementById('contactForm');
 if (form) {
+  const formEn = document.documentElement.lang === 'en';
+  const T = formEn ? {
+    champsManquants: 'Please fill in all required fields.',
+    envoi: 'Sending...',
+    envoye: 'Message sent ✓',
+    envoyer: 'Send message',
+    choisirFormule: 'Choose a plan',
+    erreur: 'Something went wrong, please try again or email contact@shuren.fr'
+  } : {
+    champsManquants: 'Merci de remplir tous les champs obligatoires.',
+    envoi: 'Envoi en cours...',
+    envoye: 'Message envoyé ✓',
+    envoyer: 'Envoyer le message',
+    choisirFormule: 'Choisir une formule',
+    erreur: 'Une erreur est survenue, réessayez ou écrivez à contact@shuren.fr'
+  };
+
   // Initialisation du timestamp anti-bot
   const formStartEl = document.getElementById('formStart');
   if (formStartEl) formStartEl.value = Date.now();
@@ -240,13 +257,13 @@ if (form) {
     }
 
     if (!valid) {
-      erreur.textContent = 'Merci de remplir tous les champs obligatoires.';
+      erreur.textContent = T.champsManquants;
       return;
     }
 
     erreur.textContent = '';
     const btn = form.querySelector('.form-submit');
-    btn.textContent = 'Envoi en cours...';
+    btn.textContent = T.envoi;
     btn.disabled = true;
 
     fetch(form.action, {
@@ -256,25 +273,25 @@ if (form) {
     })
       .then(r => { if (!r.ok) throw new Error(); })
       .then(() => {
-        btn.textContent = 'Message envoyé ✓';
+        btn.textContent = T.envoye;
         setTimeout(() => {
           form.reset();
           if (formuleSelect) {
             const lbl = formuleSelect.querySelector('.select-label');
             const trg = formuleSelect.querySelector('.select-trigger');
             const opts = formuleSelect.querySelectorAll('.select-dropdown li');
-            if (lbl) lbl.textContent = 'Choisir une formule';
+            if (lbl) lbl.textContent = T.choisirFormule;
             if (trg) trg.classList.remove('has-value');
             if (opts) opts.forEach(o => o.classList.remove('selected'));
           }
-          btn.textContent = 'Envoyer le message';
+          btn.textContent = T.envoyer;
           btn.disabled = false;
         }, 2000);
       })
       .catch(() => {
-        btn.textContent = 'Envoyer le message';
+        btn.textContent = T.envoyer;
         btn.disabled = false;
-        erreur.textContent = "Une erreur est survenue, réessayez ou écrivez à contact@shuren.fr";
+        erreur.textContent = T.erreur;
       });
   });
 
