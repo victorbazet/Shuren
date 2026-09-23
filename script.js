@@ -1,8 +1,13 @@
+/* localStorage peut lever une exception (stockage bloqué) : ne jamais interrompre le script */
+function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) { } }
+function lsDel(k) { try { localStorage.removeItem(k); } catch (e) { } }
+
 /* Gérer les cookies — retrait du consentement */
 const cookiePrefsBtn = document.getElementById('cookiePrefs');
 if (cookiePrefsBtn) {
   cookiePrefsBtn.addEventListener('click', function () {
-    localStorage.removeItem('cookie_consent');
+    lsDel('cookie_consent');
     if (typeof gtag === 'function') gtag('consent', 'update', { analytics_storage: 'denied' });
     location.reload();
   });
@@ -10,7 +15,7 @@ if (cookiePrefsBtn) {
 
 /* Cookie Consent Banner */
 (function () {
-  if (localStorage.getItem('cookie_consent')) return;
+  if (lsGet('cookie_consent')) return;
 
   var isEn = document.documentElement.lang === 'en';
   var banner = document.createElement('div');
@@ -41,63 +46,14 @@ if (cookiePrefsBtn) {
   document.body.appendChild(banner);
 
   banner.querySelector('.cookie-accept').addEventListener('click', function () {
-    localStorage.setItem('cookie_consent', 'accepted');
-    if (typeof gtag === 'function') gtag('consent', 'update', { analytics_storage: 'granted' });
+    lsSet('cookie_consent', 'accepted');
+    if (typeof loadGA === 'function') loadGA();
     banner.remove();
   });
   banner.querySelector('.cookie-refuse').addEventListener('click', function () {
-    localStorage.setItem('cookie_consent', 'refused');
+    lsSet('cookie_consent', 'refused');
     banner.remove();
   });
-})();
-
-/* Typewriter hero */
-(function () {
-  const tw = document.getElementById('typewriter');
-  const cursor = document.querySelector('.tw-cursor');
-  if (!tw || !cursor) return;
-
-  const isEn = document.documentElement.lang === 'en';
-  const mots = isEn
-    ? ['restaurants', 'craftsmen', 'law firms', 'retailers', 'businesses']
-    : ['restaurants', 'artisans', 'cabinets', 'commerçants', 'entreprises'];
-
-  let motIndex = 0;
-  let charIndex = 0;
-  let effacement = false;
-
-  function tick() {
-    const mot = mots[motIndex];
-
-    if (!effacement) {
-      cursor.classList.remove('hidden');
-      charIndex++;
-      tw.textContent = mot.slice(0, charIndex);
-
-      if (charIndex === mot.length) {
-        setTimeout(() => {
-          effacement = true;
-          cursor.classList.add('hidden');
-          tick();
-        }, 1800);
-        return;
-      }
-      setTimeout(tick, 80);
-    } else {
-      charIndex--;
-      tw.textContent = mot.slice(0, charIndex);
-
-      if (charIndex === 0) {
-        effacement = false;
-        motIndex = (motIndex + 1) % mots.length;
-        setTimeout(tick, 80);
-        return;
-      }
-      setTimeout(tick, 50);
-    }
-  }
-
-  tick();
 })();
 
 /* Theme toggle */
@@ -106,7 +62,7 @@ if (themeToggle) {
   themeToggle.addEventListener('click', () => {
     const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
+    lsSet('theme', next);
   });
 }
 
@@ -318,71 +274,3 @@ faqItems.forEach(item => {
     }
   });
 });
-
-/* Curseur Caméléon */
-
-/* Slider Avant/Après */
-const slider = document.querySelector('.ba-slider');
-if (slider) {
-  const imageAfter = slider.querySelector('.ba-image-after');
-  const handle = slider.querySelector('.ba-handle');
-  const labelAvant = slider.querySelector('.ba-label-avant');
-  const labelApres = slider.querySelector('.ba-label-apres');
-  let isDragging = false;
-  let animFrame = null;
-
-  const updateSplit = (percent) => {
-    imageAfter.style.setProperty('--split-pos', percent + '%');
-    handle.style.setProperty('--split-pos', percent + '%');
-  };
-
-  const getCurrentPercent = () => {
-    const val = imageAfter.style.getPropertyValue('--split-pos');
-    return val ? parseFloat(val) : 50;
-  };
-
-  const animateTo = (targetPercent, duration) => {
-    duration = duration || 600;
-    if (animFrame) cancelAnimationFrame(animFrame);
-    const startPercent = getCurrentPercent();
-    const startTime = performance.now();
-    const ease = t => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-
-    const step = (now) => {
-      const t = Math.min((now - startTime) / duration, 1);
-      updateSplit(startPercent + (targetPercent - startPercent) * ease(t));
-      if (t < 1) animFrame = requestAnimationFrame(step);
-    };
-    animFrame = requestAnimationFrame(step);
-  };
-
-  const percentFromClientX = (clientX) => {
-    const rect = slider.getBoundingClientRect();
-    return Math.max(0, Math.min(100, ((clientX - rect.left) / rect.width) * 100));
-  };
-
-  handle.addEventListener('mousedown', () => {
-    if (animFrame) cancelAnimationFrame(animFrame);
-    isDragging = true;
-  });
-  window.addEventListener('mouseup', () => { isDragging = false; });
-  window.addEventListener('mousemove', (e) => {
-    if (isDragging) updateSplit(percentFromClientX(e.clientX));
-  });
-
-  handle.addEventListener('touchstart', (e) => {
-    if (animFrame) cancelAnimationFrame(animFrame);
-    isDragging = true;
-    updateSplit(percentFromClientX(e.touches[0].clientX));
-  }, { passive: true });
-  window.addEventListener('touchend', () => { isDragging = false; });
-  window.addEventListener('touchmove', (e) => {
-    if (isDragging) {
-      if (e.cancelable) e.preventDefault();
-      updateSplit(percentFromClientX(e.touches[0].clientX));
-    }
-  }, { passive: false });
-
-  if (labelAvant) labelAvant.addEventListener('click', () => animateTo(0));
-  if (labelApres) labelApres.addEventListener('click', () => animateTo(100));
-}

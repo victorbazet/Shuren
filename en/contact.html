@@ -20,27 +20,57 @@
   <meta property="og:url" content="https://shuren.fr/en/contact">
   <meta property="og:image" content="https://shuren.fr/assets/logos/og-image-v2.png">
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CE9YD8CRJM"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('consent', 'default', { analytics_storage: 'denied' });
-    if (localStorage.getItem('cookie_consent') === 'accepted') {
+    /* gtag.js (~180 Ko) n'est chargé qu'après consentement explicite */
+    function loadGA() {
+      if (window.__gaLoaded) return;
+      window.__gaLoaded = true;
       gtag('consent', 'update', { analytics_storage: 'granted' });
+      gtag('js', new Date());
+      gtag('config', 'G-CE9YD8CRJM');
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-CE9YD8CRJM';
+      document.head.appendChild(s);
     }
-    gtag('js', new Date());
-    gtag('config', 'G-CE9YD8CRJM');
+    try { if (localStorage.getItem('cookie_consent') === 'accepted') loadGA(); } catch (e) { }
   </script>
 
   <link rel="preload" href="../assets/fonts/syne-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../assets/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg?v=3">
-  <link rel="apple-touch-icon" href="../favicon.svg?v=3">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=4">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4">
 
-  <link rel="stylesheet" href="../style.css?v=10">
+  <link rel="stylesheet" href="../style.css?v=11">
   <script>
-    (function () { var t = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); document.documentElement.setAttribute('data-theme', t) })();
+    (function () { var d = document.documentElement, t; d.classList.add('js'); try { t = localStorage.getItem('theme'); } catch (e) { } d.setAttribute('data-theme', t || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light')); })();
+  </script>
+  <!-- Structured data JSON-LD: contact page -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ContactPage",
+        "name": "Contact Shuren",
+        "url": "https://shuren.fr/en/contact",
+        "inLanguage": "en",
+        "mainEntity": {
+          "@type": "ProfessionalService",
+          "@id": "https://shuren.fr/#org",
+          "name": "Shuren",
+          "email": "contact@shuren.fr",
+          "url": "https://shuren.fr/"
+        }
+      }
+    ]
+  }
   </script>
 </head>
 
@@ -50,8 +80,8 @@
   <nav id="nav">
     <div class="nav-inner">
       <a href="/en/" class="nav-logo">
-        <img src="../assets/logos/logo-no-shuren-black-on-white.svg" alt="Shuren logo" class="nav-logo-mark">
-        <img src="../assets/logos/Just-Shuren-black-on-white.svg" alt="Shuren" class="nav-logo-text">
+        <img src="../assets/logos/logo-no-shuren-black-on-white.svg" alt="Shuren logo" class="nav-logo-mark" width="32" height="32">
+        <img src="../assets/logos/Just-Shuren-black-on-white.svg" alt="Shuren" class="nav-logo-text" width="78" height="18">
       </a>
       <div class="nav-right">
         <ul class="nav-links">
@@ -105,13 +135,13 @@
       <div class="section-inner">
         <div class="contact-grid">
           <div class="contact-infos reveal">
-            <h2 class="section-titre">Let's talk about your project.</h2>
+            <h1 class="section-titre">Let's talk about your AI agent project.</h1>
             <ul class="contact-liste">
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                   <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <a href="mailto:contact@shuren.fr">contact@shuren.fr</a>
+                <!--email_off--><a href="mailto:contact@shuren.fr">contact@shuren.fr</a><!--/email_off-->
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -181,7 +211,7 @@
     </div>
   </footer>
 
-  <script src="../script.js?v=7"></script>
+  <script src="../script.js?v=8"></script>
 </body>
 
 </html>

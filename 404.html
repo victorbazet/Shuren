@@ -8,16 +8,18 @@
   <meta name="robots" content="noindex, follow">
 
   <!-- Favicons -->
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
-  <link rel="apple-touch-icon" href="/favicon.svg?v=3">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=4">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4">
 
   <!-- Fonts (local) -->
   <link rel="preload" href="/assets/fonts/syne-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="stylesheet" href="/style.css?v=10">
+  <link rel="stylesheet" href="/style.css?v=11">
   <script>
-    (function () { var t = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); document.documentElement.setAttribute('data-theme', t) })();
+    (function () { var d = document.documentElement, t; d.classList.add('js'); try { t = localStorage.getItem('theme'); } catch (e) { } d.setAttribute('data-theme', t || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light')); })();
   </script>
 
   <style>

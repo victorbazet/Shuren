@@ -35,27 +35,36 @@
   }
   </script>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CE9YD8CRJM"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('consent', 'default', { analytics_storage: 'denied' });
-    if (localStorage.getItem('cookie_consent') === 'accepted') {
+    /* gtag.js (~180 Ko) n'est chargé qu'après consentement explicite */
+    function loadGA() {
+      if (window.__gaLoaded) return;
+      window.__gaLoaded = true;
       gtag('consent', 'update', { analytics_storage: 'granted' });
+      gtag('js', new Date());
+      gtag('config', 'G-CE9YD8CRJM');
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-CE9YD8CRJM';
+      document.head.appendChild(s);
     }
-    gtag('js', new Date());
-    gtag('config', 'G-CE9YD8CRJM');
+    try { if (localStorage.getItem('cookie_consent') === 'accepted') loadGA(); } catch (e) { }
   </script>
 
   <link rel="preload" href="../assets/fonts/syne-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../assets/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg?v=3">
-  <link rel="apple-touch-icon" href="../favicon.svg?v=3">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=4">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4">
 
-  <link rel="stylesheet" href="../style.css?v=10">
+  <link rel="stylesheet" href="../style.css?v=11">
   <script>
-    (function () { var t = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); document.documentElement.setAttribute('data-theme', t) })();
+    (function () { var d = document.documentElement, t; d.classList.add('js'); try { t = localStorage.getItem('theme'); } catch (e) { } d.setAttribute('data-theme', t || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light')); })();
   </script>
 </head>
 
@@ -65,8 +74,8 @@
   <nav id="nav">
     <div class="nav-inner">
       <a href="/en/" class="nav-logo">
-        <img src="../assets/logos/logo-no-shuren-black-on-white.svg" alt="Shuren logo" class="nav-logo-mark">
-        <img src="../assets/logos/Just-Shuren-black-on-white.svg" alt="Shuren" class="nav-logo-text">
+        <img src="../assets/logos/logo-no-shuren-black-on-white.svg" alt="Shuren logo" class="nav-logo-mark" width="32" height="32">
+        <img src="../assets/logos/Just-Shuren-black-on-white.svg" alt="Shuren" class="nav-logo-text" width="78" height="18">
       </a>
       <div class="nav-right">
         <ul class="nav-links">
@@ -118,7 +127,7 @@
   <main>
     <section id="processus" style="padding-top: 140px;">
       <div class="section-inner">
-        <h2 class="section-titre reveal">How does it work?</h2>
+        <h1 class="section-titre reveal">How is your AI agent deployed?</h1>
         <p class="section-sous-titre reveal">A simple, transparent process with no surprises.</p>
         <div class="processus-wrapper reveal">
           <div class="processus-ligne"></div>
@@ -163,7 +172,7 @@
     </div>
   </footer>
 
-  <script src="../script.js?v=7"></script>
+  <script src="../script.js?v=8"></script>
 </body>
 
 </html>

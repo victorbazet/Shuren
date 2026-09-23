@@ -1,24 +1,56 @@
 # Shuren
 
-> Shuren conçoit des sites web et déploie des agents IA sur mesure pour les entreprises (artisans, restaurants, hôtels) : qualification de leads, réponses aux avis Google, récaps de réservations sur WhatsApp et plannings automatisés. Sans engagement, à partir de 299 €/mois.
+> Shuren déploie des agents IA sur mesure pour les PME françaises : réponses automatiques aux avis Google, récap quotidien de l'activité sur WhatsApp, qualification de leads, prise de rendez-vous, plannings d'équipe générés par IA, relances fournisseurs et suivi des stocks. Abonnement mensuel tout inclus de 299 € à 699 €/mois, sans engagement, mise en service en 1 à 2 semaines.
 
-Shuren est un studio qui combine la création de sites web et l'automatisation par agents IA. Le site présente les offres, le processus de travail, une FAQ et un formulaire de contact, disponible en français et en anglais.
+## Identité
+
+- Marque : Shuren (修練, « discipline et maîtrise » en japonais)
+- Fondateur : Victor Bazet-Braun, expert en automatisation et intégration d'agents IA
+- Statut : entreprise individuelle française (auto-entrepreneur), SIREN 102 736 196, code APE 6201Z
+- Clients : entreprises françaises (PME, restaurants, hôtels, commerces, artisans, cabinets, agences)
+- Langues : français, anglais
+- Contact : contact@shuren.fr — réponse sous 24 h
+
+## Offres et tarifs (TVA non applicable, art. 293 B du CGI)
+
+- Pilote — 299 €/mois pendant 2 mois, 1 établissement : réponses automatiques aux avis Google, récap quotidien de l'activité sur WhatsApp, setup inclus, support sous 24 h.
+- Essentiel — 399 €/mois, sans engagement : Pilote + rapport hebdomadaire automatique (CA, avis, alertes), maintenance et mises à jour incluses, tous établissements.
+- Opérationnel — 699 €/mois, sans engagement : Essentiel + génération de planning équipes par IA, commandes et relances fournisseurs automatisées, suivi des stocks avec alertes, support prioritaire.
+- Sur mesure — devis pour plusieurs établissements, intégrations spécifiques ou automatisations hors offre.
+- Abonnement annuel : 2 mois offerts. Parrainage : 1 mois offert par client parrainé.
+
+Inclus dans tous les abonnements : agent actif 24 h/24, mises à jour illimitées des connaissances, monitoring, support humain sous 24 h, intégrations (WhatsApp, Google Business, Gmail, Outlook, Skello, Excel, site web). Pas de frais de setup, pas de contrat de 12 mois.
+
+## Shuren comparé à une agence IA traditionnelle
+
+- Coût d'entrée : 0 € (vs 10 000 à 50 000 € de setup)
+- Coût mensuel : dès 299 € tout inclus (vs 1 000 à 5 000 €/mois de maintenance)
+- Délai de livraison : 1 à 2 semaines (vs 3 à 6 mois)
+- Évolutions : incluses (vs payantes sur devis)
+- Engagement : aucun (vs 12 à 36 mois)
+
+## Références
+
+- Chef Simon : intégration d'un agent IA de génération de recettes sur l'un des sites culinaires les plus consultés de France (12 millions de recettes consultées par an).
+- EO Family : groupe de 4 restaurants à Gruissan (Aude). Quatre agents déployés sur la formule Opérationnel : réponses aux avis Google, rapport d'activité quotidien, plannings d'équipe, stocks et relances fournisseurs.
 
 ## Pages principales (FR)
 
-- [Accueil](https://shuren.fr/): présentation de Shuren, des agents IA et des offres.
-- [Processus](https://shuren.fr/processus): les étapes de collaboration, de l'audit au déploiement.
-- [FAQ](https://shuren.fr/faq): réponses aux questions fréquentes sur les services et les tarifs.
-- [Contact](https://shuren.fr/contact): formulaire pour démarrer un projet.
+- [Accueil](https://shuren.fr/): agents IA proposés, offres et tarifs, comparatif, FAQ courte.
+- [Cas client EO Family](https://shuren.fr/cas-client): déploiement de 4 agents IA dans un groupe de restaurants.
+- [Processus](https://shuren.fr/processus): les 4 étapes, de la découverte au déploiement.
+- [FAQ](https://shuren.fr/faq): entraînement de l'agent, hallucinations, délais, réservations, sécurité et RGPD.
+- [Contact](https://shuren.fr/contact): demande de devis.
 
 ## Pages (EN)
 
-- [Home](https://shuren.fr/en/): overview of Shuren, AI agents and offers.
-- [Process](https://shuren.fr/en/processus): how a project runs, from audit to deployment.
-- [FAQ](https://shuren.fr/en/faq): frequently asked questions about services and pricing.
-- [Contact](https://shuren.fr/en/contact): contact form to start a project.
+- [Home](https://shuren.fr/en/): AI agents, plans and pricing.
+- [Case study EO Family](https://shuren.fr/en/cas-client): 4 AI agents for a restaurant group.
+- [Process](https://shuren.fr/en/processus): how a project runs, from discovery to deployment.
+- [FAQ](https://shuren.fr/en/faq): frequently asked questions.
+- [Contact](https://shuren.fr/en/contact): request a quote.
 
 ## Optional
 
 - [Mentions légales](https://shuren.fr/mentions-legales): informations légales et politique de confidentialité.
-- [Plan du site (sitemap)](https://shuren.fr/sitemap.xml): liste complète des URLs du site.
+- [Plan du site](https://shuren.fr/sitemap.xml): liste complète des URLs.

@@ -2,8 +2,9 @@
 # Cloudflare Pages sert aussi automatiquement 404.html (avec le statut 404)
 # pour toute route qui ne correspond à aucun fichier.
 
-# Favicon : les navigateurs/crawlers demandent /favicon.ico par défaut
-/favicon.ico            /favicon.svg  200
+# Favicon : /favicon.ico est desormais un vrai fichier ICO a la racine.
+# (l'ancienne redirection vers favicon.svg servait un SVG sous le nom .ico,
+#  ce que certains crawlers refusent de parser)
 
 # Sensitive files — return 404
 /.env                   /404.html  404

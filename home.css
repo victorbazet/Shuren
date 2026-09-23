@@ -119,18 +119,13 @@ h1, h2, h3 { font-family: var(--font-titre); font-weight: 700; line-height: 1.08
   transform: translateY(26px);
   transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out);
   transition-delay: var(--d, 0s);
-  will-change: opacity, transform;
 }
 .rv.visible { opacity: 1; transform: none; }
 
-/* Éléments d'entrée du hero (déclenchés au chargement) */
-.fu {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.85s var(--ease-out), transform 0.85s var(--ease-out);
-  transition-delay: var(--d, 0s);
-}
-body.loaded .fu { opacity: 1; transform: none; }
+/* Éléments d'entrée du hero : animation CSS pure, démarre au premier rendu
+   sans attendre le JS (LCP plus tôt, hero visible même si le JS échoue) */
+.fu { animation: fuIn 0.85s var(--ease-out) var(--d, 0s) both; }
+@keyframes fuIn { from { opacity: 0; transform: translateY(22px); } }
 
 /* ---------- Barre de progression ---------- */
 #progress {
@@ -339,11 +334,10 @@ section { position: relative; }
 .line { display: block; overflow: hidden; padding-bottom: 0.08em; margin-bottom: -0.08em; }
 .line-in {
   display: inline-block;
-  transform: translateY(112%);
-  transition: transform 1s var(--ease-out);
+  animation: lineIn 1s var(--ease-out) both;
 }
-body.loaded .line-in { transform: translateY(0); }
-.line:nth-child(2) .line-in { transition-delay: 0.1s; }
+.line:nth-child(2) .line-in { animation-delay: 0.1s; }
+@keyframes lineIn { from { transform: translateY(112%); } }
 
 .roller {
   display: inline-block;
@@ -413,10 +407,9 @@ body.loaded .line-in { transform: translateY(0); }
 [data-theme="dark"] .hero-enso { opacity: 0.085; }
 .hero-enso path {
   stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  transition: stroke-dashoffset 2s var(--ease-out) 0.35s;
+  animation: ensoDraw 2s var(--ease-out) 0.35s both;
 }
-body.loaded .hero-enso path { stroke-dashoffset: 0; }
+@keyframes ensoDraw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
 
 /* ---------- Preuve sociale ---------- */
 #preuves { border-top: 1px solid var(--bordure); border-bottom: 1px solid var(--bordure); background: var(--fond-secondaire); }
@@ -797,10 +790,12 @@ body.loaded .hero-enso path { stroke-dashoffset: 0; }
   -webkit-mask-composite: xor;
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
-  animation: recoSpin 5.5s linear infinite;
+  /* Repeint à chaque frame (propriété @property) : ne tourne que carte à l'écran (.in-view posé par home.js) */
+  animation: recoSpin 5.5s linear infinite paused;
   pointer-events: none;
 }
 @keyframes recoSpin { to { --angle: 360deg; } }
+.tarif-reco.in-view::before { animation-play-state: running; }
 
 .tarif-badge {
   position: absolute;
@@ -1426,3 +1421,15 @@ a.footer-lien:hover { color: var(--texte); }
   .tarif-reco::before { animation: none !important; }
   .cta-panel::before { animation: none !important; }
 }
+
+/* Sans JS (désactivé ou en échec) : aucun contenu ne reste masqué.
+   La classe .js est posée sur <html> par le script de thème du <head>. */
+html:not(.js) .rv,
+html:not(.js) .rv .addition-lignes li { opacity: 1; transform: none; }
+html:not(.js) .apropos-photo { clip-path: none; }
+html:not(.js) .comp-check path,
+html:not(.js) .icon-draw path, html:not(.js) .icon-draw line, html:not(.js) .icon-draw polyline,
+html:not(.js) .icon-draw circle, html:not(.js) .icon-draw rect { stroke-dashoffset: 0; }
+html:not(.js) .methode-ligne { transform: scaleX(1); }
+html:not(.js) .agent-chat span { opacity: 1; transform: none; }
+html:not(.js) .chat-dots { display: none; }

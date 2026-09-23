@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shuren — AI Agents for businesses</title>
+  <title>AI agents for SMBs in France, from €299/month | Shuren</title>
   <meta name="description"
-    content="Shuren deploys custom AI agents for French businesses: automated lead qualification, Google review replies, WhatsApp recaps, AI-generated scheduling. From €299/month, no commitment.">
+    content="Shuren deploys custom AI agents for small businesses in France: Google review replies, lead qualification, team scheduling. From €299/month, no commitment.">
   <meta name="author" content="Victor Bazet-Braun — Shuren">
   <link rel="canonical" href="https://shuren.fr/en/">
   <link rel="alternate" hreflang="fr" href="https://shuren.fr/">
@@ -17,9 +17,9 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="Shuren">
-  <meta property="og:title" content="Shuren — AI Agents for businesses">
+  <meta property="og:title" content="Shuren — AI agents for small businesses in France">
   <meta property="og:description"
-    content="Custom AI agents for French businesses: automated lead qualification, Google review replies, WhatsApp recaps, AI scheduling. From €299/month, no commitment.">
+    content="Custom AI agents for French small businesses: Google review replies, lead qualification, WhatsApp recaps, AI scheduling. From €299/month, no commitment.">
   <meta property="og:url" content="https://shuren.fr/en/">
   <meta property="og:image" content="https://shuren.fr/assets/logos/og-image-v2.png">
   <meta property="og:image:width" content="1200">
@@ -28,117 +28,283 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Shuren — AI Agents for businesses">
+  <meta name="twitter:title" content="Shuren — AI agents for small businesses in France">
   <meta name="twitter:description"
-    content="Custom AI agents for French businesses: automated lead qualification, Google review replies, WhatsApp recaps, AI scheduling. From €299/month, no commitment.">
+    content="Custom AI agents for French small businesses: Google review replies, lead qualification, WhatsApp recaps, AI scheduling. From €299/month, no commitment.">
   <meta name="twitter:image" content="https://shuren.fr/assets/logos/og-image-v2.png">
   <meta name="twitter:image:alt" content="Shuren — AI Agents for businesses">
 
-  <!-- Structured data JSON-LD: LocalBusiness -->
+  <!-- Structured data JSON-LD: business, offers, founder, website, FAQ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Shuren",
-    "url": "https://shuren.fr",
-    "logo": "https://shuren.fr/assets/logos/logo-no-shuren-black-on-white.svg",
-    "description": "AI agent deployment for businesses in France: process automation, lead qualification, Google review replies, booking recaps.",
-    "email": "contact@shuren.fr",
-    "founder": {
-      "@type": "Person",
-      "name": "Victor Bazet-Braun"
-    },
-    "areaServed": {
-      "@type": "Country",
-      "name": "France"
-    },
-    "serviceType": ["AI Agent", "AI Automation", "AI Chatbot", "Google Reviews Management", "AI Schedule Generation"],
-    "priceRange": "€299/month - €699/month",
-    "knowsLanguage": ["fr", "en"],
-    "sameAs": []
-  }
-  </script>
-
-  <!-- Structured data JSON-LD: Offers -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Shuren Plans",
-    "itemListElement": [
+    "@graph": [
       {
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@type": "Offer",
-          "name": "Pilot",
-          "description": "2 months, 1 venue, risk-free. Automated Google review replies, daily recap of your activity on WhatsApp, setup included.",
-          "price": "299",
-          "priceCurrency": "EUR",
-          "priceSpecification": {
-            "@type": "UnitPriceSpecification",
-            "price": "299",
-            "priceCurrency": "EUR",
-            "unitCode": "MON"
-          },
-          "url": "https://shuren.fr/en/#tarifs"
+        "@type": "ProfessionalService",
+        "@id": "https://shuren.fr/#org",
+        "name": "Shuren",
+        "alternateName": "Shuren 修練",
+        "url": "https://shuren.fr/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://shuren.fr/assets/logos/logo-no-shuren-black-on-white.svg"
+        },
+        "image": "https://shuren.fr/assets/logos/og-image-v2.png",
+        "description": "Custom AI agents for French small businesses: automated Google review replies, daily WhatsApp activity recap, lead qualification, appointment booking, AI-generated team scheduling.",
+        "email": "contact@shuren.fr",
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "SIREN",
+          "value": "102736196"
+        },
+        "founder": {
+          "@id": "https://shuren.fr/#victor"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "France"
+        },
+        "knowsLanguage": [
+          "fr",
+          "en"
+        ],
+        "serviceType": [
+          "AI Agent",
+          "AI Automation for small businesses",
+          "AI Chatbot",
+          "Automated Google review replies",
+          "AI schedule generation",
+          "AI lead qualification"
+        ],
+        "priceRange": "€299 – €699 / month",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Shuren plans",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "name": "Pilot",
+              "description": "2 months, 1 venue, risk-free. Automated Google review replies, daily recap of your activity on WhatsApp, setup included.",
+              "price": "299",
+              "priceCurrency": "EUR",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "299",
+                "priceCurrency": "EUR",
+                "unitCode": "MON",
+                "referenceQuantity": {
+                  "@type": "QuantitativeValue",
+                  "value": 1,
+                  "unitCode": "MON"
+                }
+              },
+              "url": "https://shuren.fr/en/#tarifs",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "AI agent pilot: Google reviews and WhatsApp recap",
+                "provider": {
+                  "@id": "https://shuren.fr/#org"
+                },
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "France"
+                }
+              },
+              "eligibleDuration": {
+                "@type": "QuantitativeValue",
+                "value": 2,
+                "unitCode": "MON"
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "Essential",
+              "description": "Google review replies, daily recap of your activity on WhatsApp, automated weekly report, maintenance included. All venues, no commitment.",
+              "price": "399",
+              "priceCurrency": "EUR",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "399",
+                "priceCurrency": "EUR",
+                "unitCode": "MON",
+                "referenceQuantity": {
+                  "@type": "QuantitativeValue",
+                  "value": 1,
+                  "unitCode": "MON"
+                }
+              },
+              "url": "https://shuren.fr/en/#tarifs",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Essential AI agent: Google reviews, WhatsApp recap, weekly report",
+                "provider": {
+                  "@id": "https://shuren.fr/#org"
+                },
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "France"
+                }
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "Operational",
+              "description": "Everything in Essential plus AI team scheduling app, automated supplier orders & follow-ups, stock tracking and automatic alerts. Priority support.",
+              "price": "699",
+              "priceCurrency": "EUR",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "699",
+                "priceCurrency": "EUR",
+                "unitCode": "MON",
+                "referenceQuantity": {
+                  "@type": "QuantitativeValue",
+                  "value": 1,
+                  "unitCode": "MON"
+                }
+              },
+              "url": "https://shuren.fr/en/#tarifs",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Operational AI agents: team scheduling, suppliers, stock",
+                "provider": {
+                  "@id": "https://shuren.fr/#org"
+                },
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "France"
+                }
+              }
+            }
+          ]
         }
       },
       {
-        "@type": "ListItem",
-        "position": 2,
-        "item": {
-          "@type": "Offer",
-          "name": "Essential",
-          "description": "Google review replies, daily recap of your activity on WhatsApp, automated weekly report, maintenance included. All venues, no commitment.",
-          "price": "399",
-          "priceCurrency": "EUR",
-          "priceSpecification": {
-            "@type": "UnitPriceSpecification",
-            "price": "399",
-            "priceCurrency": "EUR",
-            "unitCode": "MON"
-          },
-          "url": "https://shuren.fr/en/#tarifs"
+        "@type": "Person",
+        "@id": "https://shuren.fr/#victor",
+        "name": "Victor Bazet-Braun",
+        "jobTitle": "Founder of Shuren, automation and AI agent integration expert",
+        "image": "https://shuren.fr/assets/victor.jpg",
+        "worksFor": {
+          "@id": "https://shuren.fr/#org"
         }
       },
       {
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@type": "Offer",
-          "name": "Operational",
-          "description": "Everything in Essential plus AI team scheduling app, automated supplier orders & follow-ups, stock tracking and automatic alerts. Priority support.",
-          "price": "699",
-          "priceCurrency": "EUR",
-          "priceSpecification": {
-            "@type": "UnitPriceSpecification",
-            "price": "699",
-            "priceCurrency": "EUR",
-            "unitCode": "MON"
-          },
-          "url": "https://shuren.fr/en/#tarifs"
+        "@type": "WebSite",
+        "@id": "https://shuren.fr/#website",
+        "url": "https://shuren.fr/",
+        "name": "Shuren",
+        "inLanguage": [
+          "fr-FR",
+          "en"
+        ],
+        "publisher": {
+          "@id": "https://shuren.fr/#org"
         }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://shuren.fr/en/#webpage",
+        "url": "https://shuren.fr/en/",
+        "name": "AI agents for SMBs in France, from €299/month | Shuren",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@id": "https://shuren.fr/#website"
+        },
+        "about": {
+          "@id": "https://shuren.fr/#org"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://shuren.fr/en/#faq",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@id": "https://shuren.fr/en/#webpage"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What happens if I stop the subscription?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can stop at any time. Your agent is switched off at the end of the current month, and your data as well as your configurations (knowledge base, history, access) are handed over on request. Nothing is held hostage."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many updates can I request per month?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "As many as needed: new price, new service, changed hours or procedures — I update your agent's knowledge with no limit and no extra charge. For a new agent or a new integration, we discuss it together."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are there hidden fees or a commitment?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "None. It's the advertised price per month, full stop. No setup fee, no extra infrastructure to pay for, no 12-month contract. You start when you want, you stop when you want."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if I'm not comfortable with computers at all?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "That's exactly why this offer exists. There's nothing to learn, nothing to install, nothing to configure. You send me your information by email or WhatsApp, and I take care of everything else."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long before my AI agent is up and running?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Count on 1 to 2 weeks between our first conversation and going live: a few days to design the agent and train it on your business, a few days for testing and fine-tuning with you."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What exactly is an AI agent?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A virtual employee available around the clock: it answers your customers, qualifies your prospects, generates your schedules or your reports — plugged into the channels you already use (WhatsApp, Google Business, email, your website). It's trained on your information and always answers in a way that's consistent with your brand."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can my AI agent answer customers at night and on weekends?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "That's exactly its job. Your agent doesn't sleep, doesn't take weekends off and replies within seconds at any hour. No more messages left unanswered for 48 hours — your customers get an immediate reply, and you pick up the urgent requests first thing the next morning."
+            }
+          }
+        ]
       }
     ]
   }
   </script>
 
   <!-- Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CE9YD8CRJM"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('consent', 'default', { analytics_storage: 'denied' });
-    if (localStorage.getItem('cookie_consent') === 'accepted') {
+    /* gtag.js (~180 Ko) n'est chargé qu'après consentement explicite */
+    function loadGA() {
+      if (window.__gaLoaded) return;
+      window.__gaLoaded = true;
       gtag('consent', 'update', { analytics_storage: 'granted' });
+      gtag('js', new Date());
+      gtag('config', 'G-CE9YD8CRJM');
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-CE9YD8CRJM';
+      document.head.appendChild(s);
     }
-    gtag('js', new Date());
-    gtag('config', 'G-CE9YD8CRJM');
+    try { if (localStorage.getItem('cookie_consent') === 'accepted') loadGA(); } catch (e) { }
   </script>
 
-  <!-- Preconnect -->
-  <link rel="preconnect" href="https://www.google-analytics.com">
   <!-- Fonts (local) -->
   <link rel="preload" href="../assets/fonts/syne-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../assets/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -146,12 +312,14 @@
   <link rel="preload" href="../assets/fonts/lato-700.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Favicons -->
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg?v=3">
-  <link rel="apple-touch-icon" href="../favicon.svg?v=3">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=4">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4">
 
-  <link rel="stylesheet" href="../home.css?v=1">
+  <link rel="stylesheet" href="../home.css?v=3">
   <script>
-    (function () { var t = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); document.documentElement.setAttribute('data-theme', t) })();
+    (function () { var d = document.documentElement, t; d.classList.add('js'); try { t = localStorage.getItem('theme'); } catch (e) { } d.setAttribute('data-theme', t || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light')); })();
   </script>
 </head>
 
@@ -226,11 +394,11 @@
           <span class="hero-tools-label">Works with your tools</span>
           <ul class="tools-row">
             <li class="tool-chip">
-              <img class="tool-icon-img" src="../assets/tools/gmail.png" alt="" width="18" height="18" loading="lazy">
+              <img class="tool-icon-img" src="../assets/tools/gmail-54.png" alt="" width="18" height="18">
               Gmail
             </li>
             <li class="tool-chip">
-              <img class="tool-icon-img" src="../assets/tools/outlook.png" alt="" width="18" height="18" loading="lazy">
+              <img class="tool-icon-img" src="../assets/tools/outlook-54.png" alt="" width="18" height="18">
               Outlook
             </li>
             <li class="tool-chip">
@@ -238,15 +406,15 @@
               WhatsApp
             </li>
             <li class="tool-chip">
-              <img class="tool-icon-img" src="../assets/tools/google-business.png" alt="" width="18" height="18" loading="lazy">
+              <img class="tool-icon-img" src="../assets/tools/google-business-54.png" alt="" width="18" height="18">
               Google Business
             </li>
             <li class="tool-chip">
-              <img class="tool-icon-img" src="../assets/tools/skello.png" alt="" width="18" height="18" loading="lazy">
+              <img class="tool-icon-img" src="../assets/tools/skello-54.png" alt="" width="18" height="18">
               Skello
             </li>
             <li class="tool-chip">
-              <img class="tool-icon-img" src="../assets/tools/excel.png" alt="" width="18" height="18" loading="lazy">
+              <img class="tool-icon-img" src="../assets/tools/excel-54.png" alt="" width="18" height="18">
               Excel
             </li>
           </ul>
@@ -262,11 +430,11 @@
           <span class="preuve-l">custom-built<br>for your business</span>
         </div>
         <div class="preuve">
-          <span class="preuve-n"><span class="js-count" data-target="24">0</span>/7</span>
+          <span class="preuve-n"><span class="js-count" data-target="24">24</span>/7</span>
           <span class="preuve-l">agents at work,<br>day and night</span>
         </div>
         <div class="preuve">
-          <span class="preuve-n">&lt;&hairsp;<span class="js-count" data-target="24">0</span>h</span>
+          <span class="preuve-n">&lt;&hairsp;<span class="js-count" data-target="24">24</span>h</span>
           <span class="preuve-l">maximum<br>response time</span>
         </div>
       </div>
@@ -282,8 +450,8 @@
           <div class="apropos-bloc">
             <div class="apropos-photo-wrap rv">
               <picture>
-                <source srcset="../assets/victor.webp" type="image/webp">
-                <img src="../assets/victor.jpg" alt="Victor Bazet-Braun, founder of Shuren" class="apropos-photo" width="180" height="180" loading="lazy">
+                <source srcset="../assets/victor-344.webp" type="image/webp">
+                <img src="../assets/victor-344.jpg" alt="Victor Bazet-Braun, founder of Shuren" class="apropos-photo" width="180" height="180" loading="lazy">
               </picture>
             </div>
             <div class="apropos-contenu">
@@ -756,7 +924,7 @@
         <p class="cta-sub">A free 15-minute call to scope your AI automation project. No commitment.</p>
         <div class="cta-boutons">
           <a href="/en/contact" class="btn-plein btn-inverse magnet">Get in touch</a>
-          <a href="mailto:contact@shuren.fr" class="btn-outline btn-outline-inverse magnet">contact@shuren.fr</a>
+          <!--email_off--><a href="mailto:contact@shuren.fr" class="btn-outline btn-outline-inverse magnet">contact@shuren.fr</a><!--/email_off-->
         </div>
       </div>
     </section>
@@ -774,7 +942,7 @@
     </div>
   </footer>
 
-  <script src="../home.js?v=2" defer></script>
+  <script src="../home.js?v=4" defer></script>
 </body>
 
 </html>

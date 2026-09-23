@@ -8,11 +8,16 @@
   var FINE = matchMedia('(pointer: fine)').matches;
   var isEn = document.documentElement.lang === 'en';
 
+  /* localStorage peut lever une exception (stockage bloqué) : ne jamais interrompre le script */
+  function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) { } }
+  function lsDel(k) { try { localStorage.removeItem(k); } catch (e) { } }
+
   /* ---------- Gérer les cookies — retrait du consentement ---------- */
   var cookiePrefsBtn = document.getElementById('cookiePrefs');
   if (cookiePrefsBtn) {
     cookiePrefsBtn.addEventListener('click', function () {
-      localStorage.removeItem('cookie_consent');
+      lsDel('cookie_consent');
       if (typeof gtag === 'function') gtag('consent', 'update', { analytics_storage: 'denied' });
       location.reload();
     });
@@ -20,7 +25,7 @@
 
   /* ---------- Bannière cookies ---------- */
   (function () {
-    if (localStorage.getItem('cookie_consent')) return;
+    if (lsGet('cookie_consent')) return;
 
     var banner = document.createElement('div');
     banner.id = 'cookie-banner';
@@ -50,22 +55,15 @@
     document.body.appendChild(banner);
 
     banner.querySelector('.cookie-accept').addEventListener('click', function () {
-      localStorage.setItem('cookie_consent', 'accepted');
-      if (typeof gtag === 'function') gtag('consent', 'update', { analytics_storage: 'granted' });
+      lsSet('cookie_consent', 'accepted');
+      if (typeof loadGA === 'function') loadGA();
       banner.remove();
     });
     banner.querySelector('.cookie-refuse').addEventListener('click', function () {
-      localStorage.setItem('cookie_consent', 'refused');
+      lsSet('cookie_consent', 'refused');
       banner.remove();
     });
   })();
-
-  /* ---------- Entrée du hero ---------- */
-  requestAnimationFrame(function () {
-    requestAnimationFrame(function () {
-      document.body.classList.add('loaded');
-    });
-  });
 
   /* ---------- Thème ---------- */
   var themeToggle = document.getElementById('themeToggle');
@@ -73,7 +71,7 @@
     themeToggle.addEventListener('click', function () {
       var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
-      try { localStorage.setItem('theme', next); } catch (e) { }
+      lsSet('theme', next);
     });
   }
 
@@ -126,6 +124,12 @@
   }, { threshold: 0.14, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.rv').forEach(function (el) { io.observe(el); });
 
+  /* ---------- Bordure animée de l'offre recommandée : en pause hors écran ---------- */
+  var ioReco = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { e.target.classList.toggle('in-view', e.isIntersecting); });
+  });
+  document.querySelectorAll('.tarif-reco').forEach(function (el) { ioReco.observe(el); });
+
   /* ---------- Compteurs ---------- */
   function animateCount(el) {
     var target = parseInt(el.dataset.target, 10) || 0;
@@ -148,6 +152,9 @@
       }
     });
   }, { threshold: 0.5 });
+  /* Le HTML contient la vraie valeur (lisible par les crawlers sans JS) :
+     on la remet à 0 ici pour que l'animation parte de zéro. */
+  if (!RM) document.querySelectorAll('.js-count').forEach(function (el) { el.textContent = '0'; });
   document.querySelectorAll('[data-counts]').forEach(function (el) { ioCount.observe(el); });
 
   /* ---------- Rouleau de mots du hero ---------- */

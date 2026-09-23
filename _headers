@@ -3,31 +3,44 @@
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(self "https://js.stripe.com" "https://checkout.stripe.com"), usb=()
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=()
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Resource-Policy: same-site
-  Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://static.cloudflareinsights.com; connect-src 'self' https://api.web3forms.com https://www.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://www.googletagmanager.com https://region1.google-analytics.com; img-src 'self' https: data: https://www.google-analytics.com https://*.google-analytics.com https://*.googletagmanager.com; frame-src 'self' https://js.stripe.com https://checkout.stripe.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://static.cloudflareinsights.com; connect-src 'self' https://api.web3forms.com https://www.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://www.googletagmanager.com https://region1.google-analytics.com; img-src 'self' https: data: https://www.google-analytics.com https://*.google-analytics.com https://*.googletagmanager.com; frame-src 'self'; form-action 'self' https://api.web3forms.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
 
+# CSS / JS : toujours référencés avec ?v=N -> cache 1 an.
+# RÈGLE : toute modification d'un .css/.js impose d'incrémenter ?v= dans les pages.
 /*.css
-  Cache-Control: public, max-age=86400, must-revalidate
+  Cache-Control: public, max-age=31536000, immutable
 
 /*.js
-  Cache-Control: public, max-age=86400, must-revalidate
+  Cache-Control: public, max-age=31536000, immutable
 
 /*.woff2
   Cache-Control: public, max-age=31536000, immutable
 
+# Images : URLs non versionnées -> 30 jours (pas immutable), pour qu'un
+# remplacement finisse par être vu. Pour un effet immédiat, renommer le fichier
+# (ex. og-image-v2.png).
 /*.jpg
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=2592000
+
+/*.jpeg
+  Cache-Control: public, max-age=2592000
 
 /*.png
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=2592000
 
 /*.webp
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=2592000
 
 /*.svg
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=2592000
+
+# Favicon .ico : pas de cache-busting possible (requete automatique du
+# navigateur, sans query string) -> cache court pour rester modifiable
+/favicon.ico
+  Cache-Control: public, max-age=86400, must-revalidate
 
 /*.html
   Cache-Control: public, max-age=0, must-revalidate

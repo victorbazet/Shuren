@@ -33,16 +33,23 @@
     content="4 restaurants, 4 AI agents plugged into the existing tools: Google reviews, daily report, schedules, stock and suppliers.">
   <meta name="twitter:image" content="https://shuren.fr/assets/logos/og-image-v2.png">
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CE9YD8CRJM"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('consent', 'default', { analytics_storage: 'denied' });
-    if (localStorage.getItem('cookie_consent') === 'accepted') {
+    /* gtag.js (~180 Ko) n'est chargé qu'après consentement explicite */
+    function loadGA() {
+      if (window.__gaLoaded) return;
+      window.__gaLoaded = true;
       gtag('consent', 'update', { analytics_storage: 'granted' });
+      gtag('js', new Date());
+      gtag('config', 'G-CE9YD8CRJM');
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-CE9YD8CRJM';
+      document.head.appendChild(s);
     }
-    gtag('js', new Date());
-    gtag('config', 'G-CE9YD8CRJM');
+    try { if (localStorage.getItem('cookie_consent') === 'accepted') loadGA(); } catch (e) { }
   </script>
 
   <link rel="preload" href="../assets/fonts/syne-700.woff2" as="font" type="font/woff2" crossorigin>
@@ -50,12 +57,88 @@
   <link rel="preload" href="../assets/fonts/lato-300.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../assets/fonts/lato-700.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg?v=3">
-  <link rel="apple-touch-icon" href="../favicon.svg?v=3">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=4">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4">
 
-  <link rel="stylesheet" href="../home.css?v=1">
+  <link rel="stylesheet" href="../home.css?v=3">
   <script>
-    (function () { var t = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); document.documentElement.setAttribute('data-theme', t) })();
+    (function () { var d = document.documentElement, t; d.classList.add('js'); try { t = localStorage.getItem('theme'); } catch (e) { } d.setAttribute('data-theme', t || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light')); })();
+  </script>
+  <!-- Structured data JSON-LD: case study article + breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://shuren.fr/en/cas-client#article",
+        "mainEntityOfPage": "https://shuren.fr/en/cas-client",
+        "headline": "EO Family: a restaurant group, and not a single review left unanswered",
+        "description": "How EO Family, a group of 4 restaurants in Gruissan, handed Google reviews, the daily activity report, team scheduling and supplier follow-ups over to Shuren AI agents.",
+        "articleSection": "Case study",
+        "inLanguage": "en",
+        "image": "https://shuren.fr/assets/logos/og-image-v2.png",
+        "datePublished": "2026-08-12",
+        "dateModified": "2026-09-23",
+        "author": {
+          "@type": "Person",
+          "@id": "https://shuren.fr/#victor",
+          "name": "Victor Bazet-Braun"
+        },
+        "publisher": {
+          "@type": "ProfessionalService",
+          "@id": "https://shuren.fr/#org",
+          "name": "Shuren",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://shuren.fr/assets/logos/logo-no-shuren-black-on-white.svg"
+          }
+        },
+        "about": {
+          "@type": "Organization",
+          "name": "EO Family",
+          "description": "Group of 4 restaurants in Gruissan",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Gruissan",
+            "addressCountry": "FR"
+          }
+        },
+        "mentions": {
+          "@type": "Service",
+          "name": "Shuren AI agents — Operational plan",
+          "provider": {
+            "@id": "https://shuren.fr/#org"
+          }
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Shuren",
+            "item": "https://shuren.fr/en/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "The workshop",
+            "item": "https://shuren.fr/en/#realisations"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "EO Family case study",
+            "item": "https://shuren.fr/en/cas-client"
+          }
+        ]
+      }
+    ]
+  }
   </script>
 </head>
 
@@ -174,15 +257,15 @@
               <h2 class="acte-titre">The margin defends itself.</h2>
               <div class="acte-kpis" data-counts>
                 <div class="kpi">
-                  <span class="kpi-n"><span class="js-count" data-target="100">0</span>&nbsp;%</span>
+                  <span class="kpi-n"><span class="js-count" data-target="100">100</span>&nbsp;%</span>
                   <span class="kpi-l">of reviews answered in under 24&nbsp;h, across all 4 restaurants</span>
                 </div>
                 <div class="kpi">
-                  <span class="kpi-n">≈&nbsp;<span class="js-count" data-target="40">0</span>&nbsp;h</span>
+                  <span class="kpi-n">≈&nbsp;<span class="js-count" data-target="40">40</span>&nbsp;h</span>
                   <span class="kpi-l">of admin work given back to the teams every month</span>
                 </div>
                 <div class="kpi">
-                  <span class="kpi-n"><span class="js-count" data-target="7">0</span>am</span>
+                  <span class="kpi-n"><span class="js-count" data-target="7">7</span>am</span>
                   <span class="kpi-l">the time management receives the full picture of the group</span>
                 </div>
               </div>
@@ -241,7 +324,7 @@
         <p class="cta-sub">A free 15-minute call to scope your AI automation project. No commitment.</p>
         <div class="cta-boutons">
           <a href="/en/contact" class="btn-plein btn-inverse magnet">Get in touch</a>
-          <a href="mailto:contact@shuren.fr" class="btn-outline btn-outline-inverse magnet">contact@shuren.fr</a>
+          <!--email_off--><a href="mailto:contact@shuren.fr" class="btn-outline btn-outline-inverse magnet">contact@shuren.fr</a><!--/email_off-->
         </div>
       </div>
     </section>
@@ -259,7 +342,7 @@
     </div>
   </footer>
 
-  <script src="../home.js?v=2" defer></script>
+  <script src="../home.js?v=4" defer></script>
 </body>
 
 </html>
