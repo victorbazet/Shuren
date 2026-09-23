@@ -231,37 +231,4 @@
     updateKanji();
   }
 
-  /* ---------- Toggle mensuel / annuel ---------- */
-  var billBtns = document.querySelectorAll('.bill-btn');
-  var montants = document.querySelectorAll('.tarif-montant');
-  var cadences = document.querySelectorAll('.tarif-cadence');
-  billBtns.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      if (btn.classList.contains('active')) return;
-      billBtns.forEach(function (b) {
-        b.classList.toggle('active', b === btn);
-        b.setAttribute('aria-pressed', String(b === btn));
-      });
-      var mode = btn.dataset.bill; /* 'm' ou 'a' */
-      montants.forEach(function (el) {
-        var val = el.dataset.fixed || el.dataset[mode];
-        if (!val) return;
-        el.classList.add('swap');
-        setTimeout(function () {
-          el.textContent = isEn ? '€' + val : val + '€';
-          el.classList.remove('swap');
-        }, 180);
-      });
-      cadences.forEach(function (el) {
-        var txt = el.dataset[mode];
-        if (!txt) return;
-        el.classList.add('swap');
-        setTimeout(function () {
-          el.textContent = txt;
-          el.classList.remove('swap');
-        }, 180);
-      });
-    });
-  });
-
 })();

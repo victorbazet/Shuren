@@ -363,6 +363,7 @@ section { position: relative; }
 .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
 
 /* Intégrations : rangée d'outils en niveaux de gris */
+.hero-note { margin-top: 18px; font-size: 0.9rem; color: var(--texte-doux); }
 .hero-tools { margin-top: 40px; }
 .hero-tools-label {
   display: block;
@@ -662,6 +663,7 @@ section { position: relative; }
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-3px); }
 }
+.agents-note { text-align: center; color: var(--texte-doux); margin-bottom: 24px; }
 .agents-cta { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
 
 /* ---------- Méthode ---------- */
@@ -712,37 +714,15 @@ section { position: relative; }
 /* ---------- Tarifs ---------- */
 #tarifs { background: var(--fond-secondaire); }
 
-.bill-toggle {
+.tarif-depuis {
   display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 4px;
-  border: 1px solid var(--bordure);
-  border-radius: 999px;
-  background: var(--fond-carte);
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 14px;
   margin-bottom: 44px;
 }
-.bill-btn {
-  padding: 9px 20px;
-  border-radius: 999px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--texte-doux);
-  transition: background 0.3s ease, color 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.bill-btn.active { background: var(--texte); color: var(--fond); }
-.bill-tag {
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  padding: 3px 8px;
-  border-radius: 999px;
-  border: 1px solid currentColor;
-  opacity: 0.75;
-}
+.tarif-depuis strong { font-family: var(--font-titre); font-size: 1.35rem; }
+.tarif-depuis span { font-size: 0.9rem; color: var(--texte-doux); }
 
 .tarifs-grid {
   display: grid;
@@ -813,24 +793,12 @@ section { position: relative; }
 .tarif-badge-soft { background: var(--fond-secondaire); color: var(--texte-doux); border: 1px solid var(--bordure); }
 
 .tarif-nom { font-size: 1.25rem; margin-bottom: 16px; }
-.tarif-prix { display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px; }
-.tarif-montant {
-  font-family: var(--font-titre);
-  font-size: 2.9rem;
-  line-height: 1;
-  display: inline-block;
-  transition: opacity 0.18s ease, transform 0.18s ease;
-}
-.tarif-montant.swap { opacity: 0; transform: translateY(8px); }
-.tarif-detail { color: var(--texte-doux); font-size: 0.95rem; }
+.tarif-pitch { font-family: var(--font-titre); font-size: 1.1rem; line-height: 1.35; margin-bottom: 8px; }
 .tarif-cadence {
-  font-size: 0.85rem;
-  color: var(--texte-tenu);
+  font-size: 0.88rem;
+  color: var(--texte-doux);
   margin-bottom: 24px;
-  min-height: 1.4em;
-  transition: opacity 0.18s ease;
 }
-.tarif-cadence.swap { opacity: 0; }
 .tarif-features {
   display: flex;
   flex-direction: column;
@@ -1084,6 +1052,15 @@ section { position: relative; }
 .btn-inverse:hover { box-shadow: 0 12px 28px -10px rgba(0, 0, 0, 0.45); }
 .btn-outline-inverse { border-color: color-mix(in srgb, var(--inv-texte) 35%, transparent); color: var(--inv-texte); }
 .btn-outline-inverse:hover { border-color: var(--inv-texte); }
+.btn-icon { width: 18px; height: 18px; flex-shrink: 0; fill: currentColor; }
+.cta-alt {
+  position: relative;
+  margin-top: 24px;
+  font-size: 0.9rem;
+  color: var(--inv-doux);
+}
+.cta-alt a { color: var(--inv-texte); font-weight: 700; border-bottom: 1px solid color-mix(in srgb, var(--inv-texte) 35%, transparent); }
+.cta-alt a:hover { border-color: var(--inv-texte); }
 
 /* ---------- Bannière cookies (contrat conservé avec style.css) ---------- */
 #cookie-banner {
@@ -1333,8 +1310,6 @@ a.footer-lien:hover { color: var(--texte); }
   font-size: 0.84rem; font-weight: 700;
 }
 .addition-total-n { font-size: 1.1rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.addition-vs { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 12px 0; font-size: 0.78rem; color: var(--texte-doux); }
-.addition-vs span:last-child { font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 700; color: var(--texte); }
 .addition-merci { text-align: center; font-size: 0.68rem; letter-spacing: 0.1em; color: var(--texte-tenu); margin-top: 12px; }
 
 /* ---- Transposition à d'autres secteurs ---- */

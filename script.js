@@ -115,38 +115,12 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
-/* Custom select formule */
-const formuleSelect = document.getElementById('formuleSelect');
-if (formuleSelect) {
-  const trigger = formuleSelect.querySelector('.select-trigger');
-  const label = formuleSelect.querySelector('.select-label');
-  const options = formuleSelect.querySelectorAll('.select-dropdown li');
-  const hiddenInput = document.getElementById('formuleValue');
-
-  trigger.addEventListener('click', () => {
-    const isOpen = formuleSelect.classList.toggle('open');
-    trigger.setAttribute('aria-expanded', String(isOpen));
-  });
-
-  options.forEach(opt => {
-    opt.addEventListener('click', () => {
-      const val = opt.dataset.value;
-      hiddenInput.value = val;
-      label.textContent = val;
-      trigger.classList.add('has-value');
-      options.forEach(o => o.classList.remove('selected'));
-      opt.classList.add('selected');
-      formuleSelect.classList.remove('open');
-      trigger.setAttribute('aria-expanded', 'false');
-    });
-  });
-
-  document.addEventListener('click', e => {
-    if (!formuleSelect.contains(e.target)) {
-      formuleSelect.classList.remove('open');
-      trigger.setAttribute('aria-expanded', 'false');
-    }
-  });
+/* Formule pré-sélectionnée depuis les boutons des offres (?formule=pilote) */
+const formuleField = document.getElementById('formule');
+if (formuleField) {
+  const slug = new URLSearchParams(location.search).get('formule');
+  const opt = slug && formuleField.querySelector('option[data-slug="' + slug + '"]');
+  if (opt) formuleField.value = opt.value;
 }
 
 /* Validation formulaire */
@@ -158,14 +132,12 @@ if (form) {
     envoi: 'Sending...',
     envoye: 'Message sent ✓',
     envoyer: 'Send message',
-    choisirFormule: 'Choose a plan',
     erreur: 'Something went wrong, please try again or email contact@shuren.fr'
   } : {
     champsManquants: 'Merci de remplir tous les champs obligatoires.',
     envoi: 'Envoi en cours...',
     envoye: 'Message envoyé ✓',
     envoyer: 'Envoyer le message',
-    choisirFormule: 'Choisir une formule',
     erreur: 'Une erreur est survenue, réessayez ou écrivez à contact@shuren.fr'
   };
 
@@ -195,16 +167,6 @@ if (form) {
       }
     });
 
-    const formuleHidden = document.getElementById('formuleValue');
-    if (formuleHidden !== null) {
-      const trigger = formuleSelect.querySelector('.select-trigger');
-      if (!formuleHidden.value) {
-        trigger.classList.add('erreur');
-        valid = false;
-      } else {
-        trigger.classList.remove('erreur');
-      }
-    }
 
     const email = document.getElementById('email');
     if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
@@ -232,14 +194,6 @@ if (form) {
         btn.textContent = T.envoye;
         setTimeout(() => {
           form.reset();
-          if (formuleSelect) {
-            const lbl = formuleSelect.querySelector('.select-label');
-            const trg = formuleSelect.querySelector('.select-trigger');
-            const opts = formuleSelect.querySelectorAll('.select-dropdown li');
-            if (lbl) lbl.textContent = T.choisirFormule;
-            if (trg) trg.classList.remove('has-value');
-            if (opts) opts.forEach(o => o.classList.remove('selected'));
-          }
           btn.textContent = T.envoyer;
           btn.disabled = false;
         }, 2000);
