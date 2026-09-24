@@ -135,6 +135,7 @@ main {
   display: flex;
   align-items: center;
   gap: 10px;
+  min-height: 44px;
 }
 
 .nav-logo-mark {
@@ -185,8 +186,8 @@ main {
   justify-content: center;
   align-items: center;
   gap: 5px;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   cursor: pointer;
   padding: 6px;
   flex-shrink: 0;
@@ -549,6 +550,9 @@ main {
 }
 
 .footer-legales {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   font-size: 0.875rem;
   color: var(--texte-doux);
   transition: color 0.2s ease;
@@ -585,6 +589,7 @@ main {
 
 /* Theme toggle */
 .theme-toggle {
+  position: relative;
   width: 36px;
   height: 36px;
   display: flex;
@@ -957,7 +962,10 @@ main {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--texte-doux);
-  padding: 3px 6px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 6px;
   border-radius: 4px;
   transition: color 0.2s;
   text-decoration: none;
@@ -980,4 +988,12 @@ main {
 /* Agents IA */
 #agents {
   background: var(--fond-secondaire);
+}
+
+/* Zone de clic du bouton thème étendue à 44 px sans changer le visuel */
+.theme-toggle::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
 }
