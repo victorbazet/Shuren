@@ -95,6 +95,28 @@
   addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  /* ---------- Barre de contact mobile ---------- */
+  var mobileCta = document.getElementById('mobileCta');
+  if (mobileCta) {
+    var ctaTargets = [document.getElementById('cta-final'), document.getElementById('footer')].filter(Boolean);
+    var ctaVisible = new Set();
+    var ioCta = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { e.isIntersecting ? ctaVisible.add(e.target) : ctaVisible.delete(e.target); });
+      updateMobileCta();
+    });
+    ctaTargets.forEach(function (el) { ioCta.observe(el); });
+    function updateMobileCta() {
+      /* Masquée dans le premier écran, près du CTA final et tant que la bannière cookies est ouverte */
+      var show = window.scrollY > innerHeight * 0.8 && !ctaVisible.size && !document.getElementById('cookie-banner');
+      mobileCta.classList.toggle('show', show);
+    }
+    addEventListener('scroll', updateMobileCta, { passive: true });
+    document.addEventListener('click', function (e) {
+      if (e.target.closest && e.target.closest('#cookie-banner button')) setTimeout(updateMobileCta, 0);
+    });
+    updateMobileCta();
+  }
+
   /* ---------- Menu mobile ---------- */
   var burger = document.getElementById('navHamburger');
   var navMobile = document.getElementById('navMobile');
