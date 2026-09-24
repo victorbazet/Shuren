@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent IA pour restaurant : avis, planning, stocks | Shuren</title>
+  <meta name="description"
+    content="Des agents IA pour restaurants, branchés sur vos outils : réponses aux avis Google, récap quotidien sur WhatsApp, plannings, stocks et fournisseurs. Dès 50 €/mois.">
+  <meta name="author" content="Victor Bazet-Braun — Shuren">
+  <link rel="canonical" href="https://shuren.fr/agent-ia-restaurant">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Shuren">
+  <meta property="og:title" content="Agent IA pour restaurant : avis, planning, stocks | Shuren">
+  <meta property="og:description"
+    content="Avis Google, récap quotidien sur WhatsApp, plannings, stocks et fournisseurs : les tâches d&#x27;après-service confiées à des agents IA branchés sur vos outils.">
+  <meta property="og:url" content="https://shuren.fr/agent-ia-restaurant">
+  <meta property="og:image" content="https://shuren.fr/assets/logos/og-image-v2.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Shuren — Restaurants">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Agent IA pour restaurant : avis, planning, stocks | Shuren">
+  <meta name="twitter:description"
+    content="Avis Google, récap quotidien sur WhatsApp, plannings, stocks et fournisseurs : les tâches d&#x27;après-service confiées à des agents IA branchés sur vos outils.">
+  <meta name="twitter:image" content="https://shuren.fr/assets/logos/og-image-v2.png">
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('consent', 'default', { analytics_storage: 'denied' });
+    /* gtag.js (~180 Ko) n'est chargé qu'après consentement explicite */
+    function loadGA() {
+      if (window.__gaLoaded) return;
+      window.__gaLoaded = true;
+      gtag('consent', 'update', { analytics_storage: 'granted' });
+      gtag('js', new Date());
+      gtag('config', 'G-CE9YD8CRJM');
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-CE9YD8CRJM';
+      document.head.appendChild(s);
+    }
+    try { if (localStorage.getItem('cookie_consent') === 'accepted') loadGA(); } catch (e) { }
+  </script>
+
+  <link rel="preload" href="assets/fonts/syne-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/lato-300.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/lato-700.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=4">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4">
+
+  <link rel="stylesheet" href="home.css?v=5">
+  <script>
+    (function () { var d = document.documentElement, t; d.classList.add('js'); try { t = localStorage.getItem('theme'); } catch (e) { } d.setAttribute('data-theme', t || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light')); })();
+  </script>
+  <!-- Données structurées JSON-LD : service, fil d'Ariane, FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://shuren.fr/agent-ia-restaurant#service",
+        "name": "Agents IA pour restaurants",
+        "serviceType": "Automatisation IA pour la restauration",
+        "description": "Agents IA pour restaurants branchés sur les outils existants : réponses aux avis Google, récap quotidien et rapport hebdomadaire sur WhatsApp, planning des équipes, commandes et relances fournisseurs, suivi des stocks.",
+        "url": "https://shuren.fr/agent-ia-restaurant",
+        "provider": {
+          "@type": "ProfessionalService",
+          "@id": "https://shuren.fr/#org",
+          "name": "Shuren",
+          "url": "https://shuren.fr/"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "France"
+        },
+        "inLanguage": "fr-FR",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://shuren.fr/#tarifs",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "minPrice": 50,
+            "priceCurrency": "EUR",
+            "unitCode": "MON"
+          }
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Shuren",
+            "item": "https://shuren.fr/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Agents IA",
+            "item": "https://shuren.fr/#agents"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Restaurants",
+            "item": "https://shuren.fr/agent-ia-restaurant"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://shuren.fr/agent-ia-restaurant#faq",
+        "inLanguage": "fr-FR",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Faut-il changer de logiciel de caisse, de réservation ou de planning ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. Les agents se branchent sur les outils que vous utilisez déjà. Chez EO Family, la caisse, le logiciel de réservation et le planning étaient en place : rien n'a été remplacé, et l'équipe n'a eu aucun nouveau logiciel à apprendre."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Est-ce adapté à un seul restaurant ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui. Le Pilote est conçu pour un établissement : 2 mois pour tester les réponses aux avis Google et le récap quotidien sur WhatsApp, puis vous continuez ou vous arrêtez, sans frais."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Combien coûte un agent IA pour un restaurant ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "À partir de 50 € par mois, tout inclus, selon les agents choisis et votre nombre d'établissements. Pas de frais de setup. À titre de comparaison, une agence IA traditionnelle facture souvent 10 000 à 50 000 € de mise en place, puis une maintenance mensuelle."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Mon restaurant est saisonnier. Je paie toute l'année ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. Il n'y a aucun engagement : vous pouvez arrêter à tout moment, l'agent est désactivé à la fin du mois en cours. Vos données et vos réglages vous sont transmis sur simple demande."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "L'agent peut-il prendre des réservations ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, sur mesure : il peut se connecter à vos outils (TheFork, ZenChef, etc.) pour vérifier les disponibilités et répondre aux demandes. On en parle lors du premier échange pour vous faire un devis adapté."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <div id="progress" aria-hidden="true"></div>
+
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="assets/logos/logo-no-shuren-black-on-white.svg" alt="Logo Shuren" class="nav-logo-mark" width="30" height="30">
+        <img src="assets/logos/Just-Shuren-black-on-white.svg" alt="Shuren" class="nav-logo-text" width="78" height="18">
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="/#realisations">L'Atelier</a></li>
+          <li><a href="/#agents">Agents IA</a></li>
+          <li><a href="/#tarifs">Nos Offres</a></li>
+          <li><a href="/processus">Processus</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+        <div class="lang-toggle">
+          <a href="/agent-ia-restaurant" class="lang-btn active">FR</a>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <a href="/en/" class="lang-btn">EN</a>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">
+          <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+          </svg>
+        </button>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile" id="navMobile" inert>
+      <ul>
+        <li><a href="/#realisations">L'Atelier</a></li>
+        <li><a href="/#agents">Agents IA</a></li>
+        <li><a href="/#tarifs">Nos Offres</a></li>
+        <li><a href="/processus">Processus</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/en/">EN</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <section id="usage" class="cas-hero">
+      <div class="section-inner">
+
+        <p class="cas-fil rv"><a href="/#agents">Agents IA</a> / Restaurants</p>
+
+        <p class="eyebrow rv">Agents IA · Restauration</p>
+        <h1 class="section-titre rv">Agents IA pour restaurants&nbsp;:<br>la gestion d'après-service, en pilote automatique.</h1>
+        <p class="section-sous-titre rv">Les avis, le point de la veille, le planning de la semaine, les commandes fournisseurs&nbsp;: les tâches qui vous prennent des heures après le service, confiées à des agents branchés sur vos outils.</p>
+
+        <div class="cas-grid">
+
+          <aside class="cas-fiche rv">
+            <p class="cas-fiche-label">En bref</p>
+            <ul class="cas-fiche-liste">
+              <li><span>Pour</span><strong>Restaurants, groupes multi-établissements, hôtels-restaurants, bars</strong></li>
+              <li><span>Agents</span><strong>Avis Google · Récap WhatsApp · Planning · Stocks et fournisseurs</strong></li>
+              <li><span>Outils compatibles</span><strong>Caisse, réservation, Skello, Excel, Google Business, WhatsApp</strong></li>
+              <li><span>Mise en service</span><strong>1 à 2 semaines</strong></li>
+              <li><span>Référence</span><strong class="accent">EO Family, 4 restaurants à Gruissan</strong></li>
+              <li><span>Tarif</span><strong>À partir de 50&nbsp;€/mois, sans engagement</strong></li>
+            </ul>
+            <div class="cas-fiche-cta">
+              <a href="/cas-client" class="lien-souligne">Lire le cas client EO Family →</a>
+            </div>
+          </aside>
+
+          <div class="cas-actes">
+
+            <article class="acte rv">
+              <p class="acte-num">Le constat</p>
+              <h2 class="acte-titre">Où part le temps d'un restaurateur&nbsp;?</h2>
+              <p class="acte-texte">
+                Pas en cuisine ni en salle&nbsp;: dans tout ce qui se fait avant et après. Répondre aux avis, faire le point sur la veille, refaire le planning chaque semaine, suivre les stocks, relancer un fournisseur qui n'a pas livré. Ce sont des tâches que tout le monde repousse et que personne ne chiffre, mais qui pèsent sur la marge&nbsp;: un avis négatif ignoré, une rupture non anticipée, une heure de trop au planning.
+              </p>
+            </article>
+            <article class="acte rv">
+              <p class="acte-num">Le positionnement</p>
+              <h2 class="acte-titre">Réservations au téléphone, ou gestion en coulisses&nbsp;?</h2>
+              <p class="acte-texte">
+                Beaucoup d'agents IA pour restaurants se concentrent sur le téléphone et les réservations. Shuren commence par ce qui se passe en coulisses&nbsp;: la réputation en ligne, le suivi de l'activité, le planning et les fournisseurs. Si vous avez aussi besoin d'un agent qui répond aux questions des clients ou gère les réservations avec TheFork ou ZenChef, on l'ajoute sur mesure.
+              </p>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="agents-resto">
+      <div class="section-inner">
+        <p class="eyebrow rv">Les agents</p>
+        <h2 class="section-titre rv">Que peut faire un agent IA<br>dans un restaurant&nbsp;?</h2>
+        <p class="section-sous-titre rv">Chaque agent prend en charge une tâche précise, branché sur les outils que vous avez déjà.</p>
+        <div class="avantages-grid">
+          <div class="avantage-item rv" style="--d:.05s">
+            <div class="avantage-icone icon-draw" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <h3 class="avantage-titre"><a href="/agent-ia-avis-google" class="lien-souligne">Réponses aux avis Google <span class="card-arrow">→</span></a></h3>
+            <p class="avantage-desc">Chaque avis reçoit une réponse personnalisée au ton de la maison, en moins de 24&nbsp;h.</p>
+          </div>
+          <div class="avantage-item rv" style="--d:.12s">
+            <div class="avantage-icone icon-draw" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+              </svg>
+            </div>
+            <h3 class="avantage-titre">Récap quotidien sur WhatsApp</h3>
+            <p class="avantage-desc">Chaque matin, l'état de la veille sur votre téléphone. Et chaque semaine, un rapport&nbsp;: chiffre d'affaires, avis, alertes.</p>
+          </div>
+          <div class="avantage-item rv" style="--d:.19s">
+            <div class="avantage-icone icon-draw" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+            </div>
+            <h3 class="avantage-titre"><a href="/planning-equipe-ia" class="lien-souligne">Planning des équipes <span class="card-arrow">→</span></a></h3>
+            <p class="avantage-desc">Le planning de la semaine généré selon les contrats, les disponibilités et l'activité prévue.</p>
+          </div>
+          <div class="avantage-item rv" style="--d:.26s">
+            <div class="avantage-icone icon-draw" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+              </svg>
+            </div>
+            <h3 class="avantage-titre">Commandes et relances fournisseurs</h3>
+            <p class="avantage-desc">Les commandes partent, les relances aussi&nbsp;: plus de livraison oubliée en plein rush.</p>
+          </div>
+          <div class="avantage-item rv" style="--d:.33s">
+            <div class="avantage-icone icon-draw" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
+              </svg>
+            </div>
+            <h3 class="avantage-titre">Suivi des stocks</h3>
+            <p class="avantage-desc">Des alertes avant la rupture, pas après. Les écarts sont repérés tout de suite.</p>
+          </div>
+          <div class="avantage-item rv" style="--d:.40s">
+            <div class="avantage-icone icon-draw" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
+              </svg>
+            </div>
+            <h3 class="avantage-titre">Réservations et questions clients</h3>
+            <p class="avantage-desc">Sur mesure&nbsp;: horaires, menu, disponibilités, connecté à TheFork, ZenChef et vos outils.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="resultats">
+      <div class="section-inner">
+        <p class="eyebrow rv">Cas client</p>
+        <h2 class="section-titre rv">Ce que ça donne sur<br>un groupe de 4 restaurants.</h2>
+        <p class="section-sous-titre rv">EO Family, à Gruissan&nbsp;: quatre agents branchés sur la caisse, la réservation et le planning déjà en place, sur l'offre Opérationnel.</p>
+        <div class="acte-kpis rv">
+          <div class="kpi">
+            <span class="kpi-n">100&nbsp;%</span>
+            <span class="kpi-l">des avis répondus en moins de 24&nbsp;h, sur les 4 restaurants</span>
+          </div>
+          <div class="kpi">
+            <span class="kpi-n">≈&nbsp;40&nbsp;h</span>
+            <span class="kpi-l">de travail administratif rendues aux équipes chaque mois</span>
+          </div>
+          <div class="kpi">
+            <span class="kpi-n">7h00</span>
+            <span class="kpi-l">l'heure à laquelle la direction reçoit l'état complet du groupe</span>
+          </div>
+        </div>
+        <p class="kpi-note rv">Ordre de grandeur propre à ce cas — on chiffre le vôtre lors du premier échange.</p>
+        <p class="methode-lien rv"><a href="/cas-client" class="lien-souligne">Lire le cas client complet <span class="card-arrow">→</span></a></p>
+      </div>
+    </section>
+    <section id="fonctionnement">
+      <div class="section-inner">
+        <p class="eyebrow rv">Comment ça marche</p>
+        <h2 class="section-titre rv">De l'appel à l'agent en service,<br>en 1 à 2 semaines.</h2>
+        <div class="methode-wrap rv">
+          <span class="methode-ligne" aria-hidden="true"></span>
+          <ol class="methode-grid">
+            <li class="methode-etape rv" style="--d:.01s">
+              <span class="methode-num" aria-hidden="true">01</span>
+              <h3 class="methode-titre">Découverte</h3>
+              <p class="methode-desc">15&nbsp;minutes au téléphone, pendant votre coupure&nbsp;: vous me dites ce qui vous prend le plus de temps.</p>
+            </li>
+            <li class="methode-etape rv" style="--d:.13s">
+              <span class="methode-num" aria-hidden="true">02</span>
+              <h3 class="methode-titre">Conception</h3>
+              <p class="methode-desc">Je conçois les agents et leur ton. Vous validez avant toute connexion à vos outils.</p>
+            </li>
+            <li class="methode-etape rv" style="--d:.25s">
+              <span class="methode-num" aria-hidden="true">03</span>
+              <h3 class="methode-titre">Tests</h3>
+              <p class="methode-desc">J'entraîne les agents sur votre établissement et je teste leurs réponses avant la mise en service.</p>
+            </li>
+            <li class="methode-etape rv" style="--d:.37s">
+              <span class="methode-num" aria-hidden="true">04</span>
+              <h3 class="methode-titre">Déploiement</h3>
+              <p class="methode-desc">Les agents tournent. Je les surveille et je les ajuste en continu, sans surcoût.</p>
+            </li>
+          </ol>
+        </div>
+        <p class="methode-lien rv"><a href="/processus" class="lien-souligne">Voir le processus complet <span class="card-arrow">→</span></a></p>
+      </div>
+    </section>
+    <section id="faq-courte">
+      <div class="section-inner section-inner-etroite">
+        <p class="eyebrow rv">FAQ</p>
+        <h2 class="section-titre rv">Questions de restaurateurs.</h2>
+        <div class="faq-liste rv">
+          <details class="faq-item">
+            <summary>Faut-il changer de logiciel de caisse, de réservation ou de planning&nbsp;?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <p>Non. Les agents se branchent sur les outils que vous utilisez déjà. Chez EO Family, la caisse, le logiciel de réservation et le planning étaient en place&nbsp;: rien n'a été remplacé, et l'équipe n'a eu aucun nouveau logiciel à apprendre.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Est-ce adapté à un seul restaurant&nbsp;?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <p>Oui. Le Pilote est conçu pour un établissement&nbsp;: 2 mois pour tester les réponses aux avis Google et le récap quotidien sur WhatsApp, puis vous continuez ou vous arrêtez, sans frais.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Combien coûte un agent IA pour un restaurant&nbsp;?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <p>À partir de 50&nbsp;€ par mois, tout inclus, selon les agents choisis et votre nombre d'établissements. Pas de frais de setup. À titre de comparaison, une agence IA traditionnelle facture souvent 10&nbsp;000 à 50&nbsp;000&nbsp;€ de mise en place, puis une maintenance mensuelle.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Mon restaurant est saisonnier. Je paie toute l'année&nbsp;?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <p>Non. Il n'y a aucun engagement&nbsp;: vous pouvez arrêter à tout moment, l'agent est désactivé à la fin du mois en cours. Vos données et vos réglages vous sont transmis sur simple demande.</p>
+          </details>
+          <details class="faq-item">
+            <summary>L'agent peut-il prendre des réservations&nbsp;?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <p>Oui, sur mesure&nbsp;: il peut se connecter à vos outils (TheFork, ZenChef, etc.) pour vérifier les disponibilités et répondre aux demandes. On en parle lors du premier échange pour vous faire un devis adapté.</p>
+          </details>
+        </div>
+        <p class="methode-lien rv">À lire aussi&nbsp;: <a href="/agent-ia-avis-google" class="lien-souligne">Réponse automatique aux avis Google</a> · <a href="/planning-equipe-ia" class="lien-souligne">Planning d'équipe par IA</a> · <a href="/cas-client" class="lien-souligne">Cas client EO Family</a></p>
+      </div>
+    </section>
+    <!-- ============ CTA FINAL ============ -->
+    <section id="cta-final">
+      <div class="cta-panel rv">
+        <h2 class="cta-titre">Et si le prochain service commençait sans paperasse&nbsp;?</h2>
+        <p class="cta-sub">Échange gratuit de 15 minutes, par téléphone ou WhatsApp, pour définir votre projet. Sans engagement.</p>
+        <div class="cta-boutons">
+          <a href="https://wa.me/33768420370?text=Bonjour%20Victor%2C%20je%20viens%20du%20site%20Shuren%20et%20j%27aimerais%20parler%20de%20mon%20projet." class="btn-plein btn-inverse magnet" target="_blank" rel="noopener noreferrer"><svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Écrire sur WhatsApp</a>
+          <a href="/contact" class="btn-outline btn-outline-inverse magnet">Envoyer un message</a>
+        </div>
+        <p class="cta-alt">Ou appelez-moi au <a href="tel:+33768420370">07&nbsp;68&nbsp;42&nbsp;03&nbsp;70</a> · <!--email_off--><a href="mailto:contact@shuren.fr">contact@shuren.fr</a><!--/email_off--></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer">
+    <div class="footer-inner">
+      <span class="footer-nom">Shuren - Agents IA pour entreprises</span>
+      <div class="footer-links">
+        <a href="/mentions-legales" class="footer-lien">Mentions légales</a>
+        <button id="cookiePrefs" class="footer-lien footer-cookie-btn">Gérer les cookies</button>
+        <span class="footer-copy">© 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="home.js?v=5" defer></script>
+</body>
+
+</html>

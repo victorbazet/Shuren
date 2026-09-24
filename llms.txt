@@ -39,6 +39,9 @@ Inclus dans tous les abonnements : agent actif 24 h/24, mises à jour illimitée
 
 - [Accueil](https://shuren.fr/): agents IA proposés, offres et tarifs, comparatif, FAQ courte.
 - [Cas client EO Family](https://shuren.fr/cas-client): déploiement de 4 agents IA dans un groupe de restaurants.
+- [Réponse automatique aux avis Google](https://shuren.fr/agent-ia-avis-google): agent IA qui répond à chaque avis Google au ton de l'établissement, en moins de 24 h.
+- [Agents IA pour restaurants](https://shuren.fr/agent-ia-restaurant): avis Google, récap WhatsApp, planning, stocks et fournisseurs pour la restauration.
+- [Planning d'équipe par IA](https://shuren.fr/planning-equipe-ia): génération du planning hebdomadaire selon contrats, disponibilités et activité prévue.
 - [Processus](https://shuren.fr/processus): les 4 étapes, de la découverte au déploiement.
 - [FAQ](https://shuren.fr/faq): entraînement de l'agent, hallucinations, délais, réservations, sécurité et RGPD.
 - [Contact](https://shuren.fr/contact): formulaire, WhatsApp et téléphone.

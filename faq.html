@@ -57,26 +57,27 @@
 
   <link rel="preload" href="assets/fonts/syne-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/lato-300.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/lato-700.woff2" as="font" type="font/woff2" crossorigin>
 
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=4">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=4">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4">
 
-
-  <link rel="stylesheet" href="style.css?v=12">
+  <link rel="stylesheet" href="home.css?v=5">
   <script>
     (function () { var d = document.documentElement, t; d.classList.add('js'); try { t = localStorage.getItem('theme'); } catch (e) { } d.setAttribute('data-theme', t || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light')); })();
   </script>
 </head>
 
 <body>
-  <div id="cursor"></div>
+  <div id="progress" aria-hidden="true"></div>
 
   <nav id="nav">
     <div class="nav-inner">
       <a href="/" class="nav-logo">
-        <img src="assets/logos/logo-no-shuren-black-on-white.svg" alt="Logo Shuren" class="nav-logo-mark" width="32" height="32">
+        <img src="assets/logos/logo-no-shuren-black-on-white.svg" alt="Logo Shuren" class="nav-logo-mark" width="30" height="30">
         <img src="assets/logos/Just-Shuren-black-on-white.svg" alt="Shuren" class="nav-logo-text" width="78" height="18">
       </a>
       <div class="nav-right">
@@ -94,21 +95,11 @@
           <a href="/en/faq" class="lang-btn">EN</a>
         </div>
         <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">
-          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="1.5">
-            <circle cx="12" cy="12" r="5" />
-            <line x1="12" y1="1" x2="12" y2="3" />
-            <line x1="12" y1="21" x2="12" y2="23" />
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-            <line x1="1" y1="12" x2="3" y2="12" />
-            <line x1="21" y1="12" x2="23" y2="12" />
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
           </svg>
-          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="1.5">
-            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+          <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
           </svg>
         </button>
         <button class="nav-hamburger" id="navHamburger" aria-label="Ouvrir le menu" aria-expanded="false">
@@ -119,82 +110,84 @@
     <div class="nav-mobile" id="navMobile" inert>
       <ul>
         <li><a href="/#realisations">L'Atelier</a></li>
-        <li><a href="/#tarifs">Les Formules</a></li>
+        <li><a href="/#agents">Agents IA</a></li>
+        <li><a href="/#tarifs">Nos Offres</a></li>
         <li><a href="/processus">Processus</a></li>
         <li><a href="/faq">FAQ</a></li>
         <li><a href="/contact">Contact</a></li>
+        <li><a href="/en/faq">EN</a></li>
       </ul>
     </div>
   </nav>
 
   <main>
-    <section id="faq" style="padding-top: 140px;">
-      <div class="section-inner">
-        <h1 class="section-titre reveal">Questions fréquentes sur les agents IA</h1>
-        <div class="faq-liste reveal">
 
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">Comment l'agent IA connaît-il les informations de mon entreprise ?</button>
-            <div class="faq-reponse" role="region">
-              <p>Je l'entraîne sur vos documents, votre site web et vos procédures. Il ne répond qu'à partir des informations que vous avez validées.</p>
-            </div>
-          </div>
+    <!-- ============ FAQ ============ -->
+    <section id="faq">
+      <div class="section-inner section-inner-etroite">
 
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">Que se passe-t-il si l'agent ne connaît pas la réponse ?</button>
-            <div class="faq-reponse" role="region">
-              <p>Il est programmé pour ne jamais inventer de réponse (pas d'hallucination). S'il ne sait pas, il prend les coordonnées du client et vous transfère la demande.</p>
-            </div>
-          </div>
+        <p class="fil-ariane rv"><a href="/">Shuren</a> / FAQ</p>
 
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">Est-ce que je peux modifier les réponses de l'agent après le déploiement ?</button>
-            <div class="faq-reponse" role="region">
-              <p>Oui, les modifications de connaissances sont incluses dans l'abonnement. Un nouveau produit ou un changement de tarif ? Il suffit de me prévenir.</p>
-            </div>
-          </div>
+        <p class="eyebrow rv">FAQ</p>
+        <h1 class="section-titre rv">Questions fréquentes sur les agents IA.</h1>
+        <p class="section-sous-titre rv">Tout ce que vous devez savoir avant de déployer un agent IA.</p>
 
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">Combien de temps faut-il pour déployer un agent ?</button>
-            <div class="faq-reponse" role="region">
-              <p>Entre 1 et 2 semaines selon la complexité de vos flux et le nombre d'outils à connecter (site, WhatsApp, CRM).</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">L'agent peut-il prendre des rendez-vous ou des réservations ?</button>
-            <div class="faq-reponse" role="region">
-              <p>Oui, il peut se connecter à vos outils existants (Calendly, TheFork, ZenChef, etc.) pour vérifier vos disponibilités et prendre des rendez-vous en direct.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">Est-ce que mes données et celles de mes clients sont sécurisées ?</button>
-            <div class="faq-reponse" role="region">
-              <p>Absolument. Les données ne sont pas utilisées pour entraîner des modèles publics et respectent les normes RGPD applicables.</p>
-            </div>
-          </div>
-
-        </div>
-        <div class="reveal" style="text-align:center; margin-top: 60px;">
-          <a href="/contact" class="btn-plein">Obtenir un devis</a>
+        <div class="faq-liste rv">
+          <details class="faq-item">
+            <summary>Comment l'agent IA connaît-il les informations de mon entreprise&nbsp;?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <p>Je l'entraîne sur vos documents, votre site web et vos procédures. Il ne répond qu'à partir des informations que vous avez validées.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Que se passe-t-il si l'agent ne connaît pas la réponse&nbsp;?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <p>Il est programmé pour ne jamais inventer de réponse (pas d'hallucination). S'il ne sait pas, il prend les coordonnées du client et vous transfère la demande.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Est-ce que je peux modifier les réponses de l'agent après le déploiement&nbsp;?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <p>Oui, les modifications de connaissances sont incluses dans l'abonnement. Un nouveau produit ou un changement de tarif&nbsp;? Il suffit de me prévenir.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Combien de temps faut-il pour déployer un agent&nbsp;?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <p>Entre 1 et 2 semaines selon la complexité de vos flux et le nombre d'outils à connecter (site, WhatsApp, CRM).</p>
+          </details>
+          <details class="faq-item">
+            <summary>L'agent peut-il prendre des rendez-vous ou des réservations&nbsp;?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <p>Oui, il peut se connecter à vos outils existants (Calendly, TheFork, ZenChef, etc.) pour vérifier vos disponibilités et prendre des rendez-vous en direct.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Est-ce que mes données et celles de mes clients sont sécurisées&nbsp;?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <p>Absolument. Les données ne sont pas utilisées pour entraîner des modèles publics et respectent les normes RGPD applicables.</p>
+          </details>
         </div>
       </div>
     </section>
+
+    <!-- ============ CTA FINAL ============ -->
+    <section id="cta-final">
+      <div class="cta-panel rv">
+        <h2 class="cta-titre">Prêt à automatiser et vous concentrer sur votre métier&nbsp;?</h2>
+        <p class="cta-sub">Échange gratuit de 15 minutes, par téléphone ou WhatsApp, pour définir votre projet. Sans engagement.</p>
+        <div class="cta-boutons">
+          <a href="https://wa.me/33768420370?text=Bonjour%20Victor%2C%20je%20viens%20du%20site%20Shuren%20et%20j%27aimerais%20parler%20de%20mon%20projet." class="btn-plein btn-inverse magnet" target="_blank" rel="noopener noreferrer"><svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Écrire sur WhatsApp</a>
+          <a href="/contact" class="btn-outline btn-outline-inverse magnet">Envoyer un message</a>
+        </div>
+        <p class="cta-alt">Ou appelez-moi au <a href="tel:+33768420370">07&nbsp;68&nbsp;42&nbsp;03&nbsp;70</a> · <!--email_off--><a href="mailto:contact@shuren.fr">contact@shuren.fr</a><!--/email_off--></p>
+      </div>
+    </section>
+
   </main>
 
   <footer id="footer">
     <div class="footer-inner">
       <span class="footer-nom">Shuren - Agents IA pour entreprises</span>
       <div class="footer-links">
-        <a href="/mentions-legales" class="footer-legales">Mentions légales</a>
-        <button id="cookiePrefs" class="footer-legales footer-cookie-btn">Gérer les cookies</button>
+        <a href="/mentions-legales" class="footer-lien">Mentions légales</a>
+        <button id="cookiePrefs" class="footer-lien footer-cookie-btn">Gérer les cookies</button>
         <span class="footer-copy">© 2026</span>
       </div>
     </div>
   </footer>
 
-  <script src="script.js?v=9"></script>
+  <script src="home.js?v=5" defer></script>
 </body>
 
 </html>

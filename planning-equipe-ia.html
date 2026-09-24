@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planning d&#x27;équipe généré par IA pour PME | Shuren</title>
+  <meta name="description"
+    content="Un agent IA prépare le planning de la semaine en quelques minutes, selon les contrats, disponibilités et contraintes de votre équipe. Sans changer de logiciel.">
+  <meta name="author" content="Victor Bazet-Braun — Shuren">
+  <link rel="canonical" href="https://shuren.fr/planning-equipe-ia">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Shuren">
+  <meta property="og:title" content="Planning d&#x27;équipe généré par IA pour PME | Shuren">
+  <meta property="og:description"
+    content="Le planning de la semaine en quelques minutes, selon les contrats, disponibilités et contraintes de votre équipe. Vous relisez, vous diffusez.">
+  <meta property="og:url" content="https://shuren.fr/planning-equipe-ia">
+  <meta property="og:image" content="https://shuren.fr/assets/logos/og-image-v2.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Shuren — Planning d&#x27;équipe">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Planning d&#x27;équipe généré par IA pour PME | Shuren">
+  <meta name="twitter:description"
+    content="Le planning de la semaine en quelques minutes, selon les contrats, disponibilités et contraintes de votre équipe. Vous relisez, vous diffusez.">
+  <meta name="twitter:image" content="https://shuren.fr/assets/logos/og-image-v2.png">
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('consent', 'default', { analytics_storage: 'denied' });
+    /* gtag.js (~180 Ko) n'est chargé qu'après consentement explicite */
+    function loadGA() {
+      if (window.__gaLoaded) return;
+      window.__gaLoaded = true;
+      gtag('consent', 'update', { analytics_storage: 'granted' });
+      gtag('js', new Date());
+      gtag('config', 'G-CE9YD8CRJM');
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-CE9YD8CRJM';
+      document.head.appendChild(s);
+    }
+    try { if (localStorage.getItem('cookie_consent') === 'accepted') loadGA(); } catch (e) { }
+  </script>
+
+  <link rel="preload" href="assets/fonts/syne-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/lato-300.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/lato-700.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=4">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4">
+
+  <link rel="stylesheet" href="home.css?v=5">
+  <script>
+    (function () { var d = document.documentElement, t; d.classList.add('js'); try { t = localStorage.getItem('theme'); } catch (e) { } d.setAttribute('data-theme', t || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light')); })();
+  </script>
+  <!-- Données structurées JSON-LD : service, fil d'Ariane, FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://shuren.fr/planning-equipe-ia#service",
+        "name": "Génération de planning d'équipe par IA",
+        "serviceType": "Planification des équipes par IA",
+        "description": "Agent IA qui génère le planning hebdomadaire d'une équipe selon les contrats, disponibilités, repos et activité prévue, puis le livre dans l'outil existant (Skello, Excel). Inclus dans l'offre Opérationnel.",
+        "url": "https://shuren.fr/planning-equipe-ia",
+        "provider": {
+          "@type": "ProfessionalService",
+          "@id": "https://shuren.fr/#org",
+          "name": "Shuren",
+          "url": "https://shuren.fr/"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "France"
+        },
+        "inLanguage": "fr-FR"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Shuren",
+            "item": "https://shuren.fr/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Agents IA",
+            "item": "https://shuren.fr/#agents"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Planning d'équipe",
+            "item": "https://shuren.fr/planning-equipe-ia"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://shuren.fr/planning-equipe-ia#faq",
+        "inLanguage": "fr-FR",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Le planning respecte-t-il le droit du travail ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "L'agent applique les règles qu'on lui donne : durée de chaque contrat, repos entre deux services, jours de repos, amplitudes. On les définit ensemble au démarrage à partir de vos contrats et de votre convention collective. Vous relisez et validez chaque planning avant de le diffuser : vous restez maître de la décision finale."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Dois-je abandonner Skello ou mon tableur Excel ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. L'agent construit le planning, puis le livre dans l'outil que votre équipe connaît déjà. Vous gardez votre logiciel pour le pointage, les échanges de postes ou la paie."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Et si quelqu'un est absent au dernier moment ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vous signalez l'absence et demandez une nouvelle version : l'agent recalcule le planning en tenant compte de la personne manquante, en quelques minutes plutôt qu'en une soirée."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ça marche en dehors de la restauration ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui. Commerces, hôtels, cabinets, services : toute équipe avec des horaires variables, des temps partiels ou plusieurs sites."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Combien coûte la génération de planning par IA ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Elle fait partie de l'offre Opérationnel, avec les réponses aux avis Google, le récap WhatsApp, les commandes fournisseurs et le suivi des stocks. Le tarif dépend de votre nombre d'établissements ; on le fixe ensemble lors d'un échange gratuit de 15 minutes, sans engagement."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <div id="progress" aria-hidden="true"></div>
+
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="assets/logos/logo-no-shuren-black-on-white.svg" alt="Logo Shuren" class="nav-logo-mark" width="30" height="30">
+        <img src="assets/logos/Just-Shuren-black-on-white.svg" alt="Shuren" class="nav-logo-text" width="78" height="18">
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="/#realisations">L'Atelier</a></li>
+          <li><a href="/#agents">Agents IA</a></li>
+          <li><a href="/#tarifs">Nos Offres</a></li>
+          <li><a href="/processus">Processus</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+        <div class="lang-toggle">
+          <a href="/planning-equipe-ia" class="lang-btn active">FR</a>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <a href="/en/" class="lang-btn">EN</a>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">
+          <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+          </svg>
+        </button>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile" id="navMobile" inert>
+      <ul>
+        <li><a href="/#realisations">L'Atelier</a></li>
+        <li><a href="/#agents">Agents IA</a></li>
+        <li><a href="/#tarifs">Nos Offres</a></li>
+        <li><a href="/processus">Processus</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/en/">EN</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <section id="usage" class="cas-hero">
+      <div class="section-inner">
+
+        <p class="cas-fil rv"><a href="/#agents">Agents IA</a> / Planning d'équipe</p>
+
+        <p class="eyebrow rv">Agent IA · Planning</p>
+        <h1 class="section-titre rv">Planning d'équipe généré par IA&nbsp;:<br>la semaine prête en quelques minutes.</h1>
+        <p class="section-sous-titre rv">Contrats, disponibilités, repos, activité prévue&nbsp;: l'agent construit le planning à partir de vos règles. Vous le relisez, vous le diffusez.</p>
+
+        <div class="cas-grid">
+
+          <aside class="cas-fiche rv">
+            <p class="cas-fiche-label">En bref</p>
+            <ul class="cas-fiche-liste">
+              <li><span>Ce que fait l'agent</span><strong>Il propose le planning complet de la semaine</strong></li>
+              <li><span>Prend en compte</span><strong>Contrats, disponibilités, congés, repos, jours de fermeture, activité prévue</strong></li>
+              <li><span>Outils</span><strong>Skello, Excel ou votre outil actuel</strong></li>
+              <li><span>Pour</span><strong>Restaurants, commerces, hôtels, équipes en horaires variables</strong></li>
+              <li><span>Inclus dans</span><strong class="accent">Offre Opérationnel</strong></li>
+              <li><span>Mise en service</span><strong>1 à 2 semaines</strong></li>
+            </ul>
+            <div class="cas-fiche-cta">
+              <a href="/contact" class="lien-souligne">Parler de votre planning →</a>
+            </div>
+          </aside>
+
+          <div class="cas-actes">
+
+            <article class="acte rv">
+              <p class="acte-num">Le casse-tête</p>
+              <h2 class="acte-titre">Pourquoi le planning prend-il autant de temps&nbsp;?</h2>
+              <p class="acte-texte">
+                Chaque semaine, le même puzzle&nbsp;: un 24&nbsp;h, deux 35&nbsp;h, un 39&nbsp;h, des extras, une demande de repos le samedi, un congé qui tombe au pire moment, un week-end chargé. On refait tout sur un tableur ou un coin de table, souvent le dimanche soir. Et à la moindre absence, on recommence.
+              </p>
+            </article>
+            <article class="acte rv">
+              <p class="acte-num">Outil ou agent</p>
+              <h2 class="acte-titre">Logiciel de planning ou agent IA&nbsp;?</h2>
+              <p class="acte-texte">
+                Les logiciels de planning (Skello, Combo…) sont faits pour gérer l'équipe au quotidien&nbsp;: pointage, échanges de postes, préparation de la paie. L'agent Shuren ne les remplace pas&nbsp;: il fait le travail de construction du planning, puis le dépose dans votre outil. Votre équipe garde ses habitudes, vous gagnez la soirée.
+              </p>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fonctionnement">
+      <div class="section-inner">
+        <p class="eyebrow rv">Comment ça marche</p>
+        <h2 class="section-titre rv">Comment l'agent génère-t-il<br>le planning&nbsp;?</h2>
+        <div class="methode-wrap rv">
+          <span class="methode-ligne" aria-hidden="true"></span>
+          <ol class="methode-grid">
+            <li class="methode-etape rv" style="--d:.01s">
+              <span class="methode-num" aria-hidden="true">01</span>
+              <h3 class="methode-titre">Vos règles</h3>
+              <p class="methode-desc">On liste ensemble les contrats, les amplitudes, les repos et qui peut tenir quel poste.</p>
+            </li>
+            <li class="methode-etape rv" style="--d:.13s">
+              <span class="methode-num" aria-hidden="true">02</span>
+              <h3 class="methode-titre">La semaine</h3>
+              <p class="methode-desc">Disponibilités, congés et activité prévue&nbsp;: réservations, événements, saison.</p>
+            </li>
+            <li class="methode-etape rv" style="--d:.25s">
+              <span class="methode-num" aria-hidden="true">03</span>
+              <h3 class="methode-titre">La proposition</h3>
+              <p class="methode-desc">L'agent génère le planning complet en quelques minutes, dans votre format.</p>
+            </li>
+            <li class="methode-etape rv" style="--d:.37s">
+              <span class="methode-num" aria-hidden="true">04</span>
+              <h3 class="methode-titre">Votre validation</h3>
+              <p class="methode-desc">Vous ajustez ce que vous voulez, puis vous diffusez. Rien ne part sans vous.</p>
+            </li>
+          </ol>
+        </div>
+        <p class="methode-lien rv"><a href="/processus" class="lien-souligne">Voir le processus complet <span class="card-arrow">→</span></a></p>
+      </div>
+    </section>
+    <section id="gains">
+      <div class="section-inner">
+        <p class="eyebrow rv">Ce que vous y gagnez</p>
+        <h2 class="section-titre rv">Ce qui change,<br>semaine après semaine.</h2>
+        <p class="section-sous-titre rv">Chez EO Family, les plannings hebdomadaires des 4 restaurants sont générés en quelques minutes.</p>
+        <div class="avantages-grid">
+          <div class="avantage-item rv" style="--d:.05s">
+            <div class="avantage-icone icon-draw" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <h3 class="avantage-titre">Vos soirées</h3>
+            <p class="avantage-desc">Le planning de la semaine n'est plus un chantier du dimanche soir.</p>
+          </div>
+          <div class="avantage-item rv" style="--d:.12s">
+            <div class="avantage-icone icon-draw" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <h3 class="avantage-titre">Une équipe mieux traitée</h3>
+            <p class="avantage-desc">Les disponibilités et demandes de repos sont prises en compte à chaque fois, pas quand on y pense.</p>
+          </div>
+          <div class="avantage-item rv" style="--d:.19s">
+            <div class="avantage-icone icon-draw" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3 class="avantage-titre">Des règles appliquées</h3>
+            <p class="avantage-desc">Durée des contrats, repos, amplitudes&nbsp;: les règles que vous avez fixées sont vérifiées à chaque génération.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="faq-courte">
+      <div class="section-inner section-inner-etroite">
+        <p class="eyebrow rv">FAQ</p>
+        <h2 class="section-titre rv">Questions sur le planning par IA.</h2>
+        <div class="faq-liste rv">
+          <details class="faq-item">
+            <summary>Le planning respecte-t-il le droit du travail&nbsp;?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <p>L'agent applique les règles qu'on lui donne&nbsp;: durée de chaque contrat, repos entre deux services, jours de repos, amplitudes. On les définit ensemble au démarrage à partir de vos contrats et de votre convention collective. Vous relisez et validez chaque planning avant de le diffuser&nbsp;: vous restez maître de la décision finale.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Dois-je abandonner Skello ou mon tableur Excel&nbsp;?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <p>Non. L'agent construit le planning, puis le livre dans l'outil que votre équipe connaît déjà. Vous gardez votre logiciel pour le pointage, les échanges de postes ou la paie.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Et si quelqu'un est absent au dernier moment&nbsp;?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <p>Vous signalez l'absence et demandez une nouvelle version&nbsp;: l'agent recalcule le planning en tenant compte de la personne manquante, en quelques minutes plutôt qu'en une soirée.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Ça marche en dehors de la restauration&nbsp;?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <p>Oui. Commerces, hôtels, cabinets, services&nbsp;: toute équipe avec des horaires variables, des temps partiels ou plusieurs sites.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Combien coûte la génération de planning par IA&nbsp;?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <p>Elle fait partie de l'offre Opérationnel, avec les réponses aux avis Google, le récap WhatsApp, les commandes fournisseurs et le suivi des stocks. Le tarif dépend de votre nombre d'établissements&nbsp;; on le fixe ensemble lors d'un échange gratuit de 15&nbsp;minutes, sans engagement.</p>
+          </details>
+        </div>
+        <p class="methode-lien rv">À lire aussi&nbsp;: <a href="/agent-ia-restaurant" class="lien-souligne">Agents IA pour restaurants</a> · <a href="/agent-ia-avis-google" class="lien-souligne">Réponse automatique aux avis Google</a> · <a href="/cas-client" class="lien-souligne">Cas client EO Family</a></p>
+      </div>
+    </section>
+    <!-- ============ CTA FINAL ============ -->
+    <section id="cta-final">
+      <div class="cta-panel rv">
+        <h2 class="cta-titre">Votre prochain planning, préparé pour vous&nbsp;?</h2>
+        <p class="cta-sub">Échange gratuit de 15 minutes, par téléphone ou WhatsApp, pour définir votre projet. Sans engagement.</p>
+        <div class="cta-boutons">
+          <a href="https://wa.me/33768420370?text=Bonjour%20Victor%2C%20je%20viens%20du%20site%20Shuren%20et%20j%27aimerais%20parler%20de%20mon%20projet." class="btn-plein btn-inverse magnet" target="_blank" rel="noopener noreferrer"><svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Écrire sur WhatsApp</a>
+          <a href="/contact" class="btn-outline btn-outline-inverse magnet">Envoyer un message</a>
+        </div>
+        <p class="cta-alt">Ou appelez-moi au <a href="tel:+33768420370">07&nbsp;68&nbsp;42&nbsp;03&nbsp;70</a> · <!--email_off--><a href="mailto:contact@shuren.fr">contact@shuren.fr</a><!--/email_off--></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer">
+    <div class="footer-inner">
+      <span class="footer-nom">Shuren - Agents IA pour entreprises</span>
+      <div class="footer-links">
+        <a href="/mentions-legales" class="footer-lien">Mentions légales</a>
+        <button id="cookiePrefs" class="footer-lien footer-cookie-btn">Gérer les cookies</button>
+        <span class="footer-copy">© 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="home.js?v=5" defer></script>
+</body>
+
+</html>

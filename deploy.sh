@@ -21,6 +21,7 @@ trap 'rm -rf "$DIST"' EXIT
 PUBLIC=(
   index.html processus.html faq.html contact.html cas-client.html
   mentions-legales.html 404.html
+  agent-ia-avis-google.html agent-ia-restaurant.html planning-equipe-ia.html
   en
   assets
   home.css home.js style.css script.js
